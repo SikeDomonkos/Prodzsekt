@@ -1,0 +1,56 @@
+.style{
+    background-color: #C2DD8F; 
+    text-align: center;
+}
+body{
+    background-color: #F5F2D7 ;
+}
+
+
+.topnav a {
+    background-color: #C2DD8F;
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+.topnav a:hover {
+    background-color: #C2DD8F;
+    background-color: #ddd;
+    color: black;
+  }
+
+.topnav a.active {
+    background-color: #C2DD8F;
+    background-color: #419131;
+    color: white;
+  }
+
+  .topnav input[type=text] {
+    background-color: #C2DD8F;
+    float: right;
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+  }
+
+  @media screen and (max-width: 600px) {
+    .topnav a, .topnav input[type=text] {
+        background-color: #C2DD8F;
+      float: none;
+      display: block;
+      text-align: left;
+      width: 100%;
+      margin: 0;
+      padding: 14px;
+    }
+    .topnav input[type=text] {
+        background-color: #C2DD8F;
+      border: 1px solid #ccc;
+    }
+  }
