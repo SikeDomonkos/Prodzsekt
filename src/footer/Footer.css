@@ -1,10 +1,31 @@
 .Footer{
-    text-align: center;
-    position: absolute;
-    top: 93%;
-    
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center; 
     border: #C2DD8F;
     background-color: #C2DD8F;
+    display:flex;
     
     
+}
+
+
+#instagram{
+    align-items: end;
+    display:flex;
+    height: 50px;
+    width: 50px;
+}
+
+#Facebook{
+    align-items: end;
+    display:flex;
+    height: 50px;
+    width: 50px;
+}
+
+#email{
+    text-align: right;
 }

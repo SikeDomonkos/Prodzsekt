@@ -1,4 +1,4 @@
-.card {
+.szavaz {
     background-color: #C2DD8F;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -10,14 +10,31 @@
     position: absolute;
     flex-direction: column;
     align-items: center;
+    bottom: 30%;
   }
   
-  .card:hover {
+  .szavaz:hover {
     transform: scale(1.04);
   }
   
-  .card p {
-    color: #666;
+  .szavaz #igen {
+    color: green;
     padding: 0 10px;
     text-align: center;
+    display: inline;
+  }
+
+  .szavaz #nem {
+    color: red;
+    padding: 0 10px;
+    text-align: center;
+    display: inline;
+  }
+
+  .szavaz #kuldes {
+    color: black;
+    padding: 0 10px;
+    
+    display:inline;
+    
   }

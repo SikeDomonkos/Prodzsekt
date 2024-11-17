@@ -4,6 +4,7 @@ import Header from './header/Header';
 import Body from './body/Body';
 import Card from './card/Card';
 import Footer from './footer/Footer';
+import Szavazas from './szavazas/Szavazas';
 
 
 
@@ -21,6 +22,8 @@ function App() {
         <Card/>
 
        <Footer/>
+
+       <Szavazas/>
         
         
       </div>
