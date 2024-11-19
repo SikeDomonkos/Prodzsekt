@@ -2,6 +2,7 @@
     margin-top:10px ;
     margin-left: 10px; ;
     
+    
 }
  
  .topnav a {
@@ -13,12 +14,14 @@
     padding: 13px;
     text-decoration: none;
     font-size: 17px;
+   
 
   }
 .topnav a:hover {
     background-color: #C2DD8F;
     background-color: #ddd;
     color: black;
+    
   }
 
 
@@ -26,7 +29,7 @@
     background-color: #C2DD8F;
     float: right;
     padding: 14px 16px;
-    border: none;
+    border:none;
     font-size: 17px;
   }
 
@@ -39,6 +42,7 @@
       width: 100%;
       margin: 0;
       padding: 14px;
+      
     }
     .topnav input[type=search] {
         background-color: #C2DD8F;

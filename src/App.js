@@ -5,6 +5,7 @@ import Body from './body/Body';
 import Card from './card/Card';
 import Footer from './footer/Footer';
 import Szavazas from './szavazas/Szavazas';
+import { Router } from 'react-router-dom';
 
 
 
@@ -16,6 +17,7 @@ function App() {
 
       <div className="App">
         <Header />
+        
        
         <Body/>
        

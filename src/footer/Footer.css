@@ -7,7 +7,10 @@
     border: #C2DD8F;
     background-color: #C2DD8F;
     display:flex;
-    
+    border-top: green;
+    border-color: green;
+    border-top-width: 10px;
+    border-top-style:inset;
     
 }
 
