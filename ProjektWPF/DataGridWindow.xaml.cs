@@ -32,10 +32,10 @@ namespace ProjektWPF
         {
             AllData = new List<Person>
             {
-                new Person { Name = "Marci", Age = 19, Email = "janosim@kkszki.hu" , PhoneNumber = 213123123,Korzet="Avas"},
-                new Person { Name = "Her", Age = 19, Email = "janosim@kkszki.hu" , PhoneNumber = 213123123,Korzet="Avas"},
-                new Person { Name = "Domonkos", Age = 19, Email = "siked@kkszki.hu", PhoneNumber = 213123123,Korzet = "Lyuko" },
-                new Person { Name = "Szabolcs", Age = 18, Email = "kovacssz@kkszki.hu", PhoneNumber=213123123, Korzet="Mordor" } //Ha a telefonszám 0-val kezdődik lehet nem jó az int --> Person classban int
+                new Person { Name = "Marci", Age = 19, Email = "janosim@kkszki.hu" , PhoneNumber = "213123123",Korzet="Avas"},
+                new Person { Name = "Her", Age = 19, Email = "janosim@kkszki.hu" , PhoneNumber = "213123123",Korzet="Avas"},
+                new Person { Name = "Domonkos", Age = 19, Email = "siked@kkszki.hu", PhoneNumber = "213123123",Korzet = "Lyuko" },
+                new Person { Name = "Szabolcs", Age = 18, Email = "kovacssz@kkszki.hu", PhoneNumber="213123123", Korzet="Mordor" } //Ha a telefonszám 0-val kezdődik lehet nem jó az int --> Person classban int
             };
             DataGridUsers.ItemsSource = AllData;
             FilterComboBox.ItemsSource = AllData
@@ -54,7 +54,7 @@ namespace ProjektWPF
             public string Email { get; set; }
             
             //Lehet inkább stringnek kéne lennie mert a telefonszám 0-val kezdődik
-            public int PhoneNumber { get; set; }
+            public string PhoneNumber { get; set; }
             public string Korzet { get; set; }
         }
 
