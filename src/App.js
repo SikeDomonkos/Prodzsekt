@@ -5,7 +5,9 @@ import Body from './body/Body';
 import Card from './card/Card';
 import Footer from './footer/Footer';
 import Szavazas from './szavazas/Szavazas';
-import { Router } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
+import Fooldal from './Fooldal/Fooldal';
+import Bejelentkezes from './Bejelentkezes/Bejelentkezes';
 
 
 
@@ -17,16 +19,17 @@ function App() {
 
       <div className="App">
         <Header />
-        
-       
         <Body/>
+        <Footer/>
+
        
-        <Card/>
-
-       <Footer/>
-
-       <Szavazas/>
-        
+        <Routes>
+           <Route path='/Segitsegkeres' element = {<Card/>} />
+           <Route path='/Szavazas' element = {<Szavazas/>} />
+           <Route path='/Fooldal' element = {<Fooldal/>} />
+           <Route path='/Bejelentkezes' element = {<Bejelentkezes/>} />
+        </Routes>
+            
         
       </div>
   );

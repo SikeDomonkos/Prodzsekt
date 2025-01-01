@@ -1,0 +1,72 @@
+.form-container {
+    width: 300px;
+    background: linear-gradient(180deg,#C2DD8F 25%,rgb(255, 255, 255) 20%);
+    height: 360px;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-left: 100px;
+  }
+  
+  .form {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+  }
+  
+  .form-container p {
+    
+    top: 10%;
+    left: 10%;
+    font-size: 26px;
+    font-weight: 900;
+    color: black;
+  }
+  
+  .form-container label {
+    color: rgb(40, 42, 44);
+ 
+    
+    font-size: 15px;
+  }
+  
+  .form-container .input {
+  
+    height: 30px;
+    border: none;
+    background-color: rgb(224, 231, 236);
+  }
+  
+  .form-container .input:focus {
+    outline: none;
+  }
+  
+  .form-container button {
+    border: none;
+    height: 45px;
+    margin-top: 20px;
+    background-color:#C2DD8F ;
+    color: black;
+    font-size: 16px;
+  }
+  
+
+
+
+
+
+#masodik{
+    padding-top: 15px;
+    
+}
+
+#forma{
+   float:center !important; 
+   padding-left: 37%;
+}
+  
+  

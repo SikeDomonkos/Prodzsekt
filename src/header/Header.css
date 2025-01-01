@@ -1,22 +1,29 @@
 #nav{
     margin-top:10px ;
     margin-left: 10px; ;
+    float: center;
     
     
 }
  
  .topnav a {
     background-color: #C2DD8F;
-    float: left;
-    display: block;
+    text-align: center;
+    display: row;
     color: black;
     text-align:center;
     padding: 13px;
     text-decoration: none;
     font-size: 17px;
-   
+  
 
   }
+.topnav{
+  text-align:center;
+  padding: 10px;
+ 
+  
+}
 .topnav a:hover {
     background-color: #C2DD8F;
     background-color: #ddd;
@@ -25,29 +32,11 @@
   }
 
 
-  .topnav input[type=search] {
-    background-color: #C2DD8F;
-    float: right;
-    padding: 14px 16px;
-    border:none;
-    font-size: 17px;
-  }
 
-  @media screen and (max-width: 600px) {
-    .topnav a, .topnav input[type=search] {
-        background-color: #C2DD8F;
-      float: none;
-      display: block;
-      text-align: left;
-      width: 100%;
-      margin: 0;
-      padding: 14px;
-      
-    }
     .topnav input[type=search] {
         background-color: #C2DD8F;
       border: 1px solid #ccc;
     }
-  }
+  
 
 
