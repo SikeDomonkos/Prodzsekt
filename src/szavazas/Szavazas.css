@@ -1,22 +1,20 @@
+
 .szavaz {
     background-color: #C2DD8F;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     overflow: hidden;
-    transition: transform 0.2s;
     text-align: center;
-    padding: 10px;
+    padding: auto;
     margin-top: 15px;
-    margin-left: 42%;
-    position:absolute;
+    width: 300px;
     flex-direction: column;
     align-items:center;
     display: flex;
     
+    
   }
-  
-  
-  
+
   .szavaz #igen {
     color: black;
     padding: 0 10px;
@@ -60,6 +58,22 @@
     border-color: red;
     
   }
+.lead{
+  background-color: #C2DD8F;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: transform 0.2s;
+  text-align: center;
+  padding: 10px;
+  margin-top: 15px;
+  margin-left: 41%;
+  width: 300px;
+  flex-direction: column;
+  align-items:center;
+  display: flex;
+  }
+
 
  
  

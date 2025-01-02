@@ -7,7 +7,7 @@ function Header() {
     <header className="topnav">
             <div id='nav'></div>
                 <div className="topnav">
-                <Link to= "/Fooldal">
+                <Link to= "/">
                     <a  href= "#!">főoldal</a>
                 </Link>
 

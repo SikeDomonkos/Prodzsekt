@@ -26,7 +26,7 @@ function App() {
         <Routes>
            <Route path='/Segitsegkeres' element = {<Card/>} />
            <Route path='/Szavazas' element = {<Szavazas/>} />
-           <Route path='/Fooldal' element = {<Fooldal/>} />
+           <Route path='/' element = {<Fooldal/>} />
            <Route path='/Bejelentkezes' element = {<Bejelentkezes/>} />
         </Routes>
             
