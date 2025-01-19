@@ -5,31 +5,48 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjektWPF"
         mc:Ignorable="d"
-        Title="Felhaszálók" Height="450" Width="800">
-        
-    
+        Title="Felhasználók" Height="450" Width="800">
+
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="100" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                
-            </Grid.ColumnDefinitions>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
 
+        <!-- Filter ComboBox and Label -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <Label Content="Város:" VerticalAlignment="Center" Margin="10"/>
             <ComboBox Name="FilterComboBox"
-                  HorizontalAlignment="Left" 
-                  VerticalAlignment="Top" 
-                  Width="150" 
-                  Margin="10"
-                  SelectionChanged="FilterComboBox_SelectionChanged" />
-        
+                      HorizontalAlignment="Left" 
+                      VerticalAlignment="Center" 
+                      Width="150" 
+                      Margin="10"
+                      SelectionChanged="FilterComboBox_SelectionChanged"/>
+            <!-- Save Button -->
+            <Button Name="SaveButton" Content="Mentés" HorizontalAlignment="Left" VerticalAlignment="Top"
+        Width="100" Height="30" Margin="10" Grid.Row="1" Click="SaveButton_Click"/>
+        </StackPanel>
+
+        <!-- DataGrid -->
         <DataGrid Name="DataGridUsers"
-                  Grid.Column="0"
                   Grid.Row="1"
                   AutoGenerateColumns="True"
                   HorizontalAlignment="Stretch" 
-                  VerticalAlignment="Stretch"/>
+                  VerticalAlignment="Stretch"
+                  CanUserAddRows="False"
+                  IsReadOnly="False"
+                  CellEditEnding="DataGridUsers_CellEditEnding"
+                  AutoGeneratingColumn="DataGridUsers_AutoGeneratingColumn">
+            <DataGrid.Columns>
+                <!-- Custom columns for IsBehindPayment and BehindPayment -->
+                <DataGridCheckBoxColumn Header="Is Behind Payment" Binding="{Binding IsBehindPayment}" />
+                <DataGridTextColumn Header="Behind Payment" Binding="{Binding BehindPayment}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        
     </Grid>
 </Window>
