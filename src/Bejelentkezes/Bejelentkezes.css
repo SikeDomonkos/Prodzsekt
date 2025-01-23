@@ -7,7 +7,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-left: 100px;
+    border-radius: 5px;
   }
   
   .form {
@@ -55,17 +55,17 @@
   
 
 
-
-
-
-#masodik{
-    padding-top: 15px;
-    
+.forms {
+  padding: 10px;
+  
 }
 
+
 #forma{
-   float:center !important; 
-   padding-left: 37%;
+   float:center !important;
+   padding: 2%;
+   
+
 }
   
   

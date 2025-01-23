@@ -5,12 +5,12 @@ export default function Szavazas() {
   return (
 
     <div>
-                <div className='lead'>
+                <div className='Fo'>
+                  <div className='lead'>
                     <h2>Szavazás índítása</h2>
                     <p>írja le a miről szeretne szavazni</p> <input type='text'></input>
                     <input type='submit'></input>
-
-
+                  </div>
                 </div>
 
               <div className='szavaz'>

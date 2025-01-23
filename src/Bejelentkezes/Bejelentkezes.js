@@ -3,8 +3,8 @@ import './Bejelentkezes.css';
 
 export default function Bejelentkezes() {
   return (
-    <div id='forma'>
-        <div id='pozi'>
+    <div id='forma' className='Fo'>
+        <div className='forms'>
             <div className="form-container">
                      <p>Bejelentkezés</p>
 
@@ -21,7 +21,7 @@ export default function Bejelentkezes() {
         </div>
 
 
-     <div id='masodik'>
+     <div className='forms'>
         <div className="form-container">
                <p>Regisztráció</p>
 
