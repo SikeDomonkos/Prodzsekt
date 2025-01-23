@@ -14,8 +14,7 @@ export default function Fooldal() {
         
 
         </div>
-        <img id='villamos'src='https://m.blog.hu/mi/miskolciszemelvenyek/image/villamos_151009ml_5.JPG' alt='villamos'></img>
-
+        
 
     </div>
   )

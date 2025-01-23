@@ -1,30 +1,30 @@
 import React from 'react';
 import './Header.css';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 function Header() {
   return (
     <header className="topnav">
-            <div id='nav'></div>
+            <div id='nav'>
                 <div className="topnav">
-                <Link to= "/">
-                    <a  href= "#!">főoldal</a>
-                </Link>
+                <NavLink className="topnavLink" to= "/">
+                    Főoldal
+                </NavLink>
 
-                <Link to= "Szavazas">
-                    <a href="#!">Szavazás</a>
-                </Link>
+                <NavLink className="topnavLink" to= "Szavazas">
+                    Szavazás
+                </NavLink>
 
-                <Link to="Segitsegkeres">
-                    <a  href="#!">Segítség kérése</a>
-                </Link>
+                <NavLink className="topnavLink" to="Segitsegkeres">
+                    Segítség kérése
+                </NavLink>
 
-                <Link to = "Bejelentkezes">
-                    <a id='bejelentkezes' href="#!">Bejelentkezés</a>
-                </Link>
+                <NavLink className="topnavLink" to = "Bejelentkezes">
+                    Bejelentkezés
+                </NavLink>
 
                     
-                    
+            </div>
             </div>
       
     </header>

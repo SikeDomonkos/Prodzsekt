@@ -5,16 +5,16 @@ export default function Bejelentkezes() {
   return (
     <div id='forma'>
         <div id='pozi'>
-            <div class="form-container">
+            <div className="form-container">
                      <p>Bejelentkezés</p>
 
-            <form class="form">
+            <form className="form">
             <label>Felhasználónév</label>
-            <input type="text" class="input" placeholder="Írd be a felhasználóneved"/>
+            <input type="text" className="input" placeholder="Írd be a felhasználóneved"/>
                     <label>Email</label>
-                    <input type="text" class="input" placeholder="Írd be az emailed"/>
+                    <input type="text" className="input" placeholder="Írd be az emailed"/>
                     <label>Jelszó</label>
-                    <input type="password" class="input" placeholder="Írd be a jelszavad"/> 
+                    <input type="password" className="input" placeholder="Írd be a jelszavad"/> 
                     <button>Bejelentkezés</button>
             </form>
             </div>
@@ -22,17 +22,17 @@ export default function Bejelentkezes() {
 
 
      <div id='masodik'>
-        <div class="form-container">
+        <div className="form-container">
                <p>Regisztráció</p>
 
-            <form class="form">
+            <form className="form">
 
                     <label>Felhasználónév</label>
-                <input type="text" class="input" placeholder="Írd be a felhasználóneved"/>
+                <input type="text" className="input" placeholder="Írd be a felhasználóneved"/>
                 <label>Email</label>
-                <input type="text" class="input" placeholder="Írd be az emailed"/>
+                <input type="text" className="input" placeholder="Írd be az emailed"/>
                 <label>Jelszó</label>
-                <input type="password" class="input" placeholder="Írd be a jelszavad"/> 
+                <input type="password" className="input" placeholder="Írd be a jelszavad"/> 
                 <button>Regisztráció</button>
             </form>
         </div>

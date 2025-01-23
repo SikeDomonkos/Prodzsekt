@@ -1,7 +1,8 @@
-
-#hatter{
-  background-color: #F5F2D7;
-}
+body{
+  background-image:url("img/hatterkep.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+} 
 
 .App-logo {
   height: 40vmin;

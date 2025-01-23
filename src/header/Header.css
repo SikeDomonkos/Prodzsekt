@@ -1,15 +1,11 @@
 #nav{
     margin-top:10px ;
     margin-left: 10px; ;
-    float: center;
-    
-    
+
 }
  
- .topnav a {
+ .topnavLink {
     background-color: #C2DD8F;
-    text-align: center;
-    display: row;
     color: black;
     text-align:center;
     padding: 13px;
@@ -18,19 +14,20 @@
   
 
   }
+
 .topnav{
   text-align:center;
   padding: 10px;
  
   
 }
-.topnav a:hover {
+
+.topnavLink:hover {
     background-color: #C2DD8F;
     background-color: green;
     color: white;
     
   }
-
 
 
     .topnav input[type=search] {
