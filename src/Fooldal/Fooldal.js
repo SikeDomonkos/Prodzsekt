@@ -15,7 +15,7 @@ export default function Fooldal() {
 
         </div>
         
-
+    
     </div>
   )
 }

@@ -23,9 +23,17 @@ export default function Szavazas({ title, description }) {
     <div>
                 <div className='Fo'>
                   <div className='lead'>
-                    <h2>Szavazás índítása</h2>
-                    <p>írja le a miről szeretne szavazni</p> <input type='text'></input>
-                    <input type='submit'></input>
+                  <form onSubmit={function (event) {
+        event.preventDefault();
+        
+        
+      }}>
+      <h4>itt tud új szavazást feladni!</h4>
+      <p id='neve'><input type='text' id='title' placeholder='Szavazás címe'></input></p>
+      <p id='kepe'><input type='text' id='description' placeholder='szavazás leírása'></input></p>
+
+      <p id='gomb'><input type='submit'></input></p>
+      </form>
                   </div>
                 </div>
 
