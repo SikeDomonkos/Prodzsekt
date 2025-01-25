@@ -1,7 +1,23 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Szavazas.css'
 
-export default function Szavazas() {
+export default function Szavazas({ title, description }) {
+  const [database, setDatabase] = useState([]);
+
+  useEffect(() => {
+    Get();
+  }, []);
+
+  function Get() {
+    fetch("https://localhost:7079/Poll")
+      .then(response => response.json())
+      .then(data => {
+        console.log(data); 
+        setDatabase(data);
+      })
+      .catch(error => console.error('Error fetching data:', error));
+  }
+
   return (
 
     <div>
@@ -14,33 +30,32 @@ export default function Szavazas() {
                 </div>
 
               <div className='szavaz'>
-                  <table>
-                    
-                    <h2>Szavazás</h2>
-                    <h4 id='leiras'> Szavazás leírása</h4>
-                    
-                    <th>
-                    
-                        <tr>
-                          <p id='igen'>Igen</p> <input type='checkbox' id='BtnIgen'></input>
-                        
-                        </tr>
-                    </th>
-                    
-                    <th>
-                        <tr>
-                        
-                          <p id='nem'>Nem</p> <input type='checkbox' id='BtnNem'></input>
-                        </tr>
-                        <input type='submit' id='kuldes'></input>
-                    </th>
+                {
+                  database.map((data) => 
+                  (<div>
+                    <h2>{data.title}</h2>
+                    <h4>{data.description}</h4>
+                        <table>
+                            <tr>
+                          
+                                <td>
+                                  <p id='igen'>Igen</p> <input type='checkbox' id='BtnIgen'></input>
+                                
+                                </td>
+                                <td>
+                                  <p id='nem'>Nem</p> <input type='checkbox' id='BtnNem'/>
+                                </td>
+                            </tr>
 
-                    
-                  </table>
+                      </table>                       
+                   <input type='submit' id='kuldes'/>
+                  </div>
+                  ))
+                }
+             
               </div>
 
               
       </div>
   )
 }
-
