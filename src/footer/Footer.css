@@ -1,8 +1,9 @@
 .Footer{
-    position: fixed;
+    position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: 0 !important;
     width: 100%;
+    
     text-align: center; 
     border: #C2DD8F;
     background-color: #C2DD8F;
@@ -11,8 +12,19 @@
     border-color: green;
     border-top-width: 10px;
     border-top-style:inset;
+
+    box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.1);
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
     
 }
+
+@media screen and (max-width: 768px) {
+    footer {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
 
 
 #instagram{
@@ -31,4 +43,5 @@
 
 #email{
     text-align: right;
+    
 }
