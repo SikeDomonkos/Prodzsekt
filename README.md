@@ -1,6 +1,19 @@
 # E-Panel Projekt
 
+
+E-Panel Projekt - Lakóközösség Szavazó Alkalmazás
 ## Projekt leírása
+Az E-Panel egy fejlett, digitális szavazórendszer, amely kifejezetten helyi közösségek számára készült, különösen lakóközösségek, társasházak és egyéb közösségi csoportok részére. A célunk egy olyan platform biztosítása, amely lehetővé teszi a lakóközösségek számára, hogy gyorsan, egyszerűen és biztonságosan lebonyolítsák a különféle szavazásokat, döntéseket hozzanak és áttekintést nyerjenek a közösségi ügyekről. Az alkalmazás célja a közösségi interakciók, döntéshozatali folyamatok egyszerűsítése és modernizálása, miközben biztosítja a transzparenciát, biztonságot és a könnyű használhatóságot.
+
+Főbb funkciók:
+Szavazás és döntéshozatal: A felhasználók szavazhatnak közösségi ügyekről, például közös költségekről, közösségi eseményekről, és egyéb helyi döntésekről.
+Szavazati jogok kezelése: Minden lakó a jogosultságainak megfelelően részt vehet a szavazásokban. A rendszer biztosítja a szavazati jogok ellenőrzését.
+Valós idejű eredmények: Az alkalmazás biztosítja a szavazások valós idejű követését és eredményének azonnali megjelenítését.
+Anonimitás: A szavazások teljesen anonim módon zajlanak, biztosítva a lakók magánéletének védelmét.
+Projekt célja
+A projekt célja, hogy egy olyan könnyen használható digitális szavazórendszert hozzon létre, amely lehetővé teszi a lakóközösségek számára, hogy bárhonnan, bármikor részt vegyenek a közösségi döntéshozatalban, és biztosítja az összes adat védelmét és titkosságát.
+
+A Lakóközösség szavazó alkalmazás segítségével a közösségek gyorsan és hatékonyan hozhatnak döntéseket, így elősegítve a közösségi együttműködést és a közös ügyek gyors kezelését. Az alkalmazás különösen hasznos lehet olyan közösségek számára, ahol a hagyományos szavazási formák nem működnek hatékonyan, vagy ahol a lakók különböző okokból nem tudnak személyesen megjelenni.
 
 Az E-Panel egy átfogó szoftverfejlesztési projekt, amely több különálló, egymással együttműködő modulból áll. A projekt célja egy jól strukturált, könnyen karbantartható és bővíthető rendszer létrehozása. A fejlesztés hatékonyságának növelése érdekében a különböző komponenseket külön branch-ekben kezeljük, lehetővé téve a párhuzamos fejlesztést és a gyors integrációt. A projekt célközönsége mind a fejlesztői csapatok, mind a végfelhasználók, akik egy stabil és megbízható rendszert igényelnek.
 
