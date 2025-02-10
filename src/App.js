@@ -7,6 +7,7 @@ import Szavazas from './szavazas/Szavazas';
 import { Route, Routes } from 'react-router-dom';
 import Fooldal from './Fooldal/Fooldal';
 import Bejelentkezes from './Bejelentkezes/Bejelentkezes';
+import Help from './card/Help';
 
 
 
@@ -21,7 +22,7 @@ function App() {
         
         <Routes>
            <Route path='/' element = {<Fooldal/>} />
-           <Route path='/Segitsegkeres' element = {<Card/>} />
+           <Route path='/Segitsegkeres' element = {<Help/>} />
            <Route path='/Szavazas' element = {<Szavazas/>} />
            <Route path='/Bejelentkezes' element = {<Bejelentkezes/>} />
         </Routes>

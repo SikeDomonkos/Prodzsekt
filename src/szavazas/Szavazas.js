@@ -9,7 +9,7 @@ export default function Szavazas({ title, description }) {
   }, []);
 
   function Get() {
-    fetch("https://localhost:7079/Poll")
+    fetch("https://25.15.67.98:7285/swagger/index.html")
       .then(response => response.json())
       .then(data => {
         console.log(data); 
