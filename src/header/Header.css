@@ -38,3 +38,27 @@
   background-color: #C2DD8F;
   border: 1px solid #ccc;
 }
+
+.topnavLink.active{
+  background-color: #C2DD8F;
+  background-color: green;
+  color: white;
+  transform: translateY(-4px);
+  transition: 0.7s ease;
+}
+
+.topnavLink.fade-out {
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-4px);
+  }
+}
