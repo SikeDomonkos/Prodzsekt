@@ -1,47 +1,72 @@
-.Footer{
-    position: absolute;
+.Footer {
+    position: fixed; /* Az oldal aljára rögzítve marad */
+    bottom: 0;
     left: 0;
-    bottom: 0 !important;
     width: 100%;
-    
-    text-align: center; 
-    border: #C2DD8F;
-    background-color: #C2DD8F;
-    display:flex;
-    border-top: green;
-    border-color: green;
-    border-top-width: 10px;
-    border-top-style:inset;
-
-    box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.1);
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-    
+    background-color: #2e7d32;
+    padding: 10px 0;
+    color: white;
+    text-align: center;
+    border-top: 4px solid #1b5e20;
+    display: flex;
+    justify-content: center; /* Középre igazítás */
+    align-items: center;
+    height: 60px; /* Csökkentett magasság */
+    box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
 }
 
+/* Fő konténer az elemek elrendezéséhez */
+.footer-content {
+    display: flex;
+    flex-direction: row; /* Egy sorba rendezi az elemeket */
+    align-items: center;
+    gap: 20px; /* Egy kis távolság az elemek között */
+}
+
+/* Social ikonok */
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons a img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icons a img:hover {
+    transform: scale(1.2);
+}
+
+/* Kapcsolati információk */
+.contact-info {
+    display: flex;
+    gap: 15px; /* Távolság az e-mail címek között */
+    font-size: 0.9rem;
+}
+
+.contact-info h2 {
+   color: black;
+}
+
+
+/* Reszponzivitás mobilra */
 @media screen and (max-width: 768px) {
-    footer {
-      flex-direction: column;
-      text-align: center;
+    .Footer {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
     }
-  }
 
+    .footer-content {
+        flex-direction: column;
+        gap: 10px;
+    }
 
-#instagram{
-    align-items: end;
-    display:flex;
-    height: 50px;
-    width: 50px;
-}
-
-#Facebook{
-    align-items: end;
-    display:flex;
-    height: 50px;
-    width: 50px;
-}
-
-#email{
-    text-align: right;
-    
+    .contact-info {
+        flex-direction: column;
+        text-align: center;
+    }
 }

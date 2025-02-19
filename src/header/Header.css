@@ -1,64 +1,119 @@
-.topnavLink {
-  background-color: #C2DD8F;
-  color: black;
-  text-align: center;
-  padding: 13px;
-  text-decoration: none;
-  font-size: 17px;
-
-
-
-
+/* Navbar alapstílusok */
+.navbar {
+  background-color: #2e7d32;
+  color: white;
+  padding: 15px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 50;
 }
 
-.topnav {
-  text-align: center;
-  padding-top: 3px;
-  padding-bottom: 20px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 3fr));
-  max-width: 1000px;
+.container {
+  max-width: 1200px;
   margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.logo img {
+  height: 40px;
+  width: 40px;
+}
+
+/* Navigációs menü */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  padding: 8px 12px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: yellow;
+}
+
+/* Bejelentkezés gomb */
+.logout-btn {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 8px 12px;
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  color: red;
+}
+
+/* Keresősáv */
+.search-box {
+  position: relative;
+}
+
+.search-box input {
+  padding: 8px 15px;
   border-radius: 20px;
-
-
+  border: none;
+  outline: none;
 }
 
-.topnavLink:hover {
-  background-color: #C2DD8F;
-  background-color: green;
+.search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: gray;
+}
+
+/* Mobilbarát hamburger menü */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
   color: white;
-  transform: translateY(-4px);
-  transition: 0.7s ease;
-
+  font-size: 1.8rem;
+  cursor: pointer;
 }
 
-
-.topnav input[type=search] {
-  background-color: #C2DD8F;
-  border: 1px solid #ccc;
-}
-
-.topnavLink.active{
-  background-color: #C2DD8F;
-  background-color: green;
-  color: white;
-  transform: translateY(-4px);
-  transition: 0.7s ease;
-}
-
-.topnavLink.fade-out {
-  opacity: 0;
-  transform: translateY(4px);
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-}
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(4px);
+/* Reszponzív stílus */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #2e7d32;
+    text-align: center;
+    padding: 10px 0;
   }
-  to {
-    opacity: 1;
-    transform: translateY(-4px);
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
   }
 }

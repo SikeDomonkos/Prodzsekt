@@ -2,7 +2,6 @@
   width: 300px;
   background: linear-gradient(180deg, #C2DD8F 25%, rgb(255, 255, 255) 20%);
   height: 500px;
-  margin-top: 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,6 +10,7 @@
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   max-width: 1000px;
   margin: auto;
+  animation: fadeIn 0.5s ease-in-out;
 }
 
 .form {
@@ -58,15 +58,12 @@
 }
 
 
-.forms {
-  padding: 10px;
 
-}
 
 
 #forma {
   float: center !important;
-  padding: 2%;
+  padding: 12px;
 
 
 }
@@ -77,8 +74,8 @@
   top: 0;
   left: 0;
   width: 100vw; 
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5); 
+  top: 76px;
+  
   display: flex; 
   align-items: center; 
   justify-content: center; 

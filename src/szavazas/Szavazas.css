@@ -17,6 +17,7 @@
     
     
     
+    
   }
 
   .szavaz #igen {
@@ -74,6 +75,8 @@
   margin-top: 15px;
   width: 300px;
   flex-direction: column;
+  animation: fadeIn 0.5s ease-in-out;
+
 
   }
 

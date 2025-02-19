@@ -5,6 +5,7 @@ body{
   background-attachment: fixed;
   background-size: cover;
   font-family: 'Inter', sans-serif; 
+  padding-top: 70px;
 } 
 
 .App-logo {

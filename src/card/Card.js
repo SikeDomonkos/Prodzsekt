@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Card.css';
 
-export default function Help({ description, date, name }) {
+export default function Help({ data}) {
   const [database, setDatabase] = useState([]);
 
   useEffect(() => {
@@ -9,7 +9,7 @@ export default function Help({ description, date, name }) {
   }, []);
 
   function Get() {
-    fetch("http://25.15.67.98:7285/api/data") 
+    fetch('http://localhost:5206/api/Poll/All') 
       .then(response => response.json())
       .then(data => {
         console.log(data);
@@ -24,9 +24,9 @@ export default function Help({ description, date, name }) {
         database.map((data, index) => (
           <div key={index}>
             <div className="card">
-              <h2>Segítség kell {data.name}-nek</h2>
+              <h2>{data.title}</h2>
               <p>{data.description}</p>
-              <p>Az alábbi napon kérem a segítséget: {data.date}</p>
+              
               <input type='submit' />
             </div>
           </div>

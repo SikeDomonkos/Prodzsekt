@@ -7,10 +7,9 @@ export default function Bejelentkezes() {
   const [loginPassword, setLoginPassword] = useState('');
   const [loginError, setLoginError] = useState('');
 
-  
   const loginUser = async (userData) => {
     try {
-      const response = await fetch('https://localhost:7047/UserAccounts/Login', {
+      const response = await fetch('http://localhost:5206/auth/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -23,6 +22,7 @@ export default function Bejelentkezes() {
       }
 
       const data = await response.json();
+      localStorage.setItem('token', data.token);
       return data;
     } catch (error) {
       throw error.message;
@@ -34,12 +34,8 @@ export default function Bejelentkezes() {
     setLoginError('');
 
     try {
-      const userData = { username: loginUsername, password: loginPassword };
-      const result = await loginUser(userData);
-
-      localStorage.setItem('user', JSON.stringify(result));
-
-      
+      const userData = { userName: loginUsername, password: loginPassword };
+      await loginUser(userData);
       window.location.href = '/dashboard';
     } catch (error) {
       setLoginError(error);
@@ -48,7 +44,6 @@ export default function Bejelentkezes() {
 
   return (
     <div id='forma' className='Fo'>
-      {/* Bejelentkezési űrlap */}
       <div className='forms'>
         <div className="form-container">
           <p>Bejelentkezés</p>
@@ -77,17 +72,14 @@ export default function Bejelentkezes() {
           <button onClick={() => setShowRegister(true)}>Regisztráció</button>
         </div>
       </div>
-
-      {/* Regisztrációs Modal */}
       {showRegister && <RegisterModal onClose={() => setShowRegister(false)} />}
     </div>
   );
 }
 
-
 const registerUser = async (userData) => {
   try {
-    const response = await fetch('https://localhost:7047/UserAccounts/Register', {
+    const response = await fetch('https://localhost:7285/auth/register', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -99,16 +91,14 @@ const registerUser = async (userData) => {
       throw new Error('Hiba történt a regisztráció során!');
     }
 
-    const data = await response.json();
-    return data;
+    return await response.json();
   } catch (error) {
     throw error.message;
   }
 };
 
-
 function RegisterModal({ onClose }) {
-  const [username, setUsername] = useState('');
+  const [userName, setUserName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -125,7 +115,7 @@ function RegisterModal({ onClose }) {
     }
 
     try {
-      const userData = { username, email, password };
+      const userData = { userName, email, password };
       await registerUser(userData);
       setSuccessMessage('Sikeres regisztráció! Kérlek jelentkezz be.');
       setErrorMessage('');
@@ -148,8 +138,8 @@ function RegisterModal({ onClose }) {
             type="text"
             className="input"
             placeholder="Írd be a felhasználóneved"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            value={userName}
+            onChange={(e) => setUserName(e.target.value)}
           />
           <label>Email</label>
           <input
