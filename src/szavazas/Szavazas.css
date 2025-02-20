@@ -80,7 +80,43 @@
 
   }
 
+  .input-field, .textarea-field {
+    width: 90%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  .input-field:focus, .textarea-field:focus {
+    border-color: #4CAF50;
+    outline: none;
+  }
+  
+  .textarea-field {
+    height: 80px; /* Megnövelt magasság */
+    resize: vertical; /* Engedi a felhasználónak a méretezést */
+  }
+  
+  .submit-btn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .submit-btn:hover {
+    background-color: #45a049;
+  }
 
+.sor{
+  margin-top: 200px;
+}
  
  
   

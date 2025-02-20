@@ -1,22 +1,86 @@
+/* Help.css */
+
+.Fo {
+  font-family: Arial, sans-serif;
+  
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
 .card {
-    background-color: #C2DD8F;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    width: 400px;
-    text-align: center;
-    padding: 10px;
-    margin-top: 15px;
-    flex-direction: column;
-    align-items: center;    
-    display: flex;
-    animation: fadeIn 0.5s ease-in-out;
-  }
-  
-  
-  
-  .card p {
-    color: grey;
-    padding: 0 10px;
-    text-align: center;
-  }
+  background-color: #C2DD8F;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  font-size: 24px;
+}
+
+h3 {
+  color: #2c3e50;
+  font-size: 20px;
+}
+
+p {
+  color: #555;
+  font-size: 16px;
+}
+
+input[type="text"], textarea {
+  width: 96%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+input[type="text"]:focus, textarea:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+input[type="submit"], .refresh-btn, .submit-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover, .refresh-btn:hover, .submit-btn:hover {
+  background-color: #45a049;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+  text-align: center;
+}
+
+.refresh-btn {
+  margin-top: 10px;
+}
+
+.sor1{
+  margin-top: 200px;
+}
+

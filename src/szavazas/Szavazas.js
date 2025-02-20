@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { v4 as uuidv4 } from 'uuid'; // UUID generátor
+import { v4 as uuidv4 } from 'uuid';
 import './Szavazas.css';
 
 export default function Szavazas({ user }) {
@@ -27,7 +27,6 @@ export default function Szavazas({ user }) {
       return;
     }
 
-    // Frissíti a kliens oldali állapotot
     setDatabase(prevDatabase =>
       prevDatabase.map(item =>
         item.id === id
@@ -36,7 +35,6 @@ export default function Szavazas({ user }) {
       )
     );
 
-    // Küldés az API felé
     fetch(`https://localhost:7285/api/Poll/Vote/${id}`, {
       method: "POST",
       headers: {
@@ -47,7 +45,7 @@ export default function Szavazas({ user }) {
       .then(response => response.json())
       .then(data => {
         console.log("Szavazat mentve:", data);
-        fetchPolls(); // Újra lekéri a friss adatokat
+        fetchPolls();
       })
       .catch(error => console.error("Hiba a szavazás mentésekor:", error));
   }
@@ -61,12 +59,12 @@ export default function Szavazas({ user }) {
     }
 
     const newPoll = {
-      id: uuidv4(), // Ha szükséges, egyedi UUID generálása
+      id: uuidv4(),
       title: newTitle,
       description: newDescription,
       yes: 0,
       no: 0,
-      posterId: user?.id || "unknown" // Backend valószínűleg ezt várja
+      posterId: user?.id || "unknown"
     };
 
     fetch("https://localhost:7285/api/Poll", {
@@ -94,15 +92,57 @@ export default function Szavazas({ user }) {
       });
   }
 
+  function handleDelete(id) {
+    if (!window.confirm("Biztosan lezárod ezt a szavazást?")) {
+      return;
+    }
+
+    fetch(`https://localhost:7285/api/Poll/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("Hiba a szavazás törlésekor.");
+        }
+        return response.text();
+      })
+      .then(() => {
+        console.log(`Szavazás (${id}) törölve.`);
+        setDatabase(prevDatabase => prevDatabase.filter(item => item.id !== id));
+      })
+      .catch(error => {
+        console.error("Hiba a szavazás törlésekor:", error);
+        alert("Hiba történt a szavazás lezárásakor.");
+      });
+  }
+
   return (
     <div>
       <div className='Fo'>
         <div className='lead'>
           <form onSubmit={handleSubmit}>
             <h4>Új szavazás létrehozása</h4>
-            <p><input type='text' value={newTitle} onChange={(e) => setNewTitle(e.target.value)} placeholder='Szavazás címe' /></p>
-            <p><input type='text' value={newDescription} onChange={(e) => setNewDescription(e.target.value)} placeholder='Szavazás leírása' /></p>
-            <p><input type='submit' value='Létrehozás' /></p>
+            <p>
+              <input
+                type='text'
+                value={newTitle}
+                onChange={(e) => setNewTitle(e.target.value)}
+                placeholder='Szavazás címe'
+                className="input-field"
+              />
+            </p>
+            <p>
+              <textarea
+                value={newDescription}
+                onChange={(e) => setNewDescription(e.target.value)}
+                placeholder='Szavazás leírása'
+                className="textarea-field"
+              />
+            </p>
+            <p><input type='submit' value='Létrehozás' className="submit-btn" /></p>
           </form>
         </div>
       </div>
@@ -120,8 +160,14 @@ export default function Szavazas({ user }) {
                 Nem ({data.no})
               </button>
             </div>
+            <button className='delete-btn' onClick={() => handleDelete(data.id)} disabled={!user}>
+              Szavazás lezárása
+            </button>
           </div>
         ))}
+      </div>
+      <div className='sor'>
+
       </div>
     </div>
   );

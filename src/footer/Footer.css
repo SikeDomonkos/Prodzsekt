@@ -55,18 +55,18 @@
 /* Reszponzivitás mobilra */
 @media screen and (max-width: 768px) {
     .Footer {
-        flex-direction: column;
+        flex-direction: row;
         height: auto;
         padding: 10px;
     }
 
     .footer-content {
-        flex-direction: column;
+        flex-direction: row;
         gap: 10px;
     }
 
     .contact-info {
-        flex-direction: column;
+        flex-direction: row;
         text-align: center;
     }
 }
