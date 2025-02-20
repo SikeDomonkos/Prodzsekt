@@ -9,7 +9,7 @@ export default function Bejelentkezes() {
 
   const loginUser = async (userData) => {
     try {
-      const response = await fetch('http://localhost:5206/auth/register', {
+      const response = await fetch('http://localhost:5206/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -17,15 +17,15 @@ export default function Bejelentkezes() {
         body: JSON.stringify(userData),
       });
       
-      if (!response.ok) {
-        throw new Error('Hiba történt a bejelentkezés során!');
-      }
-
       const data = await response.json();
+      if (!response.ok) {
+        throw new Error(data.message || 'Hiba történt a bejelentkezés során!');
+      }
+      
       localStorage.setItem('token', data.token);
       return data;
     } catch (error) {
-      throw error.message;
+      throw new Error(error.message);
     }
   };
 
@@ -38,7 +38,7 @@ export default function Bejelentkezes() {
       await loginUser(userData);
       window.location.href = '/dashboard';
     } catch (error) {
-      setLoginError(error);
+      setLoginError(error.message);
     }
   };
 
@@ -79,7 +79,7 @@ export default function Bejelentkezes() {
 
 const registerUser = async (userData) => {
   try {
-    const response = await fetch('https://localhost:7285/auth/register', {
+    const response = await fetch('http://localhost:7285/auth/register', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -87,13 +87,14 @@ const registerUser = async (userData) => {
       body: JSON.stringify(userData),
     });
 
+    const data = await response.json();
     if (!response.ok) {
-      throw new Error('Hiba történt a regisztráció során!');
+      throw new Error(data.message || 'Hiba történt a regisztráció során!');
     }
 
-    return await response.json();
+    return data;
   } catch (error) {
-    throw error.message;
+    throw new Error(error.message);
   }
 };
 
@@ -121,7 +122,7 @@ function RegisterModal({ onClose }) {
       setErrorMessage('');
       setTimeout(onClose, 2500);
     } catch (error) {
-      setErrorMessage(error);
+      setErrorMessage(error.message);
       setSuccessMessage('');
     }
   };

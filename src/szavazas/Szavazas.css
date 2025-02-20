@@ -1,67 +1,67 @@
 
+.szavaz-container {
+  display: flex;
+  justify-content: center; /* Középre igazítás */
+  flex-wrap: wrap; /* Ha nem fér ki, akkor új sorba törik */
+  gap: 20px; /* Távolság a kártyák között */
+}
+
 .szavaz {
-    background-color: #C2DD8F;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    text-align: center;
-    padding: auto;
-    margin-top: 15px;
-    width: 400px;
-    flex-direction: column;
-    align-items:center;
-    display: flex;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 4fr));
-    max-width: 1000px;
-    margin: auto;
-    
-    
-    
-    
-  }
+  background-color: #C2DD8F;
+  margin-top: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  text-align: center;
+  width: 400px; /* Fix szélesség, hogy egy sorba férjenek */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  
+}   
 
-  .szavaz #igen {
-    color: black;
-    padding: 0 10px;
-    text-align: center;
-    border: green;
-    border-radius: 40px;
-    border-width: 5px;
-    background-color: green;
-    border-color: green;
-    font-style: italic;
-    
-  }
+.szavaz h2, .szavaz h4 {
+  margin: 10px;
+}
 
-  .szavaz #nem {
-    color: black;
-    padding: 0 10px;
-    text-align: center;
-    font-style: italic;
-    border: red;
-    border-radius: 40px;
-    border-width: 5px;
-    background-color: red;
-    border-color: red;
-    
+.szavaz table {
+  width: 100%;
+  margin-top: 10px;
+}
 
-  }
+.szavaz input[type="submit"] {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
 
-  .szavaz #kuldes {
-    color: black;
-    padding: 0 10px;
-    margin-top: 30px;
-    
-  }
-  .szavaz #BtnNem{
-    color: red;
-    border: red;
-    border-radius: 4px;
-    border-width: 5px;
-    
-    border-color: red;
-    
-  }
+.szavaz input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.szavaz #igen {
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background-color: green;
+  font-style: italic;
+}
+
+.szavaz #nem {
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background-color: red;
+  font-style: italic;
+}
+
+
+
 .lead{
   display: flex;
   justify-content: center;
