@@ -42,8 +42,13 @@
                   AutoGeneratingColumn="DataGridUsers_AutoGeneratingColumn">
             <DataGrid.Columns>
                 <!-- Custom columns for IsBehindPayment and BehindPayment -->
+<<<<<<< HEAD
                 <DataGridCheckBoxColumn Header="Elmaradva" Binding="{Binding FizetettE_havi}" />
                 <DataGridTextColumn Header="Fizetési Elmaradás" Binding="{Binding Fizetesi_elmaradas}" />
+=======
+                <DataGridCheckBoxColumn Header="Is Behind Payment" Binding="{Binding IsBehindPayment}" />
+                <DataGridTextColumn Header="Behind Payment" Binding="{Binding BehindPayment}" />
+>>>>>>> 6ce2ae6977f3e0e0e4cfbc6ef865dda0697aa457
             </DataGrid.Columns>
         </DataGrid>
 
