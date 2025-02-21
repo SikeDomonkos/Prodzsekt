@@ -1,9 +1,9 @@
 
 .szavaz-container {
   display: flex;
-  justify-content: center; /* Középre igazítás */
-  flex-wrap: wrap; /* Ha nem fér ki, akkor új sorba törik */
-  gap: 20px; /* Távolság a kártyák között */
+  justify-content: center; 
+  flex-wrap: wrap; 
+  gap: 20px; 
 }
 
 .szavaz {
@@ -13,7 +13,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   text-align: center;
-  width: 400px; /* Fix szélesség, hogy egy sorba férjenek */
+  width: 700px; 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -73,9 +73,10 @@
   text-align: center;
   padding: 10px;
   margin-top: 15px;
-  width: 300px;
+  width: 600px;
+  height: 400px;
   flex-direction: column;
-  animation: fadeIn 0.5s ease-in-out;
+  
 
 
   }
@@ -86,7 +87,7 @@
     border-radius: 5px;
     border: 1px solid #ccc;
     font-size: 16px;
-    transition: border-color 0.3s ease-in-out;
+    
   }
   
   .input-field:focus, .textarea-field:focus {
@@ -95,8 +96,8 @@
   }
   
   .textarea-field {
-    height: 80px; /* Megnövelt magasság */
-    resize: vertical; /* Engedi a felhasználónak a méretezést */
+    height: 80px; 
+    resize: vertical; 
   }
   
   .submit-btn {
@@ -107,7 +108,7 @@
     cursor: pointer;
     border-radius: 5px;
     font-size: 16px;
-    transition: background-color 0.3s ease-in-out;
+    
   }
   
   .submit-btn:hover {

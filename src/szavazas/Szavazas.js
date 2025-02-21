@@ -153,14 +153,14 @@ export default function Szavazas({ user }) {
             <h2>{data.title}</h2>
             <h4>{data.description}</h4>
             <div className='vote-buttons'>
-              <button className='vote-btn yes' onClick={() => handleVote(data.id, 'yes')} disabled={!user}>
+              <button className='vote-btn yes' >
                 Igen ({data.yes})
               </button>
-              <button className='vote-btn no' onClick={() => handleVote(data.id, 'no')} disabled={!user}>
+              <button className='vote-btn no' >
                 Nem ({data.no})
               </button>
             </div>
-            <button className='delete-btn' onClick={() => handleDelete(data.id)} disabled={!user}>
+            <button className='delete-btn'>
               Szavazás lezárása
             </button>
           </div>

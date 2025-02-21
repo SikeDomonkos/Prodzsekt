@@ -9,7 +9,7 @@ export default function Bejelentkezes() {
 
   const loginUser = async (userData) => {
     try {
-      const response = await fetch('http://localhost:5206/auth/login', {
+      const response = await fetch('https://localhost:7285/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
