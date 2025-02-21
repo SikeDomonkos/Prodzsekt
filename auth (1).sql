@@ -179,7 +179,7 @@ CREATE TABLE `posts` (
   `Created_at` datetime NOT NULL,
   `Updated_at` datetime NOT NULL,
   `Is_accepted` tinyint(1) NOT NULL,
-  `Acceptor_id` varchar(255) NOT NULL,
+  `Acceptor_id` varchar(255) DEFAULT NULL,
   `Location` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
