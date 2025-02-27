@@ -127,10 +127,9 @@ namespace ProjektWPF
         // Event to prevent auto-generation of columns for FizetettE_havi and Fizetesi_elmaradas
         private void DataGridUsers_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
         {
-            if (e.PropertyName == "FizetettE_havi" || e.PropertyName == "Fizetesi_elmaradas" || e.PropertyName == "DateOfBirth")
-            {
+            
                 e.Cancel = true; // Prevent auto-generation of these columns
-            }
+            
         }
 
 

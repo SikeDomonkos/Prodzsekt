@@ -16,9 +16,17 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
+        <!-- Background Gradient -->
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#004d00" Offset="0.0"/>
+                <GradientStop Color="#3CB371" Offset="1.0"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
         <!-- Filter ComboBox and Label -->
         <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
-            <Label Content="Város:" VerticalAlignment="Center" Margin="10"/>
+            <Label Content="Város:" VerticalAlignment="Center" Margin="10" Foreground="White"/>
             <ComboBox Name="FilterComboBox"
                       HorizontalAlignment="Left" 
                       VerticalAlignment="Center" 
@@ -27,7 +35,40 @@
                       SelectionChanged="FilterComboBox_SelectionChanged"/>
             <!-- Save Button -->
             <Button Name="SaveButton" Content="Mentés" HorizontalAlignment="Left" VerticalAlignment="Top"
-        Width="100" Height="30" Margin="10" Grid.Row="1" Click="SaveButton_Click"/>
+                    Width="100" Height="30" Margin="10" Grid.Row="1" Click="SaveButton_Click" 
+                    Background="#3CB371" Foreground="White" FontSize="14" FontWeight="Bold"
+                    BorderThickness="0" Cursor="Hand">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Background="{TemplateBinding Background}" 
+                                            CornerRadius="20" 
+                                            BorderBrush="Transparent">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Property="Background" Value="#3CB371" />
+                        <Setter Property="Foreground" Value="White" />
+                        <Setter Property="FontSize" Value="14" />
+                        <Setter Property="FontWeight" Value="Bold" />
+                        <Setter Property="Cursor" Value="Hand" />
+                        <Setter Property="Width" Value="100" />
+                        <Setter Property="Height" Value="30" />
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#2E8B57" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#228B22" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
         </StackPanel>
 
         <!-- DataGrid -->
@@ -39,14 +80,51 @@
                   CanUserAddRows="False"
                   IsReadOnly="False"
                   CellEditEnding="DataGridUsers_CellEditEnding"
-                  AutoGeneratingColumn="DataGridUsers_AutoGeneratingColumn">
+                  AutoGeneratingColumn="DataGridUsers_AutoGeneratingColumn"
+                  Background="#004d00"
+                  BorderBrush="Transparent">
+
             <DataGrid.Columns>
-                <!-- Custom columns for IsBehindPayment and BehindPayment -->
                 <DataGridCheckBoxColumn Header="Elmaradva" Binding="{Binding FizetettE_havi}" />
                 <DataGridTextColumn Header="Fizetési Elmaradás" Binding="{Binding Fizetesi_elmaradas}" />
+                <DataGridTextColumn Header="Név" Binding="{Binding FullName}" />
+                <DataGridTextColumn Header="Szövetkezet" Binding="{Binding LakasSzovNev}" />
+                <DataGridTextColumn Header="Születési Idő" Binding="{Binding DateOfBirthFormatted}" />
+                <DataGridTextColumn Header="Telefonszám" Binding="{Binding PhoneNumber}" />
             </DataGrid.Columns>
-        </DataGrid>
 
-        
+            <!-- Row Style -->
+            <DataGrid.RowStyle>
+                <Style TargetType="DataGridRow">
+                    <!-- Default background color for rows -->
+                    <Setter Property="Background" Value="#3CB371"/>
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="Height" Value="30"/>
+
+                    <!-- DataTrigger to check if "Elmaradva" is checked -->
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding FizetettE_havi}" Value="True">
+                            <Setter Property="Background" Value="Crimson"/>
+                            <!-- Light red color for checked rows -->
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.RowStyle>
+
+            <!-- Editing Style: Prevent the blue highlight when editing -->
+            <DataGrid.CellStyle>
+                <Style TargetType="DataGridCell">
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="BorderBrush" Value="Transparent"/>
+                    <Setter Property="Foreground" Value="White"/>
+                </Style>
+            </DataGrid.CellStyle>
+
+            <!-- Prevent the selection color change -->
+            <DataGrid.SelectionUnit>
+                <DataGridSelectionUnit>Cell</DataGridSelectionUnit>
+            </DataGrid.SelectionUnit>
+
+        </DataGrid>
     </Grid>
 </Window>
