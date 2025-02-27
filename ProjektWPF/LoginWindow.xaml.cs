@@ -30,7 +30,19 @@ namespace ProjektWPF
         private void TogglePasswordVisibility(object sender, RoutedEventArgs e)
         {
             isPasswordVisible = !isPasswordVisible;
-            MessageBox.Show("Password visibility toggled."); // Implement actual toggle logic
+
+            if (isPasswordVisible)
+            {
+                PasswordTextBox.Text = PasswordBox.Password;
+                PasswordTextBox.Visibility = Visibility.Visible;
+                PasswordBox.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                PasswordBox.Password = PasswordTextBox.Text;
+                PasswordBox.Visibility = Visibility.Visible;
+                PasswordTextBox.Visibility = Visibility.Collapsed;
+            }
         }
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)

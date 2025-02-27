@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjektWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="1000">
+        Title="MainWindow" Height="500" Width="1000" Background="#006400">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
@@ -17,12 +17,63 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
+        
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#004d00" Offset="0.0"/>
+                <!-- Sötétebb zöld -->
+                <GradientStop Color="#3CB371" Offset="1.0"/>
+                <!-- Világosabb zöld -->
+            </LinearGradientBrush>
+        </Grid.Background>
 
-        <Button Content="Felhasználók lekérése" 
+        <Button Content="Felhasználók lekérése"
+                Click="OpenDataGridWindow_Click"
                 Grid.Row="0" 
                 Grid.Column="0" 
                 HorizontalAlignment="Center" 
                 VerticalAlignment="Center" 
-                Click="OpenDataGridWindow_Click" />
+                Padding="15,10"
+                Background="#3CB371" 
+                Foreground="White" 
+                FontSize="16" 
+                FontWeight="Bold"
+                BorderThickness="0"
+                Cursor="Hand"
+                Width="200"
+                Height="50"
+                BorderBrush="Transparent">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" 
+                                        CornerRadius="20" 
+                                        Padding="15,10"
+                                        BorderBrush="Transparent">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="Background" Value="#3CB371" />
+                    <Setter Property="Foreground" Value="White" />
+                    <Setter Property="FontSize" Value="16" />
+                    <Setter Property="FontWeight" Value="Bold" />
+                    <Setter Property="Cursor" Value="Hand" />
+                    <Setter Property="Width" Value="200" />
+                    <Setter Property="Height" Value="50" />
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#2E8B57" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" Value="#228B22" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
     </Grid>
 </Window>
