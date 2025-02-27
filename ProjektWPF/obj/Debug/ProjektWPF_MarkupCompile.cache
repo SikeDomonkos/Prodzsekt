@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Tibi\OneDrive\Desktop\ProjektWPF\ProjektWPF\obj\Debug\
+C:\Users\janosim\Desktop\ProjektWPF\ProjektWPF\obj\Debug\
 ProjektWPF
 none
 false
 DEBUG;TRACE
-C:\Users\Tibi\OneDrive\Desktop\ProjektWPF\ProjektWPF\App.xaml
-21349065319
+C:\Users\janosim\Desktop\ProjektWPF\ProjektWPF\App.xaml
+3531632292
 
-71732088349
-53111872687
-DataGridWindow.xaml;MainWindow.xaml;
+71257794562
+53-682978317
+DataGridWindow.xaml;LoginWindow.xaml;MainWindow.xaml;
 
-True
+False
 
