@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './Bejelentkezes.css';
+
 
 export default function Bejelentkezes() {
   const [showRegister, setShowRegister] = useState(false);
@@ -16,16 +17,19 @@ export default function Bejelentkezes() {
         },
         body: JSON.stringify(userData),
       });
-      
-      const data = await response.json();
+
       if (!response.ok) {
-        throw new Error(data.message || 'Hiba történt a bejelentkezés során!');
+        const errorData = await response.json();
+        console.error('Login error:', errorData); // Hibák részletes megjelenítése
+        throw new Error(errorData.message || 'Hiba történt a bejelentkezés során!');
       }
-      
+
+      const data = await response.json();
       localStorage.setItem('token', data.token);
       return data;
     } catch (error) {
-      throw new Error(error.message);
+      console.error('Hiba:', error.message);
+      throw new Error(error.message || 'Nem elérhető a szerver.');
     }
   };
 
@@ -34,7 +38,7 @@ export default function Bejelentkezes() {
     setLoginError('');
 
     try {
-      const userData = { userName: loginUsername, password: loginPassword };
+      const userData = { username: loginUsername, password: loginPassword };
       await loginUser(userData);
       window.location.href = '/dashboard';
     } catch (error) {
@@ -79,7 +83,7 @@ export default function Bejelentkezes() {
 
 const registerUser = async (userData) => {
   try {
-    const response = await fetch('http://localhost:7285/auth/register', {
+    const response = await fetch('https://localhost:7285/auth/register', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -87,14 +91,16 @@ const registerUser = async (userData) => {
       body: JSON.stringify(userData),
     });
 
-    const data = await response.json();
     if (!response.ok) {
-      throw new Error(data.message || 'Hiba történt a regisztráció során!');
+      const errorData = await response.json();
+      console.error('Register error:', errorData); // Hibák részletes megjelenítése
+      throw new Error(errorData.message || 'Hiba történt a regisztráció során!');
     }
 
-    return data;
+    return await response.json();
   } catch (error) {
-    throw new Error(error.message);
+    console.error('Hiba:', error.message);
+    throw new Error(error.message || 'A szerver nem válaszol.');
   }
 };
 
@@ -116,11 +122,11 @@ function RegisterModal({ onClose }) {
     }
 
     try {
-      const userData = { userName, email, password };
+      const userData = { username: userName, email, password };
       await registerUser(userData);
       setSuccessMessage('Sikeres regisztráció! Kérlek jelentkezz be.');
       setErrorMessage('');
-      setTimeout(onClose, 2500);
+      setTimeout(onClose, 2500); // Modal bezárása 2,5 másodperc után
     } catch (error) {
       setErrorMessage(error.message);
       setSuccessMessage('');
@@ -165,7 +171,7 @@ function RegisterModal({ onClose }) {
             placeholder="Írd be újra a jelszavad"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
-          />  
+          />
           <button type="submit">Regisztráció</button>
         </form>
         <button className="close-btn" onClick={onClose}>Bezárás</button>

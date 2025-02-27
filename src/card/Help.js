@@ -52,7 +52,7 @@ export default function Help() {
 
     const newPost = { title, description };
 
-    fetch("https://localhost:7285/api/Post", {
+    fetch("https://localhost:7285/api/Poll", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

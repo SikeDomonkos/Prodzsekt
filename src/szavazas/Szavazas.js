@@ -13,7 +13,10 @@ export default function Szavazas({ user }) {
 
   function fetchPolls() {
     fetch("https://localhost:7285/api/Poll/All")
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) throw new Error(`Hiba: ${response.status}`);
+        return response.json();
+      })
       .then(data => {
         console.log("Lekérdezett szavazások:", data);
         setDatabase(data);
@@ -22,30 +25,22 @@ export default function Szavazas({ user }) {
   }
 
   function handleVote(id, type) {
-    if (!user) {
-      alert("Jelentkezz be a szavazáshoz!");
-      return;
-    }
-
-    setDatabase(prevDatabase =>
-      prevDatabase.map(item =>
-        item.id === id
-          ? { ...item, [type]: item[type] + 1 }
-          : item
-      )
-    );
-
-    fetch(`https://localhost:7285/api/Poll/Vote/${id}`, {
+    fetch(`https://localhost:7285/api/Poll`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ voteType: type })
+      body: JSON.stringify({ id, voteType: type })
     })
-      .then(response => response.json())
-      .then(data => {
-        console.log("Szavazat mentve:", data);
-        fetchPolls();
+      .then(response => {
+        if (!response.ok) throw new Error(`Hiba a szavazás mentésekor: ${response.status}`);
+        return response.json();
+      })
+      .then(updatedPoll => {
+        console.log("Szavazat mentve:", updatedPoll);
+        setDatabase(prevDatabase => 
+          prevDatabase.map(item => item.id === id ? updatedPoll : item)
+        );
       })
       .catch(error => console.error("Hiba a szavazás mentésekor:", error));
   }
@@ -75,10 +70,9 @@ export default function Szavazas({ user }) {
       },
       body: JSON.stringify(newPoll)
     })
-      .then(async response => {
-        const text = await response.text();
-        console.log("Szerver válasz:", text);
-        return response.ok ? JSON.parse(text) : Promise.reject(text);
+      .then(response => {
+        if (!response.ok) throw new Error(`Hiba: ${response.status}`);
+        return response.json();
       })
       .then(data => {
         console.log("Új szavazás létrehozva:", data);
@@ -89,33 +83,6 @@ export default function Szavazas({ user }) {
       .catch(error => {
         console.error('Hiba a szavazás létrehozásakor:', error);
         alert("Hiba történt a szavazás létrehozásakor! Ellenőrizd a konzolt.");
-      });
-  }
-
-  function handleDelete(id) {
-    if (!window.confirm("Biztosan lezárod ezt a szavazást?")) {
-      return;
-    }
-
-    fetch(`https://localhost:7285/api/Poll/${id}`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json"
-      }
-    })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error("Hiba a szavazás törlésekor.");
-        }
-        return response.text();
-      })
-      .then(() => {
-        console.log(`Szavazás (${id}) törölve.`);
-        setDatabase(prevDatabase => prevDatabase.filter(item => item.id !== id));
-      })
-      .catch(error => {
-        console.error("Hiba a szavazás törlésekor:", error);
-        alert("Hiba történt a szavazás lezárásakor.");
       });
   }
 
@@ -153,22 +120,17 @@ export default function Szavazas({ user }) {
             <h2>{data.title}</h2>
             <h4>{data.description}</h4>
             <div className='vote-buttons'>
-              <button className='vote-btn yes' >
+              <button className='vote-btn btn-primary yes' onClick={() => handleVote(data.id, 'yes')}>
                 Igen ({data.yes})
               </button>
-              <button className='vote-btn no' >
+              <button className='vote-btn btn-primary no' onClick={() => handleVote(data.id, 'no')}>
                 Nem ({data.no})
               </button>
             </div>
-            <button className='delete-btn'>
-              Szavazás lezárása
-            </button>
           </div>
         ))}
       </div>
-      <div className='sor'>
-
-      </div>
+      <div className='sor'></div>
     </div>
   );
 }
