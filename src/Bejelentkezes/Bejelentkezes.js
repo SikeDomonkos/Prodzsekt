@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import './Bejelentkezes.css';
 
-
 export default function Bejelentkezes() {
   const [showRegister, setShowRegister] = useState(false);
   const [loginUsername, setLoginUsername] = useState('');
@@ -20,7 +19,7 @@ export default function Bejelentkezes() {
 
       if (!response.ok) {
         const errorData = await response.json();
-        console.error('Login error:', errorData); // Hibák részletes megjelenítése
+        console.error('Login error:', errorData);
         throw new Error(errorData.message || 'Hiba történt a bejelentkezés során!');
       }
 
@@ -93,7 +92,7 @@ const registerUser = async (userData) => {
 
     if (!response.ok) {
       const errorData = await response.json();
-      console.error('Register error:', errorData); // Hibák részletes megjelenítése
+      console.error('Register error:', errorData);
       throw new Error(errorData.message || 'Hiba történt a regisztráció során!');
     }
 
@@ -105,6 +104,7 @@ const registerUser = async (userData) => {
 };
 
 function RegisterModal({ onClose }) {
+  const [fullName, setFullName] = useState('');
   const [userName, setUserName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -122,11 +122,11 @@ function RegisterModal({ onClose }) {
     }
 
     try {
-      const userData = { username: userName, email, password };
+      const userData = { fullname: fullName, username: userName, email, password };
       await registerUser(userData);
       setSuccessMessage('Sikeres regisztráció! Kérlek jelentkezz be.');
       setErrorMessage('');
-      setTimeout(onClose, 2500); // Modal bezárása 2,5 másodperc után
+      setTimeout(onClose, 2500);
     } catch (error) {
       setErrorMessage(error.message);
       setSuccessMessage('');
@@ -140,6 +140,14 @@ function RegisterModal({ onClose }) {
         {errorMessage && <p className="error">{errorMessage}</p>}
         {successMessage && <p className="success">{successMessage}</p>}
         <form className="form" onSubmit={handleSubmit}>
+          <label>Teljes név</label>
+          <input
+            type="text"
+            className="input"
+            placeholder="Írd be a teljes neved"
+            value={fullName}
+            onChange={(e) => setFullName(e.target.value)}
+          />
           <label>Felhasználónév</label>
           <input
             type="text"

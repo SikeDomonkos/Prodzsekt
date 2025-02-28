@@ -40,16 +40,22 @@
     transform: scale(1.2);
 }
 
+
 /* Kapcsolati információk */
 .contact-info {
+    
     display: flex;
     gap: 15px; /* Távolság az e-mail címek között */
     font-size: 0.9rem;
 }
 
 .contact-info h2 {
-   color: black;
+   color: white;
 }
+
+.contact-info p {
+    color: white;
+ }
 
 
 /* Reszponzivitás mobilra */

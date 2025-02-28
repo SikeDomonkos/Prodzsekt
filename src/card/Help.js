@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Help.css';
 
 export default function Help() {
-  const [database, setDatabase] = useState([]); // Adatbázis állapot tárolása
+  const [database, setDatabase] = useState([]); // Adatbázis állapot
   const [loading, setLoading] = useState(true); // Betöltési állapot
   const [error, setError] = useState(null); // Hiba állapot
   const [title, setTitle] = useState(''); // Cím állapot
@@ -46,20 +46,30 @@ export default function Help() {
     event.preventDefault();
 
     if (!title.trim() || !description.trim()) {
-      alert("Minden mezőt ki kell tölteni!"); // Ellenőrizd, hogy a mezők nincsenek üresen
+      alert("Minden mezőt ki kell tölteni!");
       return;
     }
 
-    const newPost = { title, description };
+    const newPost = { 
+      id: crypto.randomUUID(),  // Egyedi azonosító generálása
+      PosterId: "12345", // Bejelentkezett felhasználó azonosítója (ezt cseréld le!)
+      title, 
+      description 
+    };
 
     fetch("https://localhost:7285/api/Poll", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(newPost) // Az új post adatainak elküldése
+      body: JSON.stringify(newPost)
     })
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) {
+          return response.json().then(err => { throw new Error(err.message || "Hiba történt!"); });
+        }
+        return response.json();
+      })
       .then(data => {
         console.log("Új bejegyzés létrehozva:", data);
         setDatabase(prevDatabase => [...prevDatabase, data]); // Az új post hozzáadása az adatbázishoz
@@ -68,7 +78,7 @@ export default function Help() {
       })
       .catch(error => {
         console.error('Hiba a létrehozáskor:', error);
-        alert("Hiba történt a segítségkérés mentésekor.");
+        alert("Hiba történt a segítségkérés mentésekor: " + error.message);
       });
   }
 
@@ -93,9 +103,6 @@ export default function Help() {
         </form>
       </div>
 
-      
-     
-
       {loading && <p>Adatok betöltése...</p>}
       {error && <p className="error">Hiba történt: {error}</p>}
 
@@ -104,15 +111,12 @@ export default function Help() {
           <div key={index} className="card">
             <h3>{item.title}</h3>
             <p>{item.description}</p>
-            
           </div>
         ))
       ) : (
         !loading && !error && <p>Nincs elérhető adat.</p>
       )}
-      <div className='sor1'>
-        
-      </div>
+      <div className='sor1'></div>
     </div>
   );
 }

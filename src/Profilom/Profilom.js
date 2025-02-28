@@ -9,7 +9,7 @@ const Profile = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch(`https://localhost:7285/auth/login?id=${id}`) // Fetch API használata
+    fetch(`https://localhost:7285/auth/profile/${id}`)// Fetch API használata
       .then((response) => {
         if (!response.ok) {
           throw new Error("Hiba történt az adatok lekérésekor!");
@@ -34,7 +34,7 @@ const Profile = () => {
       <img src={profile.avatar} alt="Profilkép" className="profile-image" />
       <h2>{profile.name}</h2>
       <p><strong>Email:</strong> {profile.email}</p>
-      <p><strong>Kor:</strong> {profile.age}</p>
+    
     </div>
   );
 };
