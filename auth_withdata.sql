@@ -121,8 +121,8 @@ CREATE TABLE `aspnetusers` (
 --
 
 INSERT INTO `aspnetusers` (`Id`, `FullName`, `Age`, `DateOfBirth`, `UserName`, `NormalizedUserName`, `Email`, `NormalizedEmail`, `EmailConfirmed`, `PasswordHash`, `SecurityStamp`, `ConcurrencyStamp`, `PhoneNumber`, `PhoneNumberConfirmed`, `TwoFactorEnabled`, `LockoutEnd`, `LockoutEnabled`, `AccessFailedCount`, `Fizetesi_elmaradas`, `FizetettE_havi`, `LakasSzovNev`) VALUES
-('48288b35-9820-4015-affc-387f80e4ee7c', 'Gannon Mattedi', 0, '0000-00-00', 'gmattedi0', 'GMATTEDI0', 'gmattedi0@wsj.com', 'GMATTEDI0@WSJ.COM', 0, 'AQAAAAIAAYagAAAAELd5QWNdJJttcvolWoeKT7YI+lc3y01j7lMXjbvQK4E7Ctj39XyJc7a2eTdEzKsTZw==', 'XYWUE74EOBK7GPX7PTKWVAOBMFYSLJT6', 'e93a5ae2-34a6-40ec-978b-381188b61616', NULL, 0, 0, NULL, 1, 0, 0, 0, ''),
-('e0c37b9c-543c-428f-bd6e-d582e7f590d6', 'Próba János', 0, '0000-00-00', 'PJanos86', 'PJANOS86', 'Pjanos1986@gmail.com', 'PJANOS1986@GMAIL.COM', 0, 'AQAAAAIAAYagAAAAEDLuGhUZpuiO7Rr2v1w0rEzhcCf3HbD/z7DKkk32NpnUNg50ddoL4v6yRJIMUfvVUQ==', 'JXF5N4VEDVCEO3HDD5Q7KXAWOHJVLJ4N', 'bfe69a23-11c4-48d5-9147-5c3aedf29e8a', NULL, 0, 0, NULL, 1, 0, 0, 0, '');
+('48288b35-9820-4015-affc-387f80e4ee7c', 'Gannon Mattedi', 0, '2001-09-11', 'gmattedi0', 'GMATTEDI0', 'gmattedi0@wsj.com', 'GMATTEDI0@WSJ.COM', 0, 'AQAAAAIAAYagAAAAELd5QWNdJJttcvolWoeKT7YI+lc3y01j7lMXjbvQK4E7Ctj39XyJc7a2eTdEzKsTZw==', 'XYWUE74EOBK7GPX7PTKWVAOBMFYSLJT6', 'e93a5ae2-34a6-40ec-978b-381188b61616', NULL, 0, 0, NULL, 1, 0, 0, 0, ''),
+('e0c37b9c-543c-428f-bd6e-d582e7f590d6', 'Próba János', 0, '1986-11-15', 'PJanos86', 'PJANOS86', 'Pjanos1986@gmail.com', 'PJANOS1986@GMAIL.COM', 0, 'AQAAAAIAAYagAAAAEDLuGhUZpuiO7Rr2v1w0rEzhcCf3HbD/z7DKkk32NpnUNg50ddoL4v6yRJIMUfvVUQ==', 'JXF5N4VEDVCEO3HDD5Q7KXAWOHJVLJ4N', 'bfe69a23-11c4-48d5-9147-5c3aedf29e8a', NULL, 0, 0, NULL, 1, 0, 0, 0, '');
 
 -- --------------------------------------------------------
 
