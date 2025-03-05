@@ -32,6 +32,11 @@ namespace ProjektWPF
             dataGridWindow.Show();
             
         }
+        private void GetVotes_Click(object sender, RoutedEventArgs e)
+        {
+            SzavazasLekeres szavazasLekeres = new SzavazasLekeres();
+            szavazasLekeres.Show();
+        }
 
     }
 }

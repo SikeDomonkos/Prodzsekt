@@ -79,7 +79,6 @@ C:\Users\Tibi\OneDrive\Desktop\ProjektWPF\ProjektWPF\obj\Debug\ProjektWPF.g.reso
 C:\Users\Tibi\OneDrive\Desktop\ProjektWPF\ProjektWPF\obj\Debug\ProjektWPF.Properties.Resources.resources
 C:\Users\Tibi\OneDrive\Desktop\ProjektWPF\ProjektWPF\obj\Debug\ProjektWPF.csproj.GenerateResource.cache
 C:\Users\Tibi\OneDrive\Desktop\ProjektWPF\ProjektWPF\obj\Debug\ProjektWPF.csproj.CoreCompileInputs.cache
-C:\Users\Tibi\OneDrive\Desktop\ProjektWPF\ProjektWPF\obj\Debug\ProjektWPF.csproj.CopyComplete
 C:\Users\Tibi\OneDrive\Desktop\ProjektWPF\ProjektWPF\obj\Debug\ProjektWPF.exe
 C:\Users\Tibi\OneDrive\Desktop\ProjektWPF\ProjektWPF\obj\Debug\ProjektWPF.pdb
 C:\Users\janosim\Desktop\ProjektWPF\ProjektWPF\bin\Debug\ProjektWPF.exe.config
@@ -168,3 +167,16 @@ C:\Users\janosim\Desktop\ProjektWPF\ProjektWPF\obj\Debug\ProjektWPF.exe
 C:\Users\janosim\Desktop\ProjektWPF\ProjektWPF\obj\Debug\ProjektWPF.pdb
 C:\Users\janosim\Desktop\ProjektWPF\ProjektWPF\obj\Debug\LoginWindow.g.cs
 C:\Users\janosim\Desktop\ProjektWPF\ProjektWPF\obj\Debug\LoginWindow.baml
+C:\Users\Tibi\OneDrive\Desktop\ProjektWPF\ProjektWPF\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\Tibi\OneDrive\Desktop\ProjektWPF\ProjektWPF\bin\Debug\System.Text.Json.dll
+C:\Users\Tibi\OneDrive\Desktop\ProjektWPF\ProjektWPF\bin\Debug\System.ValueTuple.dll
+C:\Users\Tibi\OneDrive\Desktop\ProjektWPF\ProjektWPF\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\Tibi\OneDrive\Desktop\ProjektWPF\ProjektWPF\bin\Debug\System.Text.Json.xml
+C:\Users\Tibi\OneDrive\Desktop\ProjektWPF\ProjektWPF\bin\Debug\System.ValueTuple.xml
+C:\Users\Tibi\OneDrive\Desktop\ProjektWPF\ProjektWPF\obj\Debug\ProjektWPF.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tibi\OneDrive\Desktop\ProjektWPF\ProjektWPF\obj\Debug\ProjektWPF.exe.config
+C:\Users\Tibi\OneDrive\Desktop\ProjektWPF\ProjektWPF\obj\Debug\SzavazasLekeres.baml
+C:\Users\Tibi\OneDrive\Desktop\ProjektWPF\ProjektWPF\obj\Debug\LoginWindow.g.cs
+C:\Users\Tibi\OneDrive\Desktop\ProjektWPF\ProjektWPF\obj\Debug\SzavazasLekeres.g.cs
+C:\Users\Tibi\OneDrive\Desktop\ProjektWPF\ProjektWPF\obj\Debug\LoginWindow.baml
+C:\Users\Tibi\OneDrive\Desktop\ProjektWPF\ProjektWPF\obj\Debug\ProjektWPF.csproj.Up2Date
