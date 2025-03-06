@@ -276,3 +276,4 @@ C:\Users\janosim\Desktop\Projekt\ProjektWPF\obj\Debug\ProjektWPF.csproj.CoreComp
 C:\Users\janosim\Desktop\Projekt\ProjektWPF\obj\Debug\ProjektWPF.csproj.Up2Date
 C:\Users\janosim\Desktop\Projekt\ProjektWPF\obj\Debug\ProjektWPF.exe
 C:\Users\janosim\Desktop\Projekt\ProjektWPF\obj\Debug\ProjektWPF.pdb
+C:\Users\janosim\Desktop\Projekt\ProjektWPF\obj\Debug\GeneratedInternalTypeHelper.g.cs

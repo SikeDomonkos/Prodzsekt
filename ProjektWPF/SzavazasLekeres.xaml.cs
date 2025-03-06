@@ -33,16 +33,14 @@ namespace ProjektWPF
             try
             {
                 var button = sender as Button;
-                var pollId = button?.Tag.ToString(); // Get Poll ID from Tag
+                var pollId = button?.Tag.ToString();
 
                 if (!string.IsNullOrEmpty(pollId))
                 {
-                    // Call PollService to delete the poll
                     var result = await _pollService.DeletePollAsync(pollId);
 
                     if (result)
                     {
-                        // Reload the polls list after deletion
                         LoadPolls();
                     }
                     else

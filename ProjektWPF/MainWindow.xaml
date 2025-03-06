@@ -21,9 +21,7 @@
         <Grid.Background>
             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                 <GradientStop Color="#004d00" Offset="0.0"/>
-                <!-- Sötétebb zöld -->
                 <GradientStop Color="#3CB371" Offset="1.0"/>
-                <!-- Világosabb zöld -->
             </LinearGradientBrush>
         </Grid.Background>
 

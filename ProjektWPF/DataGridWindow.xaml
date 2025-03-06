@@ -16,7 +16,6 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <!-- Background Gradient -->
         <Grid.Background>
             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                 <GradientStop Color="#004d00" Offset="0.0"/>
@@ -24,7 +23,6 @@
             </LinearGradientBrush>
         </Grid.Background>
 
-        <!-- Filter ComboBox and Label -->
         <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
             <Label Content="Város:" VerticalAlignment="Center" Margin="10" Foreground="White"/>
             <ComboBox Name="FilterComboBox"
@@ -33,7 +31,6 @@
                       Width="150" 
                       Margin="10"
                       SelectionChanged="FilterComboBox_SelectionChanged"/>
-            <!-- Save Button -->
             <Button Name="SaveButton" Content="Mentés" HorizontalAlignment="Left" VerticalAlignment="Top"
                     Width="100" Height="30" Margin="10" Grid.Row="1" Click="SaveButton_Click" 
                     Background="#3CB371" Foreground="White" FontSize="14" FontWeight="Bold"
@@ -71,7 +68,6 @@
             </Button>
         </StackPanel>
 
-        <!-- DataGrid -->
         <DataGrid Name="DataGridUsers"
                   Grid.Row="1"
                   AutoGenerateColumns="True"
@@ -93,25 +89,20 @@
                 <DataGridTextColumn Header="Telefonszám" Binding="{Binding PhoneNumber}" />
             </DataGrid.Columns>
 
-            <!-- Row Style -->
             <DataGrid.RowStyle>
                 <Style TargetType="DataGridRow">
-                    <!-- Default background color for rows -->
                     <Setter Property="Background" Value="#3CB371"/>
                     <Setter Property="Foreground" Value="White"/>
                     <Setter Property="Height" Value="30"/>
 
-                    <!-- DataTrigger to check if "Elmaradva" is checked -->
                     <Style.Triggers>
                         <DataTrigger Binding="{Binding FizetettE_havi}" Value="True">
                             <Setter Property="Background" Value="Crimson"/>
-                            <!-- Light red color for checked rows -->
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </DataGrid.RowStyle>
 
-            <!-- Editing Style: Prevent the blue highlight when editing -->
             <DataGrid.CellStyle>
                 <Style TargetType="DataGridCell">
                     <Setter Property="Background" Value="Transparent"/>
@@ -120,7 +111,6 @@
                 </Style>
             </DataGrid.CellStyle>
 
-            <!-- Prevent the selection color change -->
             <DataGrid.SelectionUnit>
                 <DataGridSelectionUnit>Cell</DataGridSelectionUnit>
             </DataGrid.SelectionUnit>
