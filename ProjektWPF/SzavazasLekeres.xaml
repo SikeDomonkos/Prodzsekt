@@ -12,12 +12,13 @@
                     <StackPanel Margin="5">
                         <TextBlock Text="{Binding Title}" FontSize="16" FontWeight="Bold"/>
                         <TextBlock Text="{Binding Description}" FontSize="14"/>
-                        <!-- Show Yes and No votes -->
                         <StackPanel Orientation="Horizontal" Margin="5,10,0,0">
                             <TextBlock Text="Igen: " FontSize="14" FontWeight="Bold"/>
                             <TextBlock Text="{Binding Yes}" FontSize="14" Margin="5,0,10,0"/>
                             <TextBlock Text="Nem: " FontSize="14" FontWeight="Bold"/>
                             <TextBlock Text="{Binding No}" FontSize="14"/>
+                            <!-- X button to delete poll -->
+                            <Button Content="X" Width="30" Height="30" Margin="10,0,0,0" Click="DeletePoll_Click" Tag="{Binding Id}" Background="Red" Foreground="White" />
                         </StackPanel>
                     </StackPanel>
                 </DataTemplate>
