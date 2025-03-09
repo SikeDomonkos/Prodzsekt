@@ -1,22 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace ProjektWPF
 {
-    /// <summary>
-    /// Interaction logic for LoginWindow.xaml
-    /// </summary>
     public partial class LoginWindow : Window
     {
         private bool isPasswordVisible = false;
@@ -25,7 +16,6 @@ namespace ProjektWPF
         {
             InitializeComponent();
         }
-
 
         private void TogglePasswordVisibility(object sender, RoutedEventArgs e)
         {
@@ -45,22 +35,66 @@ namespace ProjektWPF
             }
         }
 
-        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        private async void LoginButton_Click(object sender, RoutedEventArgs e)
         {
             string username = UsernameBox.Text;
             string password = PasswordBox.Password;
 
-            // Egyszerű bejelentkezési ellenőrzés (teszt értékek)
-            if (username == "admin" && password == "1234")
+            var loginData = new
             {
-                
-                MainWindow mainWindow = new MainWindow();
-                mainWindow.Show();
-                this.Close();
-            }
-            else
+                userName = username,
+                password = password
+            };
+
+            using (HttpClient client = new HttpClient())
             {
-                MessageBox.Show("Hibás felhasználónév vagy jelszó!", "Hiba", MessageBoxButton.OK, MessageBoxImage.Error);
+                client.BaseAddress = new Uri("https://localhost:7285");
+                client.DefaultRequestHeaders.Add("Accept", "application/json");
+
+                var jsonContent = new StringContent(JsonConvert.SerializeObject(loginData), Encoding.UTF8, "application/json");
+
+                try
+                {
+                    HttpResponseMessage response = await client.PostAsync("/auth/login", jsonContent);
+                    string responseContent = await response.Content.ReadAsStringAsync();
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var jsonResponse = JObject.Parse(responseContent);
+
+                        // Validate if token exists
+                        if (jsonResponse["token"] != null && jsonResponse["token"].ToString().Length > 0)
+                        {
+                            string token = jsonResponse["token"].ToString();
+
+                            // Ensure that returned username matches the input
+                            if (jsonResponse["result"]?["userName"]?.ToString() == username)
+                            {
+                                MessageBox.Show("Bejelentkezés sikeres!", "Siker", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                                MainWindow mainWindow = new MainWindow();
+                                mainWindow.Show();
+                                this.Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Hibás felhasználónév vagy jelszó!", "Hiba", MessageBoxButton.OK, MessageBoxImage.Error);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Hibás bejelentkezési válasz!", "Hiba", MessageBoxButton.OK, MessageBoxImage.Error);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hibás felhasználónév vagy jelszó!", "Hiba", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Hiba történt: {ex.Message}", "Hiba", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
         }
     }
