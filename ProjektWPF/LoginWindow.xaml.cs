@@ -55,6 +55,7 @@ namespace ProjektWPF
 
                 try
                 {
+                    // 🔹 Első API hívás: Bejelentkezés
                     HttpResponseMessage response = await client.PostAsync("/auth/login", jsonContent);
                     string responseContent = await response.Content.ReadAsStringAsync();
 
@@ -62,28 +63,51 @@ namespace ProjektWPF
                     {
                         var jsonResponse = JObject.Parse(responseContent);
 
-                        // Validate if token exists
                         if (jsonResponse["token"] != null && jsonResponse["token"].ToString().Length > 0)
                         {
                             string token = jsonResponse["token"].ToString();
+                            string userId = jsonResponse["id"]?.ToString();  // 🔹 Az ID kinyerése
 
-                            // Ensure that returned username matches the input
-                            if (jsonResponse["result"]?["userName"]?.ToString() == username)
+                            if (string.IsNullOrEmpty(userId))
                             {
-                                MessageBox.Show("Bejelentkezés sikeres!", "Siker", MessageBoxButton.OK, MessageBoxImage.Information);
+                                MessageBox.Show("Hiba: A bejelentkezett felhasználónak nincs azonosítója!", "Hiba", MessageBoxButton.OK, MessageBoxImage.Error);
+                                return;
+                            }
 
-                                MainWindow mainWindow = new MainWindow();
-                                mainWindow.Show();
-                                this.Close();
+                            // 🔹 Második API hívás: Jogosultságok lekérése az ID alapján
+                            HttpResponseMessage roleResponse = await client.GetAsync($"/auth/UserWithRole?id={userId}");
+                            string roleContent = await roleResponse.Content.ReadAsStringAsync();
+
+                            if (roleResponse.IsSuccessStatusCode)
+                            {
+                                var roleJson = JObject.Parse(roleContent);
+                                var roles = roleJson["roles"]?.ToObject<string[]>();
+
+                                
+
+                                // 🔹 Jogosultság ellenőrzés (admin kell, hogy legyen)
+                                if (roles != null && Array.Exists(roles, role => role == "admin"))
+                                {
+                                    MessageBox.Show("Bejelentkezés sikeres!", "Siker", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                                    // 🔹 Főablak megnyitása
+                                    MainWindow mainWindow = new MainWindow();
+                                    mainWindow.Show();
+                                    this.Close();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Nincs megfelelő jogosultságod!", "Hiba", MessageBoxButton.OK, MessageBoxImage.Error);
+                                }
                             }
                             else
                             {
-                                MessageBox.Show("Hibás felhasználónév vagy jelszó!", "Hiba", MessageBoxButton.OK, MessageBoxImage.Error);
+                                MessageBox.Show("Hiba történt a jogosultságok lekérésekor!", "Hiba", MessageBoxButton.OK, MessageBoxImage.Error);
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Hibás bejelentkezési válasz!", "Hiba", MessageBoxButton.OK, MessageBoxImage.Error);
+                            MessageBox.Show("Hibás bejelentkezés", "Hiba", MessageBoxButton.OK, MessageBoxImage.Error);
                         }
                     }
                     else
