@@ -152,7 +152,23 @@ namespace ProjektWPF
                 MessageBox.Show($"Error saving changes: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+        private void SearchTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string searchText = SearchTextBox.Text.ToLower();
 
+            if (string.IsNullOrWhiteSpace(searchText))
+            {
+                DataGridUsers.ItemsSource = AllData; // Ha üres, mutassa az összes adatot
+            }
+            else
+            {
+                var filteredData = AllData
+                    .Where(person => person.FullName.ToLower().Contains(searchText))
+                    .ToList();
+
+                DataGridUsers.ItemsSource = filteredData;
+            }
+        }
         public class Person
         {
             public string FullName { get; set; }

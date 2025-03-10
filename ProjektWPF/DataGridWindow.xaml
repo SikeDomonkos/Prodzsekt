@@ -31,6 +31,14 @@
                       Width="150" 
                       Margin="10"
                       SelectionChanged="FilterComboBox_SelectionChanged"/>
+
+            <!-- 🔹 Keresőmező hozzáadása -->
+            <Label Content="Keresés név alapján:" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="White"/>
+            <TextBox Name="SearchTextBox"
+                     Width="200"
+                     Margin="5"
+                     TextChanged="SearchTextBox_TextChanged"/>
+
             <Button Name="SaveButton" Content="Mentés" HorizontalAlignment="Left" VerticalAlignment="Top"
                     Width="100" Height="30" Margin="10" Grid.Row="1" Click="SaveButton_Click" 
                     Background="#3CB371" Foreground="White" FontSize="14" FontWeight="Bold"
