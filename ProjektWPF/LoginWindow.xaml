@@ -29,7 +29,10 @@
                         <PasswordBox x:Name="PasswordBox" Height="30" Width="200" BorderBrush="#228B22" BorderThickness="1" Background="#98FB98"/>
                         <TextBox x:Name="PasswordTextBox" Height="30" Width="200" BorderBrush="#228B22" BorderThickness="1" Background="#98FB98" Visibility="Collapsed"/>
 
-                        <Button Content="👁" Width="30" Height="30" HorizontalAlignment="Right" Click="TogglePasswordVisibility"/>
+                        <Button Content="👁" Width="30" Height="30" HorizontalAlignment="Right" 
+        PreviewMouseDown="ShowPassword" 
+        PreviewMouseUp="HidePassword"
+        MouseLeave="HidePassword"/>
                     </Grid>
                 </StackPanel>
 

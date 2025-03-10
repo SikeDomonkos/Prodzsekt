@@ -3,6 +3,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Input;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -10,29 +11,22 @@ namespace ProjektWPF
 {
     public partial class LoginWindow : Window
     {
-        private bool isPasswordVisible = false;
-
         public LoginWindow()
         {
             InitializeComponent();
         }
 
-        private void TogglePasswordVisibility(object sender, RoutedEventArgs e)
+        private void ShowPassword(object sender, MouseButtonEventArgs e)
         {
-            isPasswordVisible = !isPasswordVisible;
+            PasswordTextBox.Text = PasswordBox.Password;
+            PasswordTextBox.Visibility = Visibility.Visible;
+            PasswordBox.Visibility = Visibility.Collapsed;
+        }
 
-            if (isPasswordVisible)
-            {
-                PasswordTextBox.Text = PasswordBox.Password;
-                PasswordTextBox.Visibility = Visibility.Visible;
-                PasswordBox.Visibility = Visibility.Collapsed;
-            }
-            else
-            {
-                PasswordBox.Password = PasswordTextBox.Text;
-                PasswordBox.Visibility = Visibility.Visible;
-                PasswordTextBox.Visibility = Visibility.Collapsed;
-            }
+        private void HidePassword(object sender, MouseEventArgs e)
+        {
+            PasswordBox.Visibility = Visibility.Visible;
+            PasswordTextBox.Visibility = Visibility.Collapsed;
         }
 
         private async void LoginButton_Click(object sender, RoutedEventArgs e)
@@ -55,7 +49,6 @@ namespace ProjektWPF
 
                 try
                 {
-                    // 🔹 Első API hívás: Bejelentkezés
                     HttpResponseMessage response = await client.PostAsync("/auth/login", jsonContent);
                     string responseContent = await response.Content.ReadAsStringAsync();
 
@@ -66,7 +59,7 @@ namespace ProjektWPF
                         if (jsonResponse["token"] != null && jsonResponse["token"].ToString().Length > 0)
                         {
                             string token = jsonResponse["token"].ToString();
-                            string userId = jsonResponse["id"]?.ToString();  // 🔹 Az ID kinyerése
+                            string userId = jsonResponse["id"]?.ToString();
 
                             if (string.IsNullOrEmpty(userId))
                             {
@@ -74,7 +67,6 @@ namespace ProjektWPF
                                 return;
                             }
 
-                            // 🔹 Második API hívás: Jogosultságok lekérése az ID alapján
                             HttpResponseMessage roleResponse = await client.GetAsync($"/auth/UserWithRole?id={userId}");
                             string roleContent = await roleResponse.Content.ReadAsStringAsync();
 
@@ -83,14 +75,9 @@ namespace ProjektWPF
                                 var roleJson = JObject.Parse(roleContent);
                                 var roles = roleJson["roles"]?.ToObject<string[]>();
 
-                                
-
-                                // 🔹 Jogosultság ellenőrzés (admin kell, hogy legyen)
                                 if (roles != null && Array.Exists(roles, role => role == "admin"))
                                 {
                                     MessageBox.Show("Bejelentkezés sikeres!", "Siker", MessageBoxButton.OK, MessageBoxImage.Information);
-
-                                    // 🔹 Főablak megnyitása
                                     MainWindow mainWindow = new MainWindow();
                                     mainWindow.Show();
                                     this.Close();
