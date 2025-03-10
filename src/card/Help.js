@@ -10,7 +10,7 @@ export default function Help() {
 
   useEffect(() => {
     console.log("Komponens betöltődött, adatok lekérése...");
-    fetchData(); // Adatok lekérése a komponens betöltődésekor
+    fetchData(); 
   }, []);
 
   // Adatok lekérése
