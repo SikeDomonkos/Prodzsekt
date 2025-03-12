@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2025. Már 07. 09:45
+-- Létrehozás ideje: 2025. Már 12. 16:22
 -- Kiszolgáló verziója: 10.4.32-MariaDB
 -- PHP verzió: 8.2.12
 
@@ -122,8 +122,10 @@ CREATE TABLE `aspnetusers` (
 
 INSERT INTO `aspnetusers` (`Id`, `FullName`, `Age`, `DateOfBirth`, `UserName`, `NormalizedUserName`, `Email`, `NormalizedEmail`, `EmailConfirmed`, `PasswordHash`, `SecurityStamp`, `ConcurrencyStamp`, `PhoneNumber`, `PhoneNumberConfirmed`, `TwoFactorEnabled`, `LockoutEnd`, `LockoutEnabled`, `AccessFailedCount`, `Fizetesi_elmaradas`, `FizetettE_havi`, `LakasSzovNev`) VALUES
 ('48288b35-9820-4015-affc-387f80e4ee7c', 'Gannon Mattedi', 0, '2025-03-07 08:32:36', 'gmattedi0', 'GMATTEDI0', 'gmattedi0@wsj.com', 'GMATTEDI0@WSJ.COM', 0, 'AQAAAAIAAYagAAAAELd5QWNdJJttcvolWoeKT7YI+lc3y01j7lMXjbvQK4E7Ctj39XyJc7a2eTdEzKsTZw==', 'XYWUE74EOBK7GPX7PTKWVAOBMFYSLJT6', 'e93a5ae2-34a6-40ec-978b-381188b61616', 'string', 0, 0, NULL, 1, 0, 0, 0, 'string'),
+('a3ca0ace-f40c-4f3e-adb8-75becec9cb4a', 'string', 0, '2000-01-01 00:00:00', 'ujproba', 'UJPROBA', 'string', 'STRING', 0, 'AQAAAAIAAYagAAAAEJddYwGH2T+LM8AdDBamntKAI9XXaiQsZKGGgO1E22VWSxfgLtBnS6MsgIvKgmDmmg==', 'DQZ66SQD7KE3JN3A25OZGRIJVXVLIMQ2', '362305f8-6862-4b94-9d43-c9e5bfe99d9b', NULL, 0, 0, NULL, 1, 0, 0, 0, ''),
 ('e0c37b9c-543c-428f-bd6e-d582e7f590d6', 'Próba János', 0, '2000-01-01 00:00:00', 'PJanos86', 'PJANOS86', 'Pjanos1986@gmail.com', 'PJANOS1986@GMAIL.COM', 0, 'AQAAAAIAAYagAAAAEDLuGhUZpuiO7Rr2v1w0rEzhcCf3HbD/z7DKkk32NpnUNg50ddoL4v6yRJIMUfvVUQ==', 'JXF5N4VEDVCEO3HDD5Q7KXAWOHJVLJ4N', 'bfe69a23-11c4-48d5-9147-5c3aedf29e8a', NULL, 0, 0, NULL, 1, 0, 0, 0, ''),
-('e15197b7-d32b-4090-8c88-fcaece125f20', 'string', 0, '2025-03-11 00:00:00', 'ujregister', 'UJREGISTER', 'string', 'STRING', 0, 'AQAAAAIAAYagAAAAEOyUYgxd3uz9hLAdKWD7nOD9Mh7utNvc1p/dGeOyZNYFDLwL5JAhSEcr1kzb9fJwyA==', 'RQIFLGD3IT4KAXHLPI25PWYNEY2NJIF6', 'e880e025-d694-484e-b762-42516947de20', 'string', 0, 0, NULL, 1, 0, 0, 0, 'string');
+('e15197b7-d32b-4090-8c88-fcaece125f20', 'string', 0, '2025-03-11 00:00:00', 'ujregister', 'UJREGISTER', 'string', 'STRING', 0, 'AQAAAAIAAYagAAAAEOyUYgxd3uz9hLAdKWD7nOD9Mh7utNvc1p/dGeOyZNYFDLwL5JAhSEcr1kzb9fJwyA==', 'RQIFLGD3IT4KAXHLPI25PWYNEY2NJIF6', 'e880e025-d694-484e-b762-42516947de20', 'string', 0, 0, NULL, 1, 0, 0, 0, 'string'),
+('ed417ced-15da-48ae-9742-27ce6f40c226', 'string', 0, '2000-01-01 00:00:00', 'loging', 'LOGING', 'string', 'STRING', 0, 'AQAAAAIAAYagAAAAENbrj83vke6NspbVFEUUGQ5VfOxfXTsggNxEtPbmCVOf0/z3MoyqLEArhtQLt4+Thw==', 'SGWN7OU672Q53OSZSS66ZHKJNZCFFUFR', '07777201-77ce-4dbe-9311-17ce3eac76b5', NULL, 0, 0, NULL, 1, 0, 0, 0, '');
 
 -- --------------------------------------------------------
 
@@ -180,7 +182,7 @@ CREATE TABLE `posts` (
   `Created_at` datetime NOT NULL,
   `Updated_at` datetime NOT NULL,
   `Is_accepted` tinyint(1) NOT NULL,
-  `Acceptor_id` varchar(255) DEFAULT NULL,
+  `Acceptor_id` varchar(255) NOT NULL DEFAULT 'null',
   `Location` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -189,10 +191,11 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`Id`, `Title`, `Description`, `Poster_id`, `Created_at`, `Updated_at`, `Is_accepted`, `Acceptor_id`, `Location`) VALUES
-('181bcbf7-ba6c-47b3-ad16-0e8fb86da462', 'string', 'string', '48288b35-9820-4015-affc-387f80e4ee7c', '2025-02-21 12:02:35', '0001-01-01 00:00:00', 0, NULL, 'string'),
+('181bcbf7-ba6c-47b3-ad16-0e8fb86da462', 'string', 'string', '48288b35-9820-4015-affc-387f80e4ee7c', '2025-02-21 12:02:35', '0001-01-01 00:00:00', 0, '123', 'string'),
 ('2cad4a40-3c8b-4344-b8ed-b73b2e94c5ae', 'Roofing (Metal)', 'morbi vel lectus in quam fringilla rhoncus mauris enim leo rhoncus sed vestibulum sit amet cursus id turpis integer', 'c6566929-3913-484f-b57e-1a00c3758e14', '2023-06-03 19:02:32', '2022-10-10 07:40:02', 0, '8952a9f4-afa9-4ddb-8e0f-03500fc788f4', '9 Southridge Road'),
 ('49e1d27f-078f-4aeb-a4d2-1f6d3521e090', 'Construction Clean and Final Clean', 'rhoncus aliquet pulvinar sed nisl nunc rhoncus dui vel sem sed sagittis nam', 'a342cef4-8178-4e83-bdac-619fc06e22ca', '2022-01-07 09:12:00', '2024-09-07 03:02:40', 0, '9d2b5beb-d1e2-4df2-8e14-f00722aeac2d', '336 Roxbury Park'),
 ('4a35776c-7cdb-4a45-bd3d-1681513856d8', 'Site Furnishings', 'sagittis nam congue risus semper porta volutpat quam pede lobortis ligula sit amet eleifend pede libero quis orci nullam molestie nibh in lectus pellentesque at', '75a1560b-c6a7-4f29-aa28-4318e0de6b1c', '2020-06-11 23:23:02', '2021-06-18 08:58:03', 0, '1cefccfa-e482-4a03-b326-0ac95ba745d6', '70561 Quincy Avenue'),
+('72f88e1f-122f-4115-b691-4becdc334992', 'string', 'string', 'e0c37b9c-543c-428f-bd6e-d582e7f590d6', '2025-03-12 15:04:28', '0001-01-01 00:00:00', 0, 'null', 'string'),
 ('827d4fa1-e030-4aff-aa21-9439e8aea4d8', 'Structural and Misc Steel (Fabrication)', 'varius ut blandit non interdum in ante vestibulum ante ipsum primis in faucibus orci luctus et', 'e88de332-0fc0-49e5-a654-5e4a109167d8', '2021-05-27 17:22:37', '2024-03-07 18:19:44', 1, '0ebb9926-bd08-4ab5-a5fa-a424176d4319', '39788 Donald Pass'),
 ('8922fe15-da8d-40cc-93f4-65ef4b5207f5', 'Electrical', 'aliquam sit amet diam in magna bibendum imperdiet nullam orci', '0ed550d4-ab14-42fc-b929-fbcc990c651c', '2022-11-07 18:41:50', '2022-10-05 23:07:51', 1, '43c88d48-2aa8-42a8-b087-310c230e34a1', '39149 Gina Drive');
 
