@@ -23,6 +23,7 @@ function App() {
         
         <Routes>
            <Route path='/' element = {<Fooldal/>} />
+           <Route path='*' element = {<Fooldal/>} />
            <Route path='/Segitsegkeres' element = {<Help/>} />
            <Route path='/Szavazas' element = {<Szavazas/>} />
            <Route path='/Bejelentkezes' element = {<Bejelentkezes/>} />

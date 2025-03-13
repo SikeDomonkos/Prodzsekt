@@ -1,40 +1,66 @@
+.profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+}
+
 .profile-card {
-    width: 350px;
-    margin: 40px auto;
-    padding: 20px;
-    text-align: center;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
+  background-color: #C2DD8F;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 450px;
+  padding: 30px;
+  text-align: center;
   
-  .profile-image {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #4CAF50;
-  }
+}
+
+.profile-card:hover {
   
-  h2 {
-    color: #333;
-    margin-top: 10px;
-  }
-  
-  p {
-    font-size: 16px;
-    color: #555;
-  }
-  
-  .loading {
-    text-align: center;
-    font-size: 18px;
-    color: #007bff;
-  }
-  
-  .error {
-    text-align: center;
-    color: red;
-    font-weight: bold;
-  }
-  
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.profile-card h2 {
+  font-size: 2em;
+  color: #333333;
+  margin-bottom: 15px;
+}
+
+.profile-card p {
+  font-size: 1.1em;
+  color: #666666;
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.profile-card strong {
+  color: #333333;
+}
+
+.profile-card .error {
+  color: #e74c3c;
+  font-size: 1.2em;
+}
+
+.profile-card .loading {
+  font-size: 1.2em;
+  color: #3498db;
+}
+
+.profile-card button {
+  background-color: #3498db;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1.1em;
+  margin-top: 25px;
+
+}
+
+

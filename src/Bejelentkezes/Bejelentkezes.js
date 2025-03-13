@@ -1,36 +1,87 @@
 import { useState } from 'react';
 import './Bejelentkezes.css';
 
+// Token dekódolása
+const decodeToken = (token) => {
+  try {
+    const [, payload] = token.split(".");
+    const decoded = JSON.parse(atob(payload));
+    console.log("Dekódolt token tartalma:", decoded); // Ellenőrizd a konzolon
+    return decoded;
+  } catch (error) {
+    console.error("Token dekódolási hiba:", error);
+    return null;
+  }
+};
+
+// Felhasználó bejelentkeztetése
+const loginUser = async (userData) => {
+  try {
+    const response = await fetch('https://localhost:7285/auth/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Cache-Control': 'no-cache',
+      },
+      body: JSON.stringify(userData),
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.message || 'Hiba történt a bejelentkezés során!');
+    }
+
+    const data = await response.json();
+    console.log("Szerver válasza:", data);
+
+    // Token mentése
+    localStorage.removeItem('token');
+    localStorage.setItem('token', data.token);
+
+    // Token dekódolása és userId kinyerése (a `sub` mezőből)
+    const decoded = decodeToken(data.token);
+    if (decoded && decoded.sub) {
+      localStorage.setItem('userId', decoded.sub); // userId mentése (a `sub` mezőből)
+      console.log("userId elmentve:", decoded.sub); // Ellenőrizd a konzolon
+    } else {
+      console.error("A token nem tartalmaz userId-t (sub mezőt)!");
+      throw new Error("A token nem tartalmaz userId-t (sub mezőt)!");
+    }
+
+    return data;
+  } catch (error) {
+    throw new Error(error.message || 'Nem elérhető a szerver.');
+  }
+};
+
+// Felhasználó regisztrálása
+const registerUser = async (userData) => {
+  try {
+    const response = await fetch('https://localhost:7285/auth/register', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Cache-Control': 'no-cache',
+      },
+      body: JSON.stringify(userData),
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.message || 'Hiba történt a regisztráció során!');
+    }
+
+    return await response.json();
+  } catch (error) {
+    throw new Error(error.message || 'A szerver nem válaszol.');
+  }
+};
+
 export default function Bejelentkezes() {
-  const [showRegister, setShowRegister] = useState(false);
   const [loginUsername, setLoginUsername] = useState('');
   const [loginPassword, setLoginPassword] = useState('');
   const [loginError, setLoginError] = useState('');
-
-  const loginUser = async (userData) => {
-    try {
-      const response = await fetch('https://localhost:7285/auth/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(userData),
-      });
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        console.error('Login error:', errorData);
-        throw new Error(errorData.message || 'Hiba történt a bejelentkezés során!');
-      }
-
-      const data = await response.json();
-      localStorage.setItem('token', data.token);
-      return data;
-    } catch (error) {
-      console.error('Hiba:', error.message);
-      throw new Error(error.message || 'Nem elérhető a szerver.');
-    }
-  };
+  const [showRegister, setShowRegister] = useState(false);
 
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
@@ -39,7 +90,7 @@ export default function Bejelentkezes() {
     try {
       const userData = { username: loginUsername, password: loginPassword };
       await loginUser(userData);
-      window.location.href = '/dashboard';
+      window.location.href = '/Profilom';
     } catch (error) {
       setLoginError(error.message);
     }
@@ -61,15 +112,13 @@ export default function Bejelentkezes() {
               onChange={(e) => setLoginUsername(e.target.value)}
             />
             <label>Jelszó</label>
-            <div id='also'>
-              <input
-                type="password"
-                className="input"
-                placeholder="Írd be a jelszavad"
-                value={loginPassword}
-                onChange={(e) => setLoginPassword(e.target.value)}
-              />
-            </div>
+            <input
+              type="password"
+              className="input"
+              placeholder="Írd be a jelszavad"
+              value={loginPassword}
+              onChange={(e) => setLoginPassword(e.target.value)}
+            />
             <button type="submit">Bejelentkezés</button>
           </form>
           <button onClick={() => setShowRegister(true)}>Regisztráció</button>
@@ -79,29 +128,6 @@ export default function Bejelentkezes() {
     </div>
   );
 }
-
-const registerUser = async (userData) => {
-  try {
-    const response = await fetch('https://localhost:7285/auth/register', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(userData),
-    });
-
-    if (!response.ok) {
-      const errorData = await response.json();
-      console.error('Register error:', errorData);
-      throw new Error(errorData.message || 'Hiba történt a regisztráció során!');
-    }
-
-    return await response.json();
-  } catch (error) {
-    console.error('Hiba:', error.message);
-    throw new Error(error.message || 'A szerver nem válaszol.');
-  }
-};
 
 function RegisterModal({ onClose }) {
   const [fullName, setFullName] = useState('');

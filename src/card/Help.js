@@ -2,15 +2,16 @@ import React, { useEffect, useState } from 'react';
 import './Help.css';
 
 export default function Help() {
-  const [database, setDatabase] = useState([]); // Adatbázis állapot
-  const [loading, setLoading] = useState(true); // Betöltési állapot
-  const [error, setError] = useState(null); // Hiba állapot
-  const [title, setTitle] = useState(''); // Cím állapot
-  const [description, setDescription] = useState(''); // Leírás állapot
+  const [database, setDatabase] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [title, setTitle] = useState('');
+  const [description, setDescription] = useState('');
+  const [location, setLocation] = useState('');
 
   useEffect(() => {
     console.log("Komponens betöltődött, adatok lekérése...");
-    fetchData(); 
+    fetchData();
   }, []);
 
   // Adatok lekérése
@@ -29,15 +30,15 @@ export default function Help() {
       })
       .then(data => {
         console.log("Lekérdezett adatok:", data);
-        setDatabase(data); // Adatok beállítása az adatbázishoz
+        setDatabase(data);
       })
       .catch(error => {
         console.error("Hiba történt:", error);
-        setError(error.message); // Hiba kezelés
+        setError(error.message);
       })
       .finally(() => {
         console.log("Adatok lekérése befejeződött.");
-        setLoading(false); // Betöltési állapot befejezése
+        setLoading(false);
       });
   }
 
@@ -45,19 +46,27 @@ export default function Help() {
   function handleSubmit(event) {
     event.preventDefault();
 
-    if (!title.trim() || !description.trim()) {
+    if (!title.trim() || !description.trim() || !location.trim()) {
       alert("Minden mezőt ki kell tölteni!");
       return;
     }
 
-    const newPost = { 
-      id: crypto.randomUUID(),  // Egyedi azonosító generálása
-      PosterId: "12345", // Bejelentkezett felhasználó azonosítója (ezt cseréld le!)
-      title, 
-      description 
+    const token = localStorage.getItem('token');
+    if (!token) {
+      alert("Nincs bejelentkezett felhasználó!");
+      return;
+    }
+
+    const newPost = {
+      id: crypto.randomUUID(), // Automatikus azonosító
+      PosterId: crypto.randomUUID(),
+      acceptorId: "null", // Az acceptorId itt van hozzáadva, alapértelmezetten null
+      title,
+      description,
+      location // Új mező
     };
 
-    fetch("https://localhost:7285/api/Poll", {
+    fetch("https://localhost:7285/api/Post", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -66,15 +75,16 @@ export default function Help() {
     })
       .then(response => {
         if (!response.ok) {
-          return response.json().then(err => { throw new Error(err.message || "Hiba történt!"); });
+          return response.json().then(err => { throw new Error(err.title || "Hiba történt!"); });
         }
         return response.json();
       })
       .then(data => {
         console.log("Új bejegyzés létrehozva:", data);
-        setDatabase(prevDatabase => [...prevDatabase, data]); // Az új post hozzáadása az adatbázishoz
-        setTitle(''); // Űrlap mezők törlése
+        setDatabase(prevDatabase => [...prevDatabase, data]);
+        setTitle('');
         setDescription('');
+        setLocation('');
       })
       .catch(error => {
         console.error('Hiba a létrehozáskor:', error);
@@ -87,17 +97,23 @@ export default function Help() {
       <div className="card">
         <h2>Segítség kérése</h2>
         <form onSubmit={handleSubmit}>
-          <p>Írd le, miben kell segíteni és a neved(-nak/-nek)!</p>
-          <input 
-            type='text' 
+          <p>Írd le, miben kell segíteni, a neved(-nak/-nek), és hol van szükség segítségre!</p>
+          <input
+            type='text'
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             placeholder="Cím"
           />
-          <textarea 
+          <textarea
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             placeholder="Leírás"
+          />
+          <input
+            type='text'
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
+            placeholder="Hova kell a segítség?"
           />
           <input type='submit' value="Beküldés" />
         </form>
@@ -111,6 +127,7 @@ export default function Help() {
           <div key={index} className="card">
             <h3>{item.title}</h3>
             <p>{item.description}</p>
+            <p><strong>Helyszín:</strong> {item.location}</p>
           </div>
         ))
       ) : (
