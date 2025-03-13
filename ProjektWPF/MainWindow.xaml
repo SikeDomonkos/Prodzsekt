@@ -185,7 +185,7 @@
             </Border.RenderTransform>
 
             <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <TextBlock Text="John Doe"
+                    <TextBlock x:Name="UserNameTextBlock"
                    Foreground="White"
                    FontSize="16"
                    FontWeight="Bold"

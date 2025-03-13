@@ -22,9 +22,16 @@ namespace ProjektWPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        public string LoggedInUsername { get; set; } = "John Doe";
+
         public MainWindow()
         {
             InitializeComponent();
+            Loaded += MainWindow_Loaded;
+        }
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            UserNameTextBlock.Text = LoggedInUsername; 
         }
         private bool isSidebarOpen = false;
 
@@ -47,7 +54,7 @@ namespace ProjektWPF
         {
             foreach (Window window in Application.Current.Windows)
             {
-                if (window != this) // Csak ha nem ez az ablak
+                if (window != this) 
                 {
                     window.Close();
                 }

@@ -60,6 +60,7 @@ namespace ProjektWPF
                         {
                             string token = jsonResponse["token"].ToString();
                             string userId = jsonResponse["id"]?.ToString();
+                            string loggedInUser = username;
 
                             if (string.IsNullOrEmpty(userId))
                             {
@@ -78,8 +79,11 @@ namespace ProjektWPF
                                 if (roles != null && Array.Exists(roles, role => role == "admin"))
                                 {
                                     MessageBox.Show("Bejelentkezés sikeres!", "Siker", MessageBoxButton.OK, MessageBoxImage.Information);
+
                                     MainWindow mainWindow = new MainWindow();
+                                    mainWindow.LoggedInUsername = loggedInUser; // Felhasználónév átadása
                                     mainWindow.Show();
+
                                     this.Close();
                                 }
                                 else
@@ -108,5 +112,6 @@ namespace ProjektWPF
                 }
             }
         }
+
     }
 }
