@@ -10,7 +10,7 @@ Szavazás és döntéshozatal: A felhasználók szavazhatnak közösségi ügyek
 Szavazati jogok kezelése: Minden lakó a jogosultságainak megfelelően részt vehet a szavazásokban. A rendszer biztosítja a szavazati jogok ellenőrzését.
 Valós idejű eredmények: Az alkalmazás biztosítja a szavazások valós idejű követését és eredményének azonnali megjelenítését.
 Anonimitás: A szavazások teljesen anonim módon zajlanak, biztosítva a lakók magánéletének védelmét.
-Projekt célja
+
 A projekt célja, hogy egy olyan könnyen használható digitális szavazórendszert hozzon létre, amely lehetővé teszi a lakóközösségek számára, hogy bárhonnan, bármikor részt vegyenek a közösségi döntéshozatalban, és biztosítja az összes adat védelmét és titkosságát.
 
 A Lakóközösség szavazó alkalmazás segítségével a közösségek gyorsan és hatékonyan hozhatnak döntéseket, így elősegítve a közösségi együttműködést és a közös ügyek gyors kezelését. Az alkalmazás különösen hasznos lehet olyan közösségek számára, ahol a hagyományos szavazási formák nem működnek hatékonyan, vagy ahol a lakók különböző okokból nem tudnak személyesen megjelenni.
@@ -67,12 +67,3 @@ A frontend fejlesztéséhez szükség van a React környezet beállítására. A
      npm start
      ```
 
-## Fejlesztési irányelvek
-
-A projekt fenntarthatóságának és skálázhatóságának biztosítása érdekében az alábbi fejlesztési irányelveket követjük:
-
-- Minden commit esetében egyértelmű és rövid leírást kell adni, amely segíti a verziókövetést és a későbbi visszakereshetőséget.
-- Kövesd a kódolási standardokat és az architekturális irányelveket, hogy a kód tiszta, könnyen olvasható és jól karbantartható legyen.
-- Az új funkciók és módosítások esetében részletes dokumentációt kell készíteni, amely tartalmazza a funkció célját, működését és implementációs részleteit.
-- A folyamatos integráció és telepítés (CI/CD) elvei szerint rendszeresen frissítsd a branch-edet a legújabb változatokkal, hogy elkerüld az ütközéseket és a verziókezelési problémákat.
--
