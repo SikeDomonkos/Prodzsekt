@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import './Bejelentkezes.css';
 
-// Token dekódolása
+
 const decodeToken = (token) => {
   try {
     const [, payload] = token.split(".");
     const decoded = JSON.parse(atob(payload));
-    console.log("Dekódolt token tartalma:", decoded); // Ellenőrizd a konzolon
+    console.log("Dekódolt token tartalma:", decoded); 
     return decoded;
   } catch (error) {
     console.error("Token dekódolási hiba:", error);
@@ -14,7 +14,7 @@ const decodeToken = (token) => {
   }
 };
 
-// Hibakódok fordítása felhasználóbarát üzenetekre
+
 const translateError = (errorType) => {
   switch (errorType) {
     case 'INVALID_FULLNAME':
@@ -38,7 +38,7 @@ const translateError = (errorType) => {
   }
 };
 
-// Felhasználó bejelentkeztetése
+
 const loginUser = async (userData) => {
   try {
     const response = await fetch('https://localhost:7285/auth/login', {
@@ -52,7 +52,7 @@ const loginUser = async (userData) => {
 
     if (!response.ok) {
       const errorData = await response.json();
-      throw errorData; // A szerver hibáját dobjuk tovább
+      throw errorData; 
     }
 
     const data = await response.json();
@@ -62,11 +62,11 @@ const loginUser = async (userData) => {
     localStorage.removeItem('token');
     localStorage.setItem('token', data.token);
 
-    // Token dekódolása és userId kinyerése (a sub mezőből)
+   
     const decoded = decodeToken(data.token);
     if (decoded && decoded.sub) {
-      localStorage.setItem('userId', decoded.sub); // userId mentése (a sub mezőből)
-      console.log("userId elmentve:", decoded.sub); // Ellenőrizd a konzolon
+      localStorage.setItem('userId', decoded.sub); 
+      console.log("userId elmentve:", decoded.sub); 
     } else {
       console.error("A token nem tartalmaz userId-t (sub mezőt)!");
       throw new Error("A token nem tartalmaz userId-t (sub mezőt)!");
@@ -74,7 +74,7 @@ const loginUser = async (userData) => {
 
     return data;
   } catch (error) {
-    throw error; // A szerver hibáját dobjuk tovább
+    throw error; 
   }
 };
 
@@ -92,12 +92,12 @@ const registerUser = async (userData) => {
 
     if (!response.ok) {
       const errorData = await response.json();
-      throw errorData; // A szerver hibáját dobjuk tovább
+      throw errorData; 
     }
 
     return await response.json();
   } catch (error) {
-    throw error; // A szerver hibáját dobjuk tovább
+    throw error; 
   }
 };
 
