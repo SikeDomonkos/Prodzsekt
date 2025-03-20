@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2025. Már 12. 16:22
--- Kiszolgáló verziója: 10.4.32-MariaDB
--- PHP verzió: 8.2.12
+-- Létrehozás ideje: 2025. Már 20. 08:23
+-- Kiszolgáló verziója: 10.4.28-MariaDB
+-- PHP verzió: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -122,10 +122,12 @@ CREATE TABLE `aspnetusers` (
 
 INSERT INTO `aspnetusers` (`Id`, `FullName`, `Age`, `DateOfBirth`, `UserName`, `NormalizedUserName`, `Email`, `NormalizedEmail`, `EmailConfirmed`, `PasswordHash`, `SecurityStamp`, `ConcurrencyStamp`, `PhoneNumber`, `PhoneNumberConfirmed`, `TwoFactorEnabled`, `LockoutEnd`, `LockoutEnabled`, `AccessFailedCount`, `Fizetesi_elmaradas`, `FizetettE_havi`, `LakasSzovNev`) VALUES
 ('48288b35-9820-4015-affc-387f80e4ee7c', 'Gannon Mattedi', 0, '2025-03-07 08:32:36', 'gmattedi0', 'GMATTEDI0', 'gmattedi0@wsj.com', 'GMATTEDI0@WSJ.COM', 0, 'AQAAAAIAAYagAAAAELd5QWNdJJttcvolWoeKT7YI+lc3y01j7lMXjbvQK4E7Ctj39XyJc7a2eTdEzKsTZw==', 'XYWUE74EOBK7GPX7PTKWVAOBMFYSLJT6', 'e93a5ae2-34a6-40ec-978b-381188b61616', 'string', 0, 0, NULL, 1, 0, 0, 0, 'string'),
+('7ed9e9e2-2e6b-4fa3-a4f1-7f1614be77f4', 'string', 0, '2000-01-01 00:00:00', 'tokenproba', 'TOKENPROBA', 'string', 'STRING', 0, 'AQAAAAIAAYagAAAAEMCdJinmIb2gLmgKU3cidYID7yIdIv8d70El1t5Zz3uX/WKB6bTkzswJapOK99fn6A==', 'SHVH6CIMLRV3XYWP6DNANLJXTBQ2PP6U', '0bf0f6a6-f9c3-4c00-8e46-00aa06b23102', NULL, 0, 0, NULL, 1, 0, 0, 0, ''),
 ('a3ca0ace-f40c-4f3e-adb8-75becec9cb4a', 'string', 0, '2000-01-01 00:00:00', 'ujproba', 'UJPROBA', 'string', 'STRING', 0, 'AQAAAAIAAYagAAAAEJddYwGH2T+LM8AdDBamntKAI9XXaiQsZKGGgO1E22VWSxfgLtBnS6MsgIvKgmDmmg==', 'DQZ66SQD7KE3JN3A25OZGRIJVXVLIMQ2', '362305f8-6862-4b94-9d43-c9e5bfe99d9b', NULL, 0, 0, NULL, 1, 0, 0, 0, ''),
 ('e0c37b9c-543c-428f-bd6e-d582e7f590d6', 'Próba János', 0, '2000-01-01 00:00:00', 'PJanos86', 'PJANOS86', 'Pjanos1986@gmail.com', 'PJANOS1986@GMAIL.COM', 0, 'AQAAAAIAAYagAAAAEDLuGhUZpuiO7Rr2v1w0rEzhcCf3HbD/z7DKkk32NpnUNg50ddoL4v6yRJIMUfvVUQ==', 'JXF5N4VEDVCEO3HDD5Q7KXAWOHJVLJ4N', 'bfe69a23-11c4-48d5-9147-5c3aedf29e8a', NULL, 0, 0, NULL, 1, 0, 0, 0, ''),
 ('e15197b7-d32b-4090-8c88-fcaece125f20', 'string', 0, '2025-03-11 00:00:00', 'ujregister', 'UJREGISTER', 'string', 'STRING', 0, 'AQAAAAIAAYagAAAAEOyUYgxd3uz9hLAdKWD7nOD9Mh7utNvc1p/dGeOyZNYFDLwL5JAhSEcr1kzb9fJwyA==', 'RQIFLGD3IT4KAXHLPI25PWYNEY2NJIF6', 'e880e025-d694-484e-b762-42516947de20', 'string', 0, 0, NULL, 1, 0, 0, 0, 'string'),
-('ed417ced-15da-48ae-9742-27ce6f40c226', 'string', 0, '2000-01-01 00:00:00', 'loging', 'LOGING', 'string', 'STRING', 0, 'AQAAAAIAAYagAAAAENbrj83vke6NspbVFEUUGQ5VfOxfXTsggNxEtPbmCVOf0/z3MoyqLEArhtQLt4+Thw==', 'SGWN7OU672Q53OSZSS66ZHKJNZCFFUFR', '07777201-77ce-4dbe-9311-17ce3eac76b5', NULL, 0, 0, NULL, 1, 0, 0, 0, '');
+('ed417ced-15da-48ae-9742-27ce6f40c226', 'string', 0, '2000-01-01 00:00:00', 'loging', 'LOGING', 'string', 'STRING', 0, 'AQAAAAIAAYagAAAAENbrj83vke6NspbVFEUUGQ5VfOxfXTsggNxEtPbmCVOf0/z3MoyqLEArhtQLt4+Thw==', 'SGWN7OU672Q53OSZSS66ZHKJNZCFFUFR', '07777201-77ce-4dbe-9311-17ce3eac76b5', NULL, 0, 0, NULL, 1, 0, 0, 0, ''),
+('edc6db86-4d67-432b-b6df-954815898c99', 'string', 0, '2000-01-01 00:00:00', 'tokenproba2', 'TOKENPROBA2', 'string', 'STRING', 0, 'AQAAAAIAAYagAAAAELN4oyY6l8TxGvkbkv0vtTTxmHOp0VaYnTFAiQNlxcpNF0jBDDBlyGQC36SODjmXGA==', 'LFMDJYZSHNEPREGBTSIY6GILDEYPV7BJ', '25403966-406f-4b30-809d-522f48f22eb4', NULL, 0, 0, NULL, 1, 0, 0, 0, '');
 
 -- --------------------------------------------------------
 
@@ -152,6 +154,7 @@ CREATE TABLE `polls` (
   `Description` varchar(255) NOT NULL,
   `Poster_id` varchar(255) NOT NULL,
   `Created_at` datetime NOT NULL,
+  `Ending_at` datetime NOT NULL DEFAULT current_timestamp(),
   `No` int(11) NOT NULL,
   `Yes` int(11) NOT NULL,
   `Is_voted` tinyint(1) NOT NULL
@@ -161,12 +164,12 @@ CREATE TABLE `polls` (
 -- A tábla adatainak kiíratása `polls`
 --
 
-INSERT INTO `polls` (`Id`, `Title`, `Description`, `Poster_id`, `Created_at`, `No`, `Yes`, `Is_voted`) VALUES
-('1de6e770-ec19-4145-96ba-2f9f5576a9bf', 'EIFS', 'congue risus semper porta volutpat quam pede lobortis ligula sit amet eleifend pede libero quis orci nullam molestie nibh in lectus pellentesque at nulla suspendisse potenti cras in purus eu magna vulputate luctus cum sociis natoque', 'f5119e59-fa98-4cd2-9f42-35498204df5d', '2022-03-02 14:49:49', 62, 43, 0),
-('34061f10-a860-4b29-9979-b5aed0e0437a', 'Overhead Doors', 'consequat varius integer ac leo pellentesque ultrices mattis odio donec vitae nisi nam ultrices libero non mattis pulvinar nulla pede ullamcorper augue a suscipit nulla elit ac nulla sed vel enim sit amet nunc', '301d906b-3903-4f68-9d00-82cd0f1112cf', '2022-11-01 11:55:58', 42, 21, 1),
-('a3398e47-23f4-4068-902d-6b25cd7706f7', 'Marlite Panels (FED)', 'dis parturient montes nascetur ridiculus mus etiam vel augue vestibulum rutrum rutrum neque aenean auctor gravida sem praesent id massa id nisl venenatis lacinia aenean sit amet justo morbi ut odio cras mi pede malesuada in imperdiet et', '688f1e12-82bb-4e62-9cc6-7adff7e1fb15', '2024-03-03 18:57:42', 12, 28, 0),
-('a535bd2a-f371-4b3f-a4dd-c500d1724901', 'Fire Protection', 'mauris ullamcorper purus sit amet nulla quisque arcu libero rutrum', 'abd52ce3-2fe5-456b-aed5-586718681f54', '2024-07-19 02:45:43', 50, 36, 1),
-('e5e5729c-68c0-401c-bf52-e852bcb8d673', 'Kerekesszék rámpa', 'A ... lakáshoz kéne csináltatni rámpát', 'e0c37b9c-543c-428f-bd6e-d582e7f590d6', '2025-02-19 16:39:26', 0, 0, 0);
+INSERT INTO `polls` (`Id`, `Title`, `Description`, `Poster_id`, `Created_at`, `Ending_at`, `No`, `Yes`, `Is_voted`) VALUES
+('1de6e770-ec19-4145-96ba-2f9f5576a9bf', 'EIFS', 'congue risus semper porta volutpat quam pede lobortis ligula sit amet eleifend pede libero quis orci nullam molestie nibh in lectus pellentesque at nulla suspendisse potenti cras in purus eu magna vulputate luctus cum sociis natoque', 'f5119e59-fa98-4cd2-9f42-35498204df5d', '2022-03-02 14:49:49', '2025-03-20 08:18:06', 62, 43, 0),
+('34061f10-a860-4b29-9979-b5aed0e0437a', 'Overhead Doors', 'consequat varius integer ac leo pellentesque ultrices mattis odio donec vitae nisi nam ultrices libero non mattis pulvinar nulla pede ullamcorper augue a suscipit nulla elit ac nulla sed vel enim sit amet nunc', '301d906b-3903-4f68-9d00-82cd0f1112cf', '2022-11-01 11:55:58', '2025-03-20 08:18:06', 42, 21, 1),
+('a3398e47-23f4-4068-902d-6b25cd7706f7', 'Marlite Panels (FED)', 'dis parturient montes nascetur ridiculus mus etiam vel augue vestibulum rutrum rutrum neque aenean auctor gravida sem praesent id massa id nisl venenatis lacinia aenean sit amet justo morbi ut odio cras mi pede malesuada in imperdiet et', '688f1e12-82bb-4e62-9cc6-7adff7e1fb15', '2024-03-03 18:57:42', '2025-03-20 08:18:06', 12, 28, 0),
+('a535bd2a-f371-4b3f-a4dd-c500d1724901', 'Fire Protection', 'mauris ullamcorper purus sit amet nulla quisque arcu libero rutrum', 'abd52ce3-2fe5-456b-aed5-586718681f54', '2024-07-19 02:45:43', '2025-03-20 08:18:06', 50, 36, 1),
+('e5e5729c-68c0-401c-bf52-e852bcb8d673', 'Kerekesszék rámpa', 'A ... lakáshoz kéne csináltatni rámpát', 'e0c37b9c-543c-428f-bd6e-d582e7f590d6', '2025-02-19 16:39:26', '2025-03-20 08:18:06', 0, 0, 0);
 
 -- --------------------------------------------------------
 
