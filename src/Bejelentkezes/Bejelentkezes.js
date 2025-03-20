@@ -14,6 +14,30 @@ const decodeToken = (token) => {
   }
 };
 
+// Hibakódok fordítása felhasználóbarát üzenetekre
+const translateError = (errorType) => {
+  switch (errorType) {
+    case 'INVALID_FULLNAME':
+      return 'Hiba a teljes névnél!';
+    case 'INVALID_USERNAME':
+      return 'Hiba a felhasználónévnél!';
+    case 'INVALID_EMAIL':
+      return 'Hiba az email címnél!';
+    case 'INVALID_PASSWORD':
+      return 'Hiba a jelszónál!';
+    case 'PASSWORDS_DO_NOT_MATCH':
+      return 'A jelszavak nem egyeznek!';
+    case 'USERNAME_TAKEN':
+      return 'A felhasználónév már foglalt!';
+    case 'EMAIL_TAKEN':
+      return 'Az email cím már foglalt!';
+    case 'LOGIN_FAILED':
+      return 'Hibás felhasználónév vagy jelszó!';
+    default:
+      return 'Ismeretlen hiba történt!';
+  }
+};
+
 // Felhasználó bejelentkeztetése
 const loginUser = async (userData) => {
   try {
@@ -28,7 +52,7 @@ const loginUser = async (userData) => {
 
     if (!response.ok) {
       const errorData = await response.json();
-      throw new Error(errorData.message || 'Hiba történt a bejelentkezés során!');
+      throw errorData; // A szerver hibáját dobjuk tovább
     }
 
     const data = await response.json();
@@ -38,10 +62,10 @@ const loginUser = async (userData) => {
     localStorage.removeItem('token');
     localStorage.setItem('token', data.token);
 
-    // Token dekódolása és userId kinyerése (a `sub` mezőből)
+    // Token dekódolása és userId kinyerése (a sub mezőből)
     const decoded = decodeToken(data.token);
     if (decoded && decoded.sub) {
-      localStorage.setItem('userId', decoded.sub); // userId mentése (a `sub` mezőből)
+      localStorage.setItem('userId', decoded.sub); // userId mentése (a sub mezőből)
       console.log("userId elmentve:", decoded.sub); // Ellenőrizd a konzolon
     } else {
       console.error("A token nem tartalmaz userId-t (sub mezőt)!");
@@ -50,7 +74,7 @@ const loginUser = async (userData) => {
 
     return data;
   } catch (error) {
-    throw new Error(error.message || 'Nem elérhető a szerver.');
+    throw error; // A szerver hibáját dobjuk tovább
   }
 };
 
@@ -68,12 +92,12 @@ const registerUser = async (userData) => {
 
     if (!response.ok) {
       const errorData = await response.json();
-      throw new Error(errorData.message || 'Hiba történt a regisztráció során!');
+      throw errorData; // A szerver hibáját dobjuk tovább
     }
 
     return await response.json();
   } catch (error) {
-    throw new Error(error.message || 'A szerver nem válaszol.');
+    throw error; // A szerver hibáját dobjuk tovább
   }
 };
 
@@ -92,7 +116,7 @@ export default function Bejelentkezes() {
       await loginUser(userData);
       window.location.href = '/Profilom';
     } catch (error) {
-      setLoginError(error.message);
+      setLoginError(translateError(error.errorType || 'LOGIN_FAILED'));
     }
   };
 
@@ -142,7 +166,7 @@ function RegisterModal({ onClose }) {
     e.preventDefault();
 
     if (password !== confirmPassword) {
-      setErrorMessage('A jelszavak nem egyeznek!');
+      setErrorMessage(translateError('PASSWORDS_DO_NOT_MATCH'));
       setSuccessMessage('');
       return;
     }
@@ -154,7 +178,7 @@ function RegisterModal({ onClose }) {
       setErrorMessage('');
       setTimeout(onClose, 2500);
     } catch (error) {
-      setErrorMessage(error.message);
+      setErrorMessage(translateError(error.errorType));
       setSuccessMessage('');
     }
   };
