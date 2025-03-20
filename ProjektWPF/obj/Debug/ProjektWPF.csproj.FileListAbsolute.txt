@@ -568,3 +568,5 @@ C:\Users\janosim\Desktop\Új mappa\ProjektWPF\obj\Debug\ProjektWPF.csproj.CoreCo
 C:\Users\janosim\Desktop\Új mappa\ProjektWPF\obj\Debug\ProjektWPF.csproj.Up2Date
 C:\Users\janosim\Desktop\Új mappa\ProjektWPF\obj\Debug\ProjektWPF.exe
 C:\Users\janosim\Desktop\Új mappa\ProjektWPF\obj\Debug\ProjektWPF.pdb
+C:\Users\janosim\Desktop\Új mappa\ProjektWPF\obj\Debug\SegitsegkeresWindow.g.cs
+C:\Users\janosim\Desktop\Új mappa\ProjektWPF\obj\Debug\SegitsegkeresWindow.baml

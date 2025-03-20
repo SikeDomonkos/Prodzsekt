@@ -24,7 +24,7 @@
         </Grid.Background>
 
         <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
-            <Label Content="Város:" VerticalAlignment="Center" Margin="10" Foreground="White"/>
+            <Label Content="Szövetkezet:" VerticalAlignment="Center" Margin="10" Foreground="White"/>
             <ComboBox Name="FilterComboBox"
                       HorizontalAlignment="Left" 
                       VerticalAlignment="Center" 

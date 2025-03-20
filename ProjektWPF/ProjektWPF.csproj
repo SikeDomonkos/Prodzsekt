@@ -175,6 +175,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="PollColorConverter.cs" />
+    <Compile Include="PostModel.cs" />
+    <Compile Include="SegitsegkeresWindow.xaml.cs">
+      <DependentUpon>SegitsegkeresWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SzavazasLekeres.xaml.cs">
       <DependentUpon>SzavazasLekeres.xaml</DependentUpon>
     </Compile>
@@ -204,6 +208,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="SegitsegkeresWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SzavazasLekeres.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

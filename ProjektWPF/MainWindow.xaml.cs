@@ -77,6 +77,15 @@ namespace ProjektWPF
             szavazasLekeres.Show();
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
 
+        }
+
+        private void Segitseg_Click(object sender, RoutedEventArgs e)
+        {
+            SegitsegkeresWindow segitsegkeresWindow = new SegitsegkeresWindow();
+            segitsegkeresWindow.Show();
+        }
     }
 }
