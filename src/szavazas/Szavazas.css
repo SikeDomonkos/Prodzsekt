@@ -6,6 +6,30 @@
   gap: 20px; 
 }
 
+.expired {
+  opacity: 0.9;
+  border: 1px solid #ccc;
+}
+
+.expired-message {
+  color: red;
+  font-weight: bold;
+}
+
+.end-date {
+  font-size: 0.9em;
+  color: #666;
+  margin: 5px 0;
+}
+
+input[type="datetime-local"] {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
 .szavaz {
   background-color: #C2DD8F;
   margin-top: 10px;

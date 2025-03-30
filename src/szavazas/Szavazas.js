@@ -6,6 +6,7 @@ export default function Szavazas({ user }) {
   const [database, setDatabase] = useState([]);
   const [newTitle, setNewTitle] = useState("");
   const [newDescription, setNewDescription] = useState("");
+  const [newEndDate, setNewEndDate] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
@@ -15,7 +16,7 @@ export default function Szavazas({ user }) {
 
   function checkLoginStatus() {
     const token = localStorage.getItem("token");
-    setIsLoggedIn(!!token); // Ha van token, true lesz, ha nincs, false
+    setIsLoggedIn(!!token); 
   }
 
   function fetchPolls() {
@@ -37,7 +38,12 @@ export default function Szavazas({ user }) {
       return;
     }
 
-    // Ellenőrizzük, hogy a felhasználó már szavazott-e
+    const poll = database.find(item => item.id === id);
+    if (poll && isPollExpired(poll.endingAt)) {
+      alert("Ez a szavazás már lejárt!");
+      return;
+    }
+
     const votedPolls = JSON.parse(localStorage.getItem("votedPolls")) || [];
 
     if (votedPolls.includes(id)) {
@@ -59,11 +65,7 @@ export default function Szavazas({ user }) {
       })
       .then(message => {
         console.log("Válasz a szervertől:", message);
-
-        // Hozzáadjuk az ID-t a localStorage-hoz
         localStorage.setItem("votedPolls", JSON.stringify([...votedPolls, id]));
-
-        // Frissítés a frontend oldalon
         setDatabase(prevDatabase =>
           prevDatabase.map(item =>
             item.id === id ? { ...item, [type]: item[type] + 1 } : item
@@ -81,8 +83,21 @@ export default function Szavazas({ user }) {
       return;
     }
 
-    if (!newTitle.trim() || !newDescription.trim()) {
+    if (!newTitle.trim() || !newDescription.trim() || !newEndDate) {
       alert("Minden mezőt ki kell tölteni!");
+      return;
+    }
+
+    const selectedDate = new Date(newEndDate);
+    const currentDate = new Date();
+
+    if (selectedDate.toString() === "Invalid Date") {
+      alert("Érvénytelen dátum formátum!");
+      return;
+    }
+
+    if (selectedDate <= currentDate) {
+      alert("A lejárati dátumnak a jövőben kell lennie!");
       return;
     }
 
@@ -92,7 +107,8 @@ export default function Szavazas({ user }) {
       description: newDescription,
       yes: 0,
       no: 0,
-      posterId: user?.id || "unknown"
+      posterId: user?.id || "unknown",
+      endingAt: newEndDate
     };
 
     fetch("https://localhost:7285/api/Poll", {
@@ -112,11 +128,28 @@ export default function Szavazas({ user }) {
         setDatabase([...database, data]);
         setNewTitle("");
         setNewDescription("");
+        setNewEndDate("");
       })
       .catch(error => {
         console.error('Hiba a szavazás létrehozásakor:', error);
         alert("Hiba történt a szavazás létrehozásakor! Ellenőrizd a konzolt.");
       });
+  }
+
+  function formatDate(dateString) {
+    const options = { 
+      year: 'numeric', 
+      month: '2-digit', 
+      day: '2-digit', 
+      hour: '2-digit', 
+      minute: '2-digit',
+      hour12: false
+    };
+    return new Date(dateString).toLocaleDateString('hu-HU', options);
+  }
+
+  function isPollExpired(endingAt) {
+    return new Date(endingAt) < new Date();
   }
 
   return (
@@ -134,6 +167,7 @@ export default function Szavazas({ user }) {
                 placeholder='Szavazás címe'
                 className="input-field"
                 disabled={!isLoggedIn}
+                required
               />
             </p>
             <p>
@@ -143,6 +177,18 @@ export default function Szavazas({ user }) {
                 placeholder='Szavazás leírása'
                 className="textarea-field"
                 disabled={!isLoggedIn}
+                required
+              />
+            </p>
+            <p>
+              <input
+                type='datetime-local'
+                value={newEndDate}
+                onChange={(e) => setNewEndDate(e.target.value)}
+                className="input-field"
+                disabled={!isLoggedIn}
+                min={new Date().toISOString().slice(0, 16)}
+                required
               />
             </p>
             <p><input type='submit' value='Létrehozás' className="submit-btn" disabled={!isLoggedIn} /></p>
@@ -151,28 +197,37 @@ export default function Szavazas({ user }) {
       </div>
 
       <div className='szavaz-container'>
-        {database.map((data) => (
-          <div key={data.id} className='szavaz'>
-            <h2>{data.title}</h2>
-            <h4>{data.description}</h4>
-            <div className='vote-buttons'>
-              <button 
-                className='vote-btn btn-primary yes' 
-                onClick={() => handleVote(data.id, 'yes')} 
-                disabled={!isLoggedIn}
-              >
-                Igen ({data.yes})
-              </button>
-              <button 
-                className='vote-btn btn-primary no' 
-                onClick={() => handleVote(data.id, 'no')} 
-                disabled={!isLoggedIn}
-              >
-                Nem ({data.no})
-              </button>
+        {database.map((data) => {
+          const expired = isPollExpired(data.endingAt);
+          return (
+            <div key={data.id} className={`szavaz ${expired ? 'expired' : ''}`}>
+              <h2>{data.title}</h2>
+              <h4>{data.description}</h4>
+              <p className="end-date">
+                {expired 
+                  ? `Lejárt: ${formatDate(data.endingAt)}` 
+                  : `Lejár: ${formatDate(data.endingAt)}`}
+              </p>
+              {expired && <p className="expired-message">Ez a szavazás lejárt</p>}
+              <div className='vote-buttons'>
+                <button 
+                  className={`vote-btn ${expired ? 'btn-disabled' : 'btn-primary yes'}`} 
+                  onClick={() => handleVote(data.id, 'yes')} 
+                  disabled={!isLoggedIn || expired}
+                >
+                  Igen ({data.yes})
+                </button>
+                <button 
+                  className={`vote-btn ${expired ? 'btn-disabled' : 'btn-primary no'}`} 
+                  onClick={() => handleVote(data.id, 'no')} 
+                  disabled={!isLoggedIn || expired}
+                >
+                  Nem ({data.no})
+                </button>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
       <div className='sor'></div>
     </div>

@@ -21,7 +21,6 @@ export default function Profile() {
     const token = localStorage.getItem('token');
     const userId = localStorage.getItem('userId');
 
-    //bejelentkezett profil betoltese
     fetch(`https://localhost:7285/auth/profile?id=${userId}`, {
       method: 'GET',
       headers: {
@@ -59,20 +58,10 @@ export default function Profile() {
     const token = localStorage.getItem('token');
     const userId = localStorage.getItem('userId');
 
-   
     const formattedDateOfBirth = new Date(formData.dateOfBirth)
       .toISOString()
       .split('T')[0]; 
 
-   
-    console.log('Sending data to the server:', {
-      phoneNumber: formData.phoneNumber,
-      lakasSzovNev: formData.lakasSzovNev,
-      dateOfBirth: formattedDateOfBirth,
-      userId: userId
-    });
-
-    //adatok frissitese
     fetch(`https://localhost:7285/auth/personal?id=${userId}`, {
       method: 'PUT',
       headers: {
@@ -86,7 +75,6 @@ export default function Profile() {
       })
     })
       .then(response => {
-        
         if (response.headers.get('content-type')?.includes('application/json')) {
           return response.json(); 
         } else {
@@ -95,20 +83,15 @@ export default function Profile() {
       })
       .then(data => {
         if (typeof data === 'string') {
-          
           console.log('Server response:', data);
           alert(data);
         } else {
-          
           setProfile(data); 
           setIsEditing(false); 
         }
-
-      
         window.location.reload(); 
       })
       .catch(error => {
-        
         alert(`Hiba történt: ${error.message}`);
         console.error('Error:', error); 
       });
@@ -123,10 +106,23 @@ export default function Profile() {
           <h2>{profile.fullName}</h2>
           <p><strong>Felhasználónév:</strong> {profile.userName}</p>
           <p><strong>Email:</strong> {profile.email}</p>
-          {profile.age && <p><strong>Kor:</strong> {profile.age}</p>}
+          {profile.phoneNumber && (
+            <p><strong>Telefonszám:</strong> {profile.phoneNumber}</p>
+          )}
+          {profile.lakasSzovNev && (
+            <p><strong>Lakcím:</strong> {profile.lakasSzovNev}</p>
+          )}
           {profile.dateOfBirth && (
             <p><strong>Születési dátum:</strong> {new Date(profile.dateOfBirth).toLocaleDateString()}</p>
           )}
+          
+          {/* Fizetési elmaradás megjelenítése */}
+          {profile.fizetesiElmaradas && profile.fizetesiElmaradas > 0 && (
+            <p className="payment-warning">
+              <strong>Fizetés elmaradás!</strong> {profile.fizetesiElmaradas} Ft
+            </p>
+          )}
+
           <button onClick={handleEditClick}>Szerkesztés</button>
         </div>
       )}

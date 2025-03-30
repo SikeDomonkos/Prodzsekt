@@ -7,6 +7,14 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   padding: 20px;
 }
+.payment-warning {
+  color: red;
+  font-weight: bold;
+  background-color: #a94c4c;
+  padding: 5px;
+  border-radius: 4px;
+  margin: 10px 0;
+}
 
 .profile-card {
   background-color: #C2DD8F;

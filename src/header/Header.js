@@ -50,7 +50,7 @@ function Header() {
 
        
         <div className="search-box">
-          <input type="search" placeholder="Keresés..." />
+          <input type="search" placeholder="Keresés..." />  
           <FaSearch className="search-icon" />
         </div>
 

@@ -1,4 +1,6 @@
 body{
     background-image:url("https://pcdn.hu/articles/images-xl/m/i/s/miskolc-borsod-bukk-594966.jpg");
     background-attachment: fixed;
+    background-color: antiquewhite;
+    opacity: 0.8;
 }
