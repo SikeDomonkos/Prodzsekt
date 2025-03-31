@@ -2,6 +2,7 @@ import React from 'react';
 import './Fooldal.css';
 
 export default function Fooldal() {
+  
   return (
     <div className="Fo">
       <div id="leiras">
