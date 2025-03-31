@@ -1,0 +1,320 @@
+C:\Users\farka\GitWorkDir\AuthApi\WeatherForecastApi\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\farka\GitWorkDir\AuthApi\WeatherForecastApi\bin\Debug\net8.0\appsettings.json
+C:\Users\farka\GitWorkDir\AuthApi\WeatherForecastApi\bin\Debug\net8.0\WeatherForecastApi.exe
+C:\Users\farka\GitWorkDir\AuthApi\WeatherForecastApi\bin\Debug\net8.0\WeatherForecastApi.deps.json
+C:\Users\farka\GitWorkDir\AuthApi\WeatherForecastApi\bin\Debug\net8.0\WeatherForecastApi.runtimeconfig.json
+C:\Users\farka\GitWorkDir\AuthApi\WeatherForecastApi\bin\Debug\net8.0\WeatherForecastApi.dll
+C:\Users\farka\GitWorkDir\AuthApi\WeatherForecastApi\bin\Debug\net8.0\WeatherForecastApi.pdb
+C:\Users\farka\GitWorkDir\AuthApi\WeatherForecastApi\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\farka\GitWorkDir\AuthApi\WeatherForecastApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\farka\GitWorkDir\AuthApi\WeatherForecastApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\farka\GitWorkDir\AuthApi\WeatherForecastApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\farka\GitWorkDir\AuthApi\WeatherForecastApi\obj\Debug\net8.0\WeatherForecastApi.csproj.AssemblyReference.cache
+C:\Users\farka\GitWorkDir\AuthApi\WeatherForecastApi\obj\Debug\net8.0\WeatherForecastApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\farka\GitWorkDir\AuthApi\WeatherForecastApi\obj\Debug\net8.0\WeatherForecastApi.AssemblyInfoInputs.cache
+C:\Users\farka\GitWorkDir\AuthApi\WeatherForecastApi\obj\Debug\net8.0\WeatherForecastApi.AssemblyInfo.cs
+C:\Users\farka\GitWorkDir\AuthApi\WeatherForecastApi\obj\Debug\net8.0\WeatherForecastApi.csproj.CoreCompileInputs.cache
+C:\Users\farka\GitWorkDir\AuthApi\WeatherForecastApi\obj\Debug\net8.0\WeatherForecastApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\farka\GitWorkDir\AuthApi\WeatherForecastApi\obj\Debug\net8.0\WeatherForecastApi.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\farka\GitWorkDir\AuthApi\WeatherForecastApi\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\farka\GitWorkDir\AuthApi\WeatherForecastApi\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\farka\GitWorkDir\AuthApi\WeatherForecastApi\obj\Debug\net8.0\staticwebassets\msbuild.WeatherForecastApi.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\farka\GitWorkDir\AuthApi\WeatherForecastApi\obj\Debug\net8.0\staticwebassets\msbuild.build.WeatherForecastApi.props
+C:\Users\farka\GitWorkDir\AuthApi\WeatherForecastApi\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.WeatherForecastApi.props
+C:\Users\farka\GitWorkDir\AuthApi\WeatherForecastApi\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.WeatherForecastApi.props
+C:\Users\farka\GitWorkDir\AuthApi\WeatherForecastApi\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\farka\GitWorkDir\AuthApi\WeatherForecastApi\obj\Debug\net8.0\scopedcss\bundle\WeatherForecastApi.styles.css
+C:\Users\farka\GitWorkDir\AuthApi\WeatherForecastApi\obj\Debug\net8.0\WeatherF.7ED98301.Up2Date
+C:\Users\farka\GitWorkDir\AuthApi\WeatherForecastApi\obj\Debug\net8.0\WeatherForecastApi.dll
+C:\Users\farka\GitWorkDir\AuthApi\WeatherForecastApi\obj\Debug\net8.0\refint\WeatherForecastApi.dll
+C:\Users\farka\GitWorkDir\AuthApi\WeatherForecastApi\obj\Debug\net8.0\WeatherForecastApi.pdb
+C:\Users\farka\GitWorkDir\AuthApi\WeatherForecastApi\obj\Debug\net8.0\WeatherForecastApi.genruntimeconfig.cache
+C:\Users\farka\GitWorkDir\AuthApi\WeatherForecastApi\obj\Debug\net8.0\ref\WeatherForecastApi.dll
+C:\Users\farka\GitWorkDir\AuthApi\WeatherForecastApi\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\farka\GitWorkDir\AuthApi\WeatherForecastApi\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\farka\GitWorkDir\AuthApi\WeatherForecastApi\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\farka\GitWorkDir\AuthApi\WeatherForecastApi\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\farka\GitWorkDir\AuthApi\WeatherForecastApi\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\farka\GitWorkDir\AuthApi\WeatherForecastApi\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\farka\GitWorkDir\AuthApi\WeatherForecastApi\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\farka\GitWorkDir\AuthApi\WeatherForecastApi\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\farka\GitWorkDir\AuthApi\WeatherForecastApi\obj\Debug\net8.0\WeatherForecastApi.sourcelink.json
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\appsettings.json
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\WeatherForecastApi.exe
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\WeatherForecastApi.deps.json
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\WeatherForecastApi.runtimeconfig.json
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\WeatherForecastApi.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\WeatherForecastApi.pdb
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\obj\Debug\net8.0\WeatherForecastApi.csproj.AssemblyReference.cache
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\obj\Debug\net8.0\WeatherForecastApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\obj\Debug\net8.0\WeatherForecastApi.AssemblyInfoInputs.cache
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\obj\Debug\net8.0\WeatherForecastApi.AssemblyInfo.cs
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\obj\Debug\net8.0\WeatherForecastApi.csproj.CoreCompileInputs.cache
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\obj\Debug\net8.0\WeatherForecastApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\obj\Debug\net8.0\WeatherForecastApi.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\obj\Debug\net8.0\staticwebassets\msbuild.WeatherForecastApi.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\obj\Debug\net8.0\staticwebassets\msbuild.build.WeatherForecastApi.props
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.WeatherForecastApi.props
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.WeatherForecastApi.props
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\obj\Debug\net8.0\scopedcss\bundle\WeatherForecastApi.styles.css
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\obj\Debug\net8.0\WeatherF.7ED98301.Up2Date
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\obj\Debug\net8.0\WeatherForecastApi.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\obj\Debug\net8.0\refint\WeatherForecastApi.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\obj\Debug\net8.0\WeatherForecastApi.pdb
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\obj\Debug\net8.0\WeatherForecastApi.genruntimeconfig.cache
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\obj\Debug\net8.0\ref\WeatherForecastApi.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\Google.Protobuf.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\Humanizer.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\K4os.Compression.LZ4.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\K4os.Compression.LZ4.Streams.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\K4os.Hash.xxHash.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\Mono.TextTemplating.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\MySql.Data.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\MySql.EntityFrameworkCore.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\System.CodeDom.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\System.Composition.AttributedModel.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\System.Composition.Convention.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\System.Composition.Hosting.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\System.Composition.Runtime.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\System.Composition.TypedParts.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\System.Security.Permissions.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\System.Windows.Extensions.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\ZstdSharp.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.resources.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.resources.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.resources.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.resources.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.resources.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.resources.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.resources.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.resources.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\runtimes\win-x64\native\comerr64.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\runtimes\win-x64\native\gssapi64.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\runtimes\win-x64\native\k5sprt64.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\runtimes\win-x64\native\krb5_64.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\runtimes\win-x64\native\krbcc64.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Windows.Extensions.dll
+C:\Users\szabolcs\Downloads\asd\AuthApihetfo-main\WeatherForecastApi\obj\Debug\net8.0\WeatherForecastApi.sourcelink.json
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\appsettings.json
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\WeatherForecastApi.exe
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\WeatherForecastApi.deps.json
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\WeatherForecastApi.runtimeconfig.json
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\WeatherForecastApi.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\WeatherForecastApi.pdb
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\Google.Protobuf.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\Humanizer.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\K4os.Compression.LZ4.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\K4os.Compression.LZ4.Streams.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\K4os.Hash.xxHash.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\Mono.TextTemplating.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\MySql.Data.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\MySql.EntityFrameworkCore.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\System.CodeDom.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\System.Composition.AttributedModel.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\System.Composition.Convention.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\System.Composition.Hosting.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\System.Composition.Runtime.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\System.Composition.TypedParts.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\System.Security.Permissions.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\System.Windows.Extensions.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\ZstdSharp.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\runtimes\win-x64\native\comerr64.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\runtimes\win-x64\native\gssapi64.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\runtimes\win-x64\native\k5sprt64.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\runtimes\win-x64\native\krb5_64.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\runtimes\win-x64\native\krbcc64.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Windows.Extensions.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\obj\Debug\net8.0\WeatherForecastApi.csproj.AssemblyReference.cache
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\obj\Debug\net8.0\WeatherForecastApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\obj\Debug\net8.0\WeatherForecastApi.AssemblyInfoInputs.cache
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\obj\Debug\net8.0\WeatherForecastApi.AssemblyInfo.cs
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\obj\Debug\net8.0\WeatherForecastApi.csproj.CoreCompileInputs.cache
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\obj\Debug\net8.0\WeatherForecastApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\obj\Debug\net8.0\WeatherForecastApi.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\obj\Debug\net8.0\staticwebassets\msbuild.WeatherForecastApi.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\obj\Debug\net8.0\staticwebassets\msbuild.build.WeatherForecastApi.props
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.WeatherForecastApi.props
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.WeatherForecastApi.props
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\obj\Debug\net8.0\scopedcss\bundle\WeatherForecastApi.styles.css
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\obj\Debug\net8.0\WeatherF.7ED98301.Up2Date
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\obj\Debug\net8.0\WeatherForecastApi.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\obj\Debug\net8.0\refint\WeatherForecastApi.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\obj\Debug\net8.0\WeatherForecastApi.pdb
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\obj\Debug\net8.0\WeatherForecastApi.genruntimeconfig.cache
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\WeatherForecastApi\obj\Debug\net8.0\ref\WeatherForecastApi.dll

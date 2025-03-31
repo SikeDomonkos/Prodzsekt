@@ -1,0 +1,23 @@
+{
+  "Version": 1,
+  "Hash": "E2BPARbllhIGGOrjMAvL1AYc79o2t6makFeSQbRV31U=",
+  "Source": "AuthApi",
+  "BasePath": "_content/AuthApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "C:\\Users\\Tanulo\\Downloads\\Prodzsekt-backend (2)\\Prodzsekt-backend\\E-panelApi\\E-panelApi.csproj",
+      "Version": 2,
+      "Source": "E-panelApi",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
+    }
+  ],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

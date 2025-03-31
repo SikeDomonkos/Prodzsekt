@@ -1,0 +1,6 @@
+@E_panelApi_HostAddress = http://localhost:5242
+
+GET {{E_panelApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
