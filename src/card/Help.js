@@ -8,11 +8,18 @@ export default function Help() {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [location, setLocation] = useState('');
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
     console.log("Komponens betöltődött, adatok lekérése...");
     fetchData();
+    checkLoginStatus();
   }, []);
+
+  function checkLoginStatus() {
+    const token = localStorage.getItem('token');
+    setIsLoggedIn(!!token);
+  }
 
   // Adatok lekérése
   function fetchData() {
@@ -46,6 +53,11 @@ export default function Help() {
   function handleSubmit(event) {
     event.preventDefault();
 
+    if (!isLoggedIn) {
+      alert("Be kell jelentkezned a segítségkérés létrehozásához!");
+      return;
+    }
+
     if (!title.trim() || !description.trim() || !location.trim()) {
       alert("Minden mezőt ki kell tölteni!");
       return;
@@ -60,10 +72,10 @@ export default function Help() {
     const newPost = {
       id: crypto.randomUUID(), // Automatikus azonosító
       PosterId: crypto.randomUUID(),
-      acceptorId: "null", // Az acceptorId itt van hozzáadva, alapértelmezetten null
+      acceptorId: "null",
       title,
       description,
-      location // Új mező
+      location
     };
 
     fetch("https://localhost:7285/api/Post", {
@@ -98,24 +110,32 @@ export default function Help() {
         <h2>Segítség kérése</h2>
         <form onSubmit={handleSubmit}>
           <p>Írd le, miben kell segíteni, a neved(-nak/-nek), és hol van szükség segítségre!</p>
+          {!isLoggedIn && <p className="warning">Be kell jelentkezned a segítségkérés létrehozásához!</p>}
           <input
             type='text'
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             placeholder="Cím"
+            disabled={!isLoggedIn}
           />
           <textarea
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             placeholder="Leírás"
+            disabled={!isLoggedIn}
           />
           <input
             type='text'
             value={location}
             onChange={(e) => setLocation(e.target.value)}
             placeholder="Hova kell a segítség?"
+            disabled={!isLoggedIn}
           />
-          <input type='submit' value="Beküldés" />
+          <input 
+            type='submit' 
+            value="Beküldés" 
+            disabled={!isLoggedIn} 
+          />
         </form>
       </div>
 

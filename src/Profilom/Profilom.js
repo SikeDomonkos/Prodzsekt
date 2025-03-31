@@ -8,7 +8,8 @@ export default function Profile() {
   const [formData, setFormData] = useState({
     phoneNumber: '',
     lakasSzovNev: '',
-    dateOfBirth: ''
+    dateOfBirth: '',
+    varos: '' 
   });
 
   useEffect(() => {
@@ -34,7 +35,8 @@ export default function Profile() {
         setFormData({
           phoneNumber: data.phoneNumber || '',
           lakasSzovNev: data.lakasSzovNev || '',
-          dateOfBirth: data.dateOfBirth ? data.dateOfBirth.split('T')[0] : ''  
+          dateOfBirth: data.dateOfBirth ? data.dateOfBirth.split('T')[0] : '',
+          varos: data.varos || ''  
         });
       })
       .finally(() => {
@@ -72,6 +74,7 @@ export default function Profile() {
         phoneNumber: formData.phoneNumber,
         lakasSzovNev: formData.lakasSzovNev,
         dateOfBirth: formattedDateOfBirth,
+        varos: formData.varos  
       })
     })
       .then(response => {
@@ -105,6 +108,7 @@ export default function Profile() {
         <div className="profile-card">
           <h2>{profile.fullName}</h2>
           <p><strong>Felhasználónév:</strong> {profile.userName}</p>
+          <p><strong>Város:</strong> {profile.varos}</p>
           <p><strong>Email:</strong> {profile.email}</p>
           {profile.phoneNumber && (
             <p><strong>Telefonszám:</strong> {profile.phoneNumber}</p>
@@ -116,7 +120,6 @@ export default function Profile() {
             <p><strong>Születési dátum:</strong> {new Date(profile.dateOfBirth).toLocaleDateString()}</p>
           )}
           
-          {/* Fizetési elmaradás megjelenítése */}
           {profile.fizetesiElmaradas && profile.fizetesiElmaradas > 0 && (
             <p className="payment-warning">
               <strong>Fizetés elmaradás!</strong> {profile.fizetesiElmaradas} Ft
@@ -155,6 +158,15 @@ export default function Profile() {
                 type="date"
                 name="dateOfBirth"
                 value={formData.dateOfBirth}
+                onChange={handleInputChange}
+              />
+            </label>
+            <label>
+              Város:
+              <input
+                type="text"
+                name="varos"  
+                value={formData.varos}
                 onChange={handleInputChange}
               />
             </label>

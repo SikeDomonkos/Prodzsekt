@@ -10,6 +10,41 @@
   gap: 20px;
  
 }
+.help-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.help-button:hover {
+  background-color: #45a049;
+}
+
+.help-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.accepted-message {
+  color: #4CAF50;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.warning {
+  color: #ff5722;
+  font-weight: bold;
+}
+
+.error {
+  color: #f44336;
+  font-weight: bold;
+}
 
 .card {
   background-color: #C2DD8F;
