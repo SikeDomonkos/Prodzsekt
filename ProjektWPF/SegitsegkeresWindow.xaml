@@ -1,6 +1,7 @@
 ﻿<Window x:Class="ProjektWPF.SegitsegkeresWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Icon="/Assets/favicon.ico"
         Title="Segítségkérések" Height="450" Width="800" Background="#006400">
     <Grid>
         <Grid.Background>

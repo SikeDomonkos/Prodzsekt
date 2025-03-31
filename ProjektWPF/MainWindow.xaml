@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjektWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="1000" Background="#006400">
+        Icon="/Assets/favicon.ico"
+        Title="E-Panel Admin" Height="500" Width="1000" Background="#006400"
+        >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
