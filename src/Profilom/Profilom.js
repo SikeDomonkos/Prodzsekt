@@ -114,7 +114,7 @@ export default function Profile() {
             <p><strong>Telefonszám:</strong> {profile.phoneNumber}</p>
           )}
           {profile.lakasSzovNev && (
-            <p><strong>Lakcím:</strong> {profile.lakasSzovNev}</p>
+            <p><strong>Lakásszövetkezet neve:</strong> {profile.lakasSzovNev}</p>
           )}
           {profile.dateOfBirth && (
             <p><strong>Születési dátum:</strong> {new Date(profile.dateOfBirth).toLocaleDateString()}</p>
@@ -144,7 +144,7 @@ export default function Profile() {
               />
             </label>
             <label>
-              Lakcím:
+            Lakásszövetkezet neve:
               <input
                 type="text"
                 name="lakasSzovNev"
