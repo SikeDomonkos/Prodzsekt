@@ -722,3 +722,4 @@ C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\AuthApi\obj\De
 C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\AuthApi\obj\Debug\net8.0\AuthApi.pdb
 C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\AuthApi\obj\Debug\net8.0\AuthApi.genruntimeconfig.cache
 C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\AuthApi\obj\Debug\net8.0\ref\AuthApi.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\AuthApi\obj\Debug\net8.0\AuthApi.sourcelink.json

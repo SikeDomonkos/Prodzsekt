@@ -561,3 +561,4 @@ C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\E-panelApi\obj
 C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\E-panelApi\obj\Debug\net8.0\E-panelApi.pdb
 C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\E-panelApi\obj\Debug\net8.0\E-panelApi.genruntimeconfig.cache
 C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\E-panelApi\obj\Debug\net8.0\ref\E-panelApi.dll
+C:\Users\Tanulo\Downloads\Prodzsekt-backend (2)\Prodzsekt-backend\E-panelApi\obj\Debug\net8.0\E-panelApi.sourcelink.json

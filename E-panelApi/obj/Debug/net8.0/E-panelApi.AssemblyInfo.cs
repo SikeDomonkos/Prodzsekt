@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("E-panelApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ab9a97a0b3572ae1c3d8b9a66d6b538a710086fb")]
 [assembly: System.Reflection.AssemblyProductAttribute("E-panelApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("E-panelApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

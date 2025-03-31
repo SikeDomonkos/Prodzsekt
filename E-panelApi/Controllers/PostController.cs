@@ -55,15 +55,23 @@ namespace E_panelApi.Controllers
                         p.Description,
                         p.Location,
                         p.PosterId,
-                        pfullname = p.Poster.FullName,
+                        PosterFullName = context.Aspnetusers
+                                                .Where(user => user.Id == p.PosterId)
+                                                .Select(user => user.FullName)
+                                                .FirstOrDefault(),
                         p.CreatedAt,
                         p.IsAccepted,
                         p.AcceptorId,
-                        afullname = p.Acceptor.FullName,
+                        AcceptorFullName = context.Aspnetusers
+                                                  .Where(user => user.Id == p.AcceptorId)
+                                                  .Select(user => user.FullName)
+                                                  .FirstOrDefault()
                     });
-                return Ok(context.Posts.ToList());
+
+                return Ok(result.ToList());
             }
         }
+
 
         [HttpGet("ById")]
         public ActionResult<Post> GetById(string id)
@@ -112,8 +120,10 @@ namespace E_panelApi.Controllers
                 if (existingPost != null)
                 {
                     existingPost.Title = updatePostDto.Title;
-                    existingPost.Description = updatePostDto.Description;
-                    existingPost.CreatedAt = DateTime.Now;
+                    existingPost.Description = updatePostDto.Description;                    
+                    existingPost.UpdatedAt = DateTime.Now;
+                    existingPost.AcceptorId = updatePostDto.AcceptorId;
+                    existingPost.IsAccepted = updatePostDto.IsAccepted;
                     context.SaveChanges();
                     return StatusCode(200, existingPost);
                 }
