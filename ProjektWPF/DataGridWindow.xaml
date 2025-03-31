@@ -91,10 +91,10 @@
             <DataGrid.Columns>
                 <DataGridCheckBoxColumn Header="Elmaradva" Binding="{Binding FizetettE_havi}" />
                 <DataGridTextColumn Header="Fizetési Elmaradás" Binding="{Binding Fizetesi_elmaradas}" />
-                <DataGridTextColumn Header="Név" Binding="{Binding FullName}" />
-                <DataGridTextColumn Header="Szövetkezet" Binding="{Binding LakasSzovNev}" />
-                <DataGridTextColumn Header="Születési Idő" Binding="{Binding DateOfBirthFormatted}" />
-                <DataGridTextColumn Header="Telefonszám" Binding="{Binding PhoneNumber}" />
+                <DataGridTextColumn Header="Név" Binding="{Binding FullName}" IsReadOnly="True" />
+                <DataGridTextColumn Header="Szövetkezet" Binding="{Binding LakasSzovNev}" IsReadOnly="True" />
+                <DataGridTextColumn Header="Születési Idő" Binding="{Binding DateOfBirthFormatted}" IsReadOnly="True" />
+                <DataGridTextColumn Header="Telefonszám" Binding="{Binding PhoneNumber}" IsReadOnly="True" />
             </DataGrid.Columns>
 
             <DataGrid.RowStyle>

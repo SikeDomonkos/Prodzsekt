@@ -8,11 +8,19 @@
         <local:PollColorConverter x:Key="PollColorConverter"/>
     </Window.Resources>
 
-    <Grid Background="LightBlue">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#228B22" Offset="0"/>
+                <GradientStop Color="#006400" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
         <ListBox x:Name="PollsListBox"
                  HorizontalAlignment="Stretch"
                  VerticalAlignment="Stretch"
-                 Margin="10">
+                 Margin="10"
+                 Background="Transparent">
 
             <ListBox.ItemContainerStyle>
                 <Style TargetType="ListBoxItem">
@@ -31,20 +39,21 @@
 
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Border Padding="10" CornerRadius="5">
+                    <Border Padding="10" CornerRadius="5" Background="#006400" BorderBrush="#004d00" BorderThickness="2">
                         <StackPanel>
-                            <TextBlock Text="{Binding Title}" FontSize="16" FontWeight="Bold"/>
-                            <TextBlock Text="{Binding Description}" FontSize="14"/>
+                            <TextBlock Text="{Binding Title}" FontSize="16" FontWeight="Bold" Foreground="White"/>
+                            <TextBlock Text="{Binding Description}" FontSize="14" Foreground="LightGray"/>
                             <TextBlock Text="Közzétette:" FontSize="12" FontWeight="Bold" Foreground="Gray"/>
-                            <TextBlock Text="{Binding FullName}" FontSize="14" FontWeight="Bold" Foreground="DarkBlue"/>
+                            <TextBlock Text="{Binding FullName}" FontSize="14" FontWeight="Bold" Foreground="LightBlue"/>
                             <StackPanel Orientation="Horizontal" Margin="5,10,0,0">
-                                <TextBlock Text="Igen: " FontSize="14" FontWeight="Bold"/>
-                                <TextBlock Text="{Binding Yes}" FontSize="14" Margin="5,0,10,0"/>
-                                <TextBlock Text="Nem: " FontSize="14" FontWeight="Bold"/>
-                                <TextBlock Text="{Binding No}" FontSize="14"/>
-                                <Button Content="X" Width="30" Height="30" Margin="10,0,0,0"
-                                        Click="DeletePoll_Click" Tag="{Binding Id}"
-                                        Background="Red" Foreground="White"/>
+                                <TextBlock Text="Igen: " FontSize="14" FontWeight="Bold" Foreground="White"/>
+                                <TextBlock Text="{Binding Yes}" FontSize="14" Margin="5,0,10,0" Foreground="White"/>
+                                <TextBlock Text="Nem: " FontSize="14" FontWeight="Bold" Foreground="White"/>
+                                <TextBlock Text="{Binding No}" FontSize="14" Foreground="White"/>
+                                <Button Width="30" Height="30" Background="Red" Foreground="White"
+                                        Click="DeletePoll_Click" Tag="{Binding Id}">
+                                    <TextBlock Text="X"/>
+                                </Button>
                             </StackPanel>
                         </StackPanel>
                     </Border>
