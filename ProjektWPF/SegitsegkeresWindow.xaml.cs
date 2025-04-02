@@ -64,7 +64,6 @@ namespace ProjektWPF
                     {
                         MessageBox.Show("A poszt sikeresen törölve!", "Siker", MessageBoxButton.OK, MessageBoxImage.Information);
 
-                        // Frissítjük a listát az eltávolított elemmel
                         posts.RemoveAll(p => p.Id == postId);
                         PostsListBox.ItemsSource = null;
                         PostsListBox.ItemsSource = posts;

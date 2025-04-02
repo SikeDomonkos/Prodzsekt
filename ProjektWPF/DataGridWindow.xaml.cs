@@ -145,11 +145,11 @@ namespace ProjektWPF
                 {
                     UpdatePersonInDatabase(person);
                 }
-                MessageBox.Show("Changes saved successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Változtatások sikeresen elmentve!", "Siker", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error saving changes: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Hiba mentéskor: {ex.Message}", "Hiba", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
         private void SearchTextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -158,7 +158,7 @@ namespace ProjektWPF
 
             if (string.IsNullOrWhiteSpace(searchText))
             {
-                DataGridUsers.ItemsSource = AllData; // Ha üres, mutassa az összes adatot
+                DataGridUsers.ItemsSource = AllData; 
             }
             else
             {

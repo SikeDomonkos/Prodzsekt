@@ -81,7 +81,7 @@ namespace ProjektWPF
                                     MessageBox.Show("Bejelentkezés sikeres!", "Siker", MessageBoxButton.OK, MessageBoxImage.Information);
 
                                     MainWindow mainWindow = new MainWindow();
-                                    mainWindow.LoggedInUsername = loggedInUser; // Felhasználónév átadása
+                                    mainWindow.LoggedInUsername = loggedInUser; // Felhasználónév
                                     mainWindow.Show();
 
                                     this.Close();

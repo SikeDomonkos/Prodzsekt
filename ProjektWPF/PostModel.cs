@@ -19,6 +19,7 @@ namespace ProjektWPF
         public string Location { get; set; }
         public string Acceptor { get; set; }
         public string Poster { get; set; }
+        public string posterFullName { get; set; }
     }
 
 
