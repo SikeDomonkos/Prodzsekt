@@ -30,28 +30,30 @@ namespace ProjektWPF
 
         private async void DeletePoll_Click(object sender, RoutedEventArgs e)
         {
-            try
+            if (sender is Button button && button.Tag is string pollId)
             {
-                var button = sender as Button;
-                var pollId = button?.Tag.ToString();
+                bool confirmed = MessageBox.Show("Biztosan törölni szeretnéd ezt a szavazást?",
+                                                 "Megerősítés", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes;
+                if (!confirmed) return;
 
-                if (!string.IsNullOrEmpty(pollId))
+                try
                 {
                     var result = await _pollService.DeletePollAsync(pollId);
 
                     if (result)
                     {
-                        LoadPolls();
+                        MessageBox.Show("A szavazás sikeresen törölve!", "Siker", MessageBoxButton.OK, MessageBoxImage.Information);
+                        LoadPolls(); // Lista frissítése
                     }
                     else
                     {
-                        MessageBox.Show("Failed to delete the poll.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        MessageBox.Show("Nem sikerült törölni a szavazást!", "Hiba", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Hálózati hiba: {ex.Message}", "Hiba", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
         }
     }

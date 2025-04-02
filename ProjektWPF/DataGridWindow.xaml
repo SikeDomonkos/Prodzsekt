@@ -34,7 +34,6 @@
                       Margin="10"
                       SelectionChanged="FilterComboBox_SelectionChanged"/>
 
-            <!-- 🔹 Keresőmező hozzáadása -->
             <Label Content="Keresés név alapján:" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="White"/>
             <TextBox Name="SearchTextBox"
                      Width="200"
