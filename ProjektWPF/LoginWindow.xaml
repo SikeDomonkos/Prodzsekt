@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:ProjektWPF"
         mc:Ignorable="d"
         Icon="/Assets/favicon.ico"
-        Title="Bejelentkezés" Height="350" Width="400" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="#2C2F33">
+        Title="Bejelentkezés" Height="350" Width="400" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="#2C2F33"
+        KeyDown="Window_KeyDown">
     <Grid>
         <Border CornerRadius="10" Background="#3CB371" Padding="20" Margin="20" >
             <Grid>
