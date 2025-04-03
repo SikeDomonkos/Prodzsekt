@@ -1,10 +1,13 @@
 .Fo {
+    margin-top: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
     padding-top: 13px;
    
 }
+
+
 
 #leiras {
     background: #C2DD8F;

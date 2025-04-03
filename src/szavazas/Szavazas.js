@@ -8,6 +8,7 @@ export default function Szavazas({ user }) {
   const [newDescription, setNewDescription] = useState("");
   const [newEndDate, setNewEndDate] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userId, setUserId] = useState(null);
 
   useEffect(() => {
     fetchPolls();
@@ -16,7 +17,15 @@ export default function Szavazas({ user }) {
 
   function checkLoginStatus() {
     const token = localStorage.getItem("token");
-    setIsLoggedIn(!!token); 
+    const storedUserId = localStorage.getItem("userId");
+    
+    if (token && storedUserId) {
+      setIsLoggedIn(true);
+      setUserId(storedUserId);
+    } else {
+      setIsLoggedIn(false);
+      setUserId(null);
+    }
   }
 
   function fetchPolls() {
@@ -56,7 +65,8 @@ export default function Szavazas({ user }) {
     fetch(`https://localhost:7285/api/Poll/${voteEndpoint}?id=${id}`, {
       method: "PUT",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${localStorage.getItem("token")}`
       }
     })
       .then(response => {
@@ -107,7 +117,7 @@ export default function Szavazas({ user }) {
       description: newDescription,
       yes: 0,
       no: 0,
-      posterId: user?.id || "unknown",
+      posterId: userId,
       endingAt: newEndDate
     };
 
@@ -115,7 +125,8 @@ export default function Szavazas({ user }) {
       method: "POST",
       headers: {
         "Accept": "application/json",
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${localStorage.getItem("token")}`
       },
       body: JSON.stringify(newPoll)
     })
@@ -154,6 +165,7 @@ export default function Szavazas({ user }) {
 
   return (
     <div>
+      <div className='sor2'></div>
       <div className='Fo'>
         <div className='lead'>
           <form onSubmit={handleSubmit}>
@@ -197,6 +209,7 @@ export default function Szavazas({ user }) {
       </div>
 
       <div className='szavaz-container'>
+       
         {database.map((data) => {
           const expired = isPollExpired(data.endingAt);
           return (
@@ -224,8 +237,11 @@ export default function Szavazas({ user }) {
                 >
                   Nem ({data.no})
                 </button>
+                
               </div>
+              
             </div>
+            
           );
         })}
       </div>

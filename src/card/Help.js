@@ -2,58 +2,62 @@ import React, { useEffect, useState } from 'react';
 import './Help.css';
 
 export default function Help() {
-  const [database, setDatabase] = useState([]);
+  const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [location, setLocation] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userId, setUserId] = useState(null);
 
   useEffect(() => {
-    console.log("Komponens betöltődött, adatok lekérése...");
     fetchData();
     checkLoginStatus();
   }, []);
 
   function checkLoginStatus() {
     const token = localStorage.getItem('token');
+    const userId = localStorage.getItem('userId');
     setIsLoggedIn(!!token);
+    if (token && userId) {
+      setUserId(userId);
+    }
   }
 
-  // Adatok lekérése
-  function fetchData() {
+  async function fetchData() {
     setLoading(true);
     setError(null);
-    console.log("Lekérési kérés elküldése...");
 
-    fetch('https://localhost:7285/api/Post/All')
-      .then(response => {
-        console.log("Szerver válasz:", response);
-        if (!response.ok) {
-          throw new Error(`Hálózati hiba! Status: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then(data => {
-        console.log("Lekérdezett adatok:", data);
-        setDatabase(data);
-      })
-      .catch(error => {
-        console.error("Hiba történt:", error);
-        setError(error.message);
-      })
-      .finally(() => {
-        console.log("Adatok lekérése befejeződött.");
-        setLoading(false);
-      });
+    try {
+      const response = await fetch('https://localhost:7285/api/Post/All');
+      
+      if (!response.ok) {
+        const errorText = await response.text();
+        throw new Error(errorText || `HTTP error! Status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log('Received posts data:', data);
+      
+      if (Array.isArray(data)) {
+        setPosts(data);
+      } else {
+        console.warn('Expected array but received:', data);
+        setPosts([]);
+      }
+    } catch (err) {
+      console.error("Fetch error:", err);
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
   }
 
-  // Post létrehozása
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
 
-    if (!isLoggedIn) {
+    if (!isLoggedIn || !userId) {
       alert("Be kell jelentkezned a segítségkérés létrehozásához!");
       return;
     }
@@ -70,90 +74,136 @@ export default function Help() {
     }
 
     const newPost = {
-      id: crypto.randomUUID(), // Automatikus azonosító
-      PosterId: crypto.randomUUID(),
-      acceptorId: "null",
+      posterId: userId,
       title,
       description,
       location
     };
 
-    fetch("https://localhost:7285/api/Post", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(newPost)
-    })
-      .then(response => {
-        if (!response.ok) {
-          return response.json().then(err => { throw new Error(err.title || "Hiba történt!"); });
-        }
-        return response.json();
-      })
-      .then(data => {
-        console.log("Új bejegyzés létrehozva:", data);
-        setDatabase(prevDatabase => [...prevDatabase, data]);
-        setTitle('');
-        setDescription('');
-        setLocation('');
-      })
-      .catch(error => {
-        console.error('Hiba a létrehozáskor:', error);
-        alert("Hiba történt a segítségkérés mentésekor: " + error.message);
+    try {
+      const response = await fetch("https://localhost:7285/api/Post", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`
+        },
+        body: JSON.stringify(newPost)
       });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || "Ismeretlen hiba történt");
+      }
+
+      const responseData = await response.json();
+      console.log("Új bejegyzés létrehozva:", responseData);
+      
+      setTitle('');
+      setDescription('');
+      setLocation('');
+      alert("Segítségkérés sikeresen létrehozva!");
+      
+      // Frissítjük a posztok listáját
+      await fetchData();
+    } catch (error) {
+      console.error('Hiba a létrehozáskor:', error);
+      alert(`Hiba történt a segítségkérés mentésekor: ${error.message}`);
+    }
   }
 
   return (
-    <div className='Fo'>
-      <div className="card">
+    
+    <div className='help-container'>
+      <div className='sor2'></div>
+      <div className="help-form-card">
+       
         <h2>Segítség kérése</h2>
         <form onSubmit={handleSubmit}>
           <p>Írd le, miben kell segíteni, a neved(-nak/-nek), és hol van szükség segítségre!</p>
           {!isLoggedIn && <p className="warning">Be kell jelentkezned a segítségkérés létrehozásához!</p>}
-          <input
-            type='text'
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            placeholder="Cím"
-            disabled={!isLoggedIn}
-          />
-          <textarea
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            placeholder="Leírás"
-            disabled={!isLoggedIn}
-          />
-          <input
-            type='text'
-            value={location}
-            onChange={(e) => setLocation(e.target.value)}
-            placeholder="Hova kell a segítség?"
-            disabled={!isLoggedIn}
-          />
-          <input 
+          
+          <div className="form-group">
+            <label htmlFor="title">Cím:</label>
+            <input
+              id="title"
+              type='text'
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              placeholder="Cím"
+              disabled={!isLoggedIn}
+              required
+            />
+          </div>
+          
+          <div className="form-group">
+            <label htmlFor="description">Leírás:</label>
+            <textarea
+              id="description"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              placeholder="Leírás"
+              disabled={!isLoggedIn}
+              required
+            />
+          </div>
+          
+          <div className="form-group">
+            <label htmlFor="location">Helyszín:</label>
+            <input
+              id="location"
+              type='text'
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
+              placeholder="Hova kell a segítség?"
+              disabled={!isLoggedIn}
+              required
+            />
+          </div>
+          
+          <button 
             type='submit' 
-            value="Beküldés" 
-            disabled={!isLoggedIn} 
-          />
+            className="submit-button"
+            disabled={!isLoggedIn || loading} 
+          >
+            {loading ? 'Feldolgozás...' : 'Beküldés'}
+          </button>
         </form>
       </div>
 
-      {loading && <p>Adatok betöltése...</p>}
-      {error && <p className="error">Hiba történt: {error}</p>}
-
-      {database.length > 0 ? (
-        database.map((item, index) => (
-          <div key={index} className="card">
-            <h3>{item.title}</h3>
-            <p>{item.description}</p>
-            <p><strong>Helyszín:</strong> {item.location}</p>
+      <div className="posts-section">
+       
+        
+        {loading && <div className="loading-spinner">Adatok betöltése...</div>}
+        
+        {error && (
+          <div className="error-message">
+            <p>Hiba történt: {error}</p>
+            <button onClick={fetchData} className="retry-button">Újrapróbálkozás</button>
           </div>
-        ))
-      ) : (
-        !loading && !error && <p>Nincs elérhető adat.</p>
-      )}
-      <div className='sor1'></div>
+        )}
+
+        <div className="posts-list">
+          {posts.length > 0 ? (
+            posts.map((post) => (
+              <div key={post.id} className="post-card">
+                <h3>{post.title || 'Nincs cím'}</h3>
+                <p className="post-description">{post.description || 'Nincs leírás'}</p>
+                <div className="post-details">
+                  <p className="post-location">
+                    <strong>Helyszín:</strong> {post.location || 'Nincs megadva'}
+                  </p>
+                  <p className="post-date">
+                    <strong>Létrehozva:</strong> {post.createdAt ? new Date(post.createdAt).toLocaleString() : 'Ismeretlen dátum'}
+                  </p>
+                </div>
+              </div>
+            ))
+          ) : (
+            !loading && !error && <p className="no-posts-message">Nincs elérhető segítségkérés.</p>
+          )}
+        </div>
+      </div>
+      <div className='sor'></div>
     </div>
   );
 }

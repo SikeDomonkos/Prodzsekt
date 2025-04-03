@@ -102,9 +102,11 @@ export default function Profile() {
 
   return (
     <div className="profile">
+      
       {loading && <p className="loading">Profil betöltése...</p>}
-
+      
       {profile && (
+        
         <div className="profile-card">
           <h2>{profile.fullName}</h2>
           <p><strong>Felhasználónév:</strong> {profile.userName}</p>

@@ -10,6 +10,7 @@
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   max-width: 1000px;
   margin: auto;
+  margin-top: 10px;
 
 }
 
@@ -47,7 +48,7 @@
 .form-container button {
   border: none;
   height: 45px;
-  margin-top: 20px;
+  margin-top: 50px;
   background-color: #C2DD8F;
   color: black;
   font-size: 16px;

@@ -1,147 +1,223 @@
+/* Szavazas.css */
 
-.szavaz-container {
-  display: flex;
-  justify-content: center; 
-  flex-wrap: wrap; 
-  gap: 20px; 
+/* Általános stílusok */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f7fa;
+  color: #333;
 }
 
-.expired {
-  opacity: 0.9;
-  border: 1px solid #ccc;
+.Fo {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
 }
 
-.expired-message {
-  color: red;
+/* Űrlap stílusok */
+.lead {
+  background-color: #C2DD8F;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.lead h4 {
+  margin-top: 0;
+  color: #2c3e50;
+  font-size: 1.5rem;
+  border-bottom: 2px solid #ffffff;
+  padding-bottom: 10px;
+}
+
+.warning {
+  color: #e74c3c;
   font-weight: bold;
-}
-
-.end-date {
-  font-size: 0.9em;
-  color: #666;
-  margin: 5px 0;
-}
-
-input[type="datetime-local"] {
+  background-color: #fde8e8;
   padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  border-radius: 5px;
+  border-left: 4px solid #e74c3c;
+}
+
+.input-field, .textarea-field {
   width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border 0.3s;
   box-sizing: border-box;
 }
 
-.szavaz {
-  background-color: #C2DD8F;
-  margin-top: 10px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-  text-align: center;
-  width: 700px; 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 15px;
-  
-}   
-
-.szavaz h2, .szavaz h4 {
-  margin: 10px;
+.input-field:focus, .textarea-field:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
 }
 
-.szavaz table {
-  width: 100%;
-  margin-top: 10px;
+.textarea-field {
+  min-height: 100px;
+  resize: vertical;
 }
 
-.szavaz input[type="submit"] {
-  margin-top: 15px;
-  padding: 10px 20px;
-  background-color: #4CAF50;
+.submit-btn {
+  background-color: #3498db;
   color: white;
   border: none;
-  cursor: pointer;
+  padding: 12px 20px;
   border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+.sor2{
+  margin-top: 50px;
 }
 
-.szavaz input[type="submit"]:hover {
-  background-color: #45a049;
+.submit-btn:hover {
+  background-color: #2980b9;
 }
 
-.szavaz #igen {
-  color: white;
-  padding: 5px 10px;
-  border-radius: 20px;
-  background-color: green;
-  font-style: italic;
+.submit-btn:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
 }
 
-.szavaz #nem {
-  color: white;
-  padding: 5px 10px;
-  border-radius: 20px;
-  background-color: red;
-  font-style: italic;
+/* Szavazás konténer */
+.szavaz-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
+  padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-
-
-.lead{
-  display: flex;
-  justify-content: center;
+/* Egyes szavazás dobozok */
+.szavaz {
   background-color: #C2DD8F;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-  transition: transform 0.2s;
-  text-align: center;
-  padding: 10px;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.szavaz:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.szavaz.expired {
+  opacity: 0.8;
+  background-color: rgb(119, 52, 52);
+  border-left: 4px solid #e74c3c;
+}
+
+.szavaz h2 {
+  margin-top: 0;
+  color: #2c3e50;
+  font-size: 1.4rem;
+}
+
+.szavaz h4 {
+  color: #7f8c8d;
+  font-weight: normal;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.end-date {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
+.expired-message {
+  color: #e74c3c;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Szavazó gombok */
+.vote-buttons {
+  display: flex;
+  gap: 10px;
   margin-top: 15px;
-  width: 600px;
-  height: 400px;
-  flex-direction: column;
+}
+
+.vote-btn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-primary {
+  color: white;
+}
+
+.btn-primary.yes {
+  background-color: #2ecc71;
+}
+
+.btn-primary.yes:hover {
+  background-color: #27ae60;
+}
+
+.btn-primary.no {
+  background-color: #e74c3c;
+}
+
+.btn-primary.no:hover {
+  background-color: #c0392b;
+}
+
+.btn-disabled {
+  background-color: #bdc3c7 !important;
+  cursor: not-allowed !important;
+}
+
+/* Elválasztó sor */
+.sor {
   
+  background-color: #ddd;
+  margin: 100px ;
+}
 
-
+/* Reszponzív design */
+@media (max-width: 768px) {
+  .szavaz-container {
+    grid-template-columns: 1fr;
   }
+  
+  .Fo {
+    padding: 0 15px;
+  }
+  
+  .lead {
+    padding: 20px;
+  }
+}
 
+@media (max-width: 480px) {
+  .vote-buttons {
+    flex-direction: column;
+  }
+  
   .input-field, .textarea-field {
-    width: 90%;
     padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 16px;
-    
-  }
-  
-  .input-field:focus, .textarea-field:focus {
-    border-color: #4CAF50;
-    outline: none;
-  }
-  
-  .textarea-field {
-    height: 80px; 
-    resize: vertical; 
+  font-size: 14px;
   }
   
   .submit-btn {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 16px;
-    
+    padding: 10px 15px;
+    font-size: 14px;
   }
-  
-  .submit-btn:hover {
-    background-color: #45a049;
-  }
-
-.sor{
-  margin-top: 200px;
 }
- 
- 
-  
