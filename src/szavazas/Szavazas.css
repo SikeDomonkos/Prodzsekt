@@ -1,6 +1,4 @@
-/* Szavazas.css */
 
-/* Általános stílusok */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
@@ -15,7 +13,7 @@ body {
   padding: 0 20px;
 }
 
-/* Űrlap stílusok */
+
 .lead {
   background-color: #C2DD8F;
   border-radius: 10px;
@@ -86,7 +84,7 @@ body {
   cursor: not-allowed;
 }
 
-/* Szavazás konténer */
+
 .szavaz-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -96,7 +94,7 @@ body {
   margin: 0 auto;
 }
 
-/* Egyes szavazás dobozok */
+
 .szavaz {
   background-color: #C2DD8F;
   border-radius: 10px;
@@ -142,7 +140,7 @@ body {
   margin-bottom: 15px;
 }
 
-/* Szavazó gombok */
+
 .vote-buttons {
   display: flex;
   gap: 10px;
@@ -184,14 +182,13 @@ body {
   cursor: not-allowed !important;
 }
 
-/* Elválasztó sor */
 .sor {
   
   background-color: #ddd;
   margin: 100px ;
 }
 
-/* Reszponzív design */
+
 @media (max-width: 768px) {
   .szavaz-container {
     grid-template-columns: 1fr;

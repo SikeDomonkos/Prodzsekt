@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import "./Profilom.css";
 
 export default function Profile() {
@@ -16,32 +17,31 @@ export default function Profile() {
     fetchProfile();
   }, []);
 
-  const fetchProfile = () => {
+  const fetchProfile = async () => {
     setLoading(true);
-
     const token = localStorage.getItem('token');
     const userId = localStorage.getItem('userId');
 
-    fetch(`https://localhost:7285/auth/profile?id=${userId}`, {
-      method: 'GET',
-      headers: {
-        'Authorization': `Bearer ${token}`,
-        'accept': '*/*'
-      }
-    })
-      .then(response => response.json())
-      .then(data => {
-        setProfile(data);
-        setFormData({
-          phoneNumber: data.phoneNumber || '',
-          lakasSzovNev: data.lakasSzovNev || '',
-          dateOfBirth: data.dateOfBirth ? data.dateOfBirth.split('T')[0] : '',
-          varos: data.varos || ''  
-        });
-      })
-      .finally(() => {
-        setLoading(false);
+    try {
+      const response = await axios.get(`https://localhost:7285/auth/profile?id=${userId}`, {
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'accept': '*/*'
+        }
       });
+
+      setProfile(response.data);
+      setFormData({
+        phoneNumber: response.data.phoneNumber || '',
+        lakasSzovNev: response.data.lakasSzovNev || '',
+        dateOfBirth: response.data.dateOfBirth ? response.data.dateOfBirth.split('T')[0] : '',
+        varos: response.data.varos || ''  
+      });
+    } catch (error) {
+      console.error('Error fetching profile:', error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleEditClick = () => {
@@ -56,7 +56,7 @@ export default function Profile() {
     });
   };
 
-  const handleSave = () => {
+  const handleSave = async () => {
     const token = localStorage.getItem('token');
     const userId = localStorage.getItem('userId');
 
@@ -64,49 +64,42 @@ export default function Profile() {
       .toISOString()
       .split('T')[0]; 
 
-    fetch(`https://localhost:7285/auth/personal?id=${userId}`, {
-      method: 'PUT',
-      headers: {
-        'Authorization': `Bearer ${token}`,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        phoneNumber: formData.phoneNumber,
-        lakasSzovNev: formData.lakasSzovNev,
-        dateOfBirth: formattedDateOfBirth,
-        varos: formData.varos  
-      })
-    })
-      .then(response => {
-        if (response.headers.get('content-type')?.includes('application/json')) {
-          return response.json(); 
-        } else {
-          return response.text(); 
+    try {
+      const response = await axios.put(
+        `https://localhost:7285/auth/personal?id=${userId}`,
+        {
+          phoneNumber: formData.phoneNumber,
+          lakasSzovNev: formData.lakasSzovNev,
+          dateOfBirth: formattedDateOfBirth,
+          varos: formData.varos  
+        },
+        {
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json'
+          }
         }
-      })
-      .then(data => {
-        if (typeof data === 'string') {
-          console.log('Server response:', data);
-          alert(data);
-        } else {
-          setProfile(data); 
-          setIsEditing(false); 
-        }
-        window.location.reload(); 
-      })
-      .catch(error => {
-        alert(`Hiba történt: ${error.message}`);
-        console.error('Error:', error); 
-      });
+      );
+
+      if (typeof response.data === 'string') {
+        console.log('Server response:', response.data);
+        alert(response.data);
+      } else {
+        setProfile(response.data); 
+        setIsEditing(false); 
+      }
+      window.location.reload();
+    } catch (error) {
+      alert(`Hiba történt: ${error.response?.data?.message || error.message}`);
+      console.error('Error:', error); 
+    }
   };
 
   return (
     <div className="profile">
-      
       {loading && <p className="loading">Profil betöltése...</p>}
       
       {profile && (
-        
         <div className="profile-card">
           <h2>{profile.fullName}</h2>
           <p><strong>Felhasználónév:</strong> {profile.userName}</p>
@@ -146,7 +139,7 @@ export default function Profile() {
               />
             </label>
             <label>
-            Lakásszövetkezet neve:
+              Lakásszövetkezet neve:
               <input
                 type="text"
                 name="lakasSzovNev"

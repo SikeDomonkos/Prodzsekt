@@ -1,5 +1,5 @@
 .Footer {
-    position: fixed; /* Az oldal aljára rögzítve marad */
+    position: fixed; 
     bottom: 0;
     left: 0;
     width: 100%;
@@ -9,22 +9,22 @@
     text-align: center;
     border-top: 4px solid #1b5e20;
     display: flex;
-    justify-content: center; /* Középre igazítás */
+    justify-content: center; 
     align-items: center;
-    height: 60px; /* Csökkentett magasság */
+    height: 60px; 
     box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.2);
     z-index: 1000;
 }
 
-/* Fő konténer az elemek elrendezéséhez */
+
 .footer-content {
     display: flex;
-    flex-direction: row; /* Egy sorba rendezi az elemeket */
+    flex-direction: row; 
     align-items: center;
-    gap: 20px; /* Egy kis távolság az elemek között */
+    gap: 20px; 
 }
 
-/* Social ikonok */
+
 .social-icons {
     display: flex;
     gap: 10px;
@@ -41,11 +41,11 @@
 }
 
 
-/* Kapcsolati információk */
+
 .contact-info {
     
     display: flex;
-    gap: 15px; /* Távolság az e-mail címek között */
+    gap: 15px; 
     font-size: 0.9rem;
 }
 
@@ -58,7 +58,7 @@
  }
 
 
-/* Reszponzivitás mobilra */
+
 @media screen and (max-width: 768px) {
     .Footer {
         flex-direction: row;

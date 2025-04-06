@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
 import './Szavazas.css';
 
@@ -28,20 +29,17 @@ export default function Szavazas({ user }) {
     }
   }
 
-  function fetchPolls() {
-    fetch("https://localhost:7285/api/Poll/All")
-      .then(response => {
-        if (!response.ok) throw new Error(`Hiba: ${response.status}`);
-        return response.json();
-      })
-      .then(data => {
-        console.log("Lekérdezett szavazások:", data);
-        setDatabase(data);
-      })
-      .catch(error => console.error('Hiba az adatok lekérésekor:', error));
+  async function fetchPolls() {
+    try {
+      const response = await axios.get("https://localhost:7285/api/Poll/All");
+      console.log("Lekérdezett szavazások:", response.data);
+      setDatabase(response.data);
+    } catch (error) {
+      console.error('Hiba az adatok lekérésekor:', error);
+    }
   }
 
-  function handleVote(id, type) {
+  async function handleVote(id, type) {
     if (!isLoggedIn) {
       alert("Be kell jelentkezned a szavazáshoz!");
       return;
@@ -62,30 +60,31 @@ export default function Szavazas({ user }) {
 
     const voteEndpoint = type === "yes" ? "Yes" : "No";
 
-    fetch(`https://localhost:7285/api/Poll/${voteEndpoint}?id=${id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${localStorage.getItem("token")}`
-      }
-    })
-      .then(response => {
-        if (!response.ok) throw new Error(`Hiba a szavazás mentésekor: ${response.status}`);
-        return response.text();
-      })
-      .then(message => {
-        console.log("Válasz a szervertől:", message);
-        localStorage.setItem("votedPolls", JSON.stringify([...votedPolls, id]));
-        setDatabase(prevDatabase =>
-          prevDatabase.map(item =>
-            item.id === id ? { ...item, [type]: item[type] + 1 } : item
-          )
-        );
-      })
-      .catch(error => console.error("Hiba a szavazás mentésekor:", error));
+    try {
+      const response = await axios.put(
+        `https://localhost:7285/api/Poll/${voteEndpoint}?id=${id}`,
+        {},
+        {
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${localStorage.getItem("token")}`
+          }
+        }
+      );
+
+      console.log("Válasz a szervertől:", response.data);
+      localStorage.setItem("votedPolls", JSON.stringify([...votedPolls, id]));
+      setDatabase(prevDatabase =>
+        prevDatabase.map(item =>
+          item.id === id ? { ...item, [type]: item[type] + 1 } : item
+        )
+      );
+    } catch (error) {
+      console.error("Hiba a szavazás mentésekor:", error);
+    }
   }
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
 
     if (!isLoggedIn) {
@@ -121,30 +120,28 @@ export default function Szavazas({ user }) {
       endingAt: newEndDate
     };
 
-    fetch("https://localhost:7285/api/Poll", {
-      method: "POST",
-      headers: {
-        "Accept": "application/json",
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${localStorage.getItem("token")}`
-      },
-      body: JSON.stringify(newPoll)
-    })
-      .then(response => {
-        if (!response.ok) throw new Error(`Hiba: ${response.status}`);
-        return response.json();
-      })
-      .then(data => {
-        console.log("Új szavazás létrehozva:", data);
-        setDatabase([...database, data]);
-        setNewTitle("");
-        setNewDescription("");
-        setNewEndDate("");
-      })
-      .catch(error => {
-        console.error('Hiba a szavazás létrehozásakor:', error);
-        alert("Hiba történt a szavazás létrehozásakor! Ellenőrizd a konzolt.");
-      });
+    try {
+      const response = await axios.post(
+        "https://localhost:7285/api/Poll",
+        newPoll,
+        {
+          headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${localStorage.getItem("token")}`
+          }
+        }
+      );
+
+      console.log("Új szavazás létrehozva:", response.data);
+      setDatabase([...database, response.data]);
+      setNewTitle("");
+      setNewDescription("");
+      setNewEndDate("");
+    } catch (error) {
+      console.error('Hiba a szavazás létrehozásakor:', error);
+      alert("Hiba történt a szavazás létrehozásakor! Ellenőrizd a konzolt.");
+    }
   }
 
   function formatDate(dateString) {
@@ -209,7 +206,6 @@ export default function Szavazas({ user }) {
       </div>
 
       <div className='szavaz-container'>
-       
         {database.map((data) => {
           const expired = isPollExpired(data.endingAt);
           return (
@@ -237,11 +233,8 @@ export default function Szavazas({ user }) {
                 >
                   Nem ({data.no})
                 </button>
-                
               </div>
-              
             </div>
-            
           );
         })}
       </div>

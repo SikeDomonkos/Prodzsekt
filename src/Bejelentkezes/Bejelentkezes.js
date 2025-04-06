@@ -1,19 +1,18 @@
 import { useState } from 'react';
+import axios from 'axios';
 import './Bejelentkezes.css';
-
 
 const decodeToken = (token) => {
   try {
     const [, payload] = token.split(".");
     const decoded = JSON.parse(atob(payload));
-    console.log("Dekódolt token tartalma:", decoded); 
+    console.log("Dekódolt token tartalma:", decoded);
     return decoded;
   } catch (error) {
     console.error("Token dekódolási hiba:", error);
     return null;
   }
 };
-
 
 const translateError = (errorType) => {
   switch (errorType) {
@@ -38,66 +37,55 @@ const translateError = (errorType) => {
   }
 };
 
-
 const loginUser = async (userData) => {
   try {
-    const response = await fetch('https://localhost:7285/auth/login', {
-      method: 'POST',
+    const response = await axios.post('https://localhost:7285/auth/login', userData, {
       headers: {
         'Content-Type': 'application/json',
         'Cache-Control': 'no-cache',
-      },
-      body: JSON.stringify(userData),
+      }
     });
 
-    if (!response.ok) {
-      const errorData = await response.json();
-      throw errorData; 
-    }
-
-    const data = await response.json();
-    console.log("Szerver válasza:", data);
+    console.log("Szerver válasza:", response.data);
 
     // Token mentése
     localStorage.removeItem('token');
-    localStorage.setItem('token', data.token);
+    localStorage.setItem('token', response.data.token);
 
-   
-    const decoded = decodeToken(data.token);
+    const decoded = decodeToken(response.data.token);
     if (decoded && decoded.sub) {
-      localStorage.setItem('userId', decoded.sub); 
-      console.log("userId elmentve:", decoded.sub); 
+      localStorage.setItem('userId', decoded.sub);
+      console.log("userId elmentve:", decoded.sub);
     } else {
       console.error("A token nem tartalmaz userId-t (sub mezőt)!");
       throw new Error("A token nem tartalmaz userId-t (sub mezőt)!");
     }
 
-    return data;
+    return response.data;
   } catch (error) {
-    throw error; 
+    if (error.response && error.response.data) {
+      throw error.response.data;
+    }
+    throw error;
   }
 };
 
 // Felhasználó regisztrálása
 const registerUser = async (userData) => {
   try {
-    const response = await fetch('https://localhost:7285/auth/register', {
-      method: 'POST',
+    const response = await axios.post('https://localhost:7285/auth/register', userData, {
       headers: {
         'Content-Type': 'application/json',
         'Cache-Control': 'no-cache',
-      },
-      body: JSON.stringify(userData),
+      }
     });
 
-    if (!response.ok) {
-      const errorData = await response.json();
-      throw errorData; 
-    }
-
-    return await response.json();
+    return response.data;
   } catch (error) {
-    throw error; 
+    if (error.response && error.response.data) {
+      throw error.response.data;
+    }
+    throw error;
   }
 };
 

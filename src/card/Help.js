@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import './Help.css';
 
 export default function Help() {
@@ -30,25 +31,19 @@ export default function Help() {
     setError(null);
 
     try {
-      const response = await fetch('https://localhost:7285/api/Post/All');
+      const response = await axios.get('https://localhost:7285/api/Post/All');
       
-      if (!response.ok) {
-        const errorText = await response.text();
-        throw new Error(errorText || `HTTP error! Status: ${response.status}`);
-      }
-
-      const data = await response.json();
-      console.log('Received posts data:', data);
+      console.log('Received posts data:', response.data);
       
-      if (Array.isArray(data)) {
-        setPosts(data);
+      if (Array.isArray(response.data)) {
+        setPosts(response.data);
       } else {
-        console.warn('Expected array but received:', data);
+        console.warn('Expected array but received:', response.data);
         setPosts([]);
       }
     } catch (err) {
       console.error("Fetch error:", err);
-      setError(err.message);
+      setError(err.response?.data?.message || err.message);
     } finally {
       setLoading(false);
     }
@@ -81,22 +76,14 @@ export default function Help() {
     };
 
     try {
-      const response = await fetch("https://localhost:7285/api/Post", {
-        method: "POST",
+      const response = await axios.post("https://localhost:7285/api/Post", newPost, {
         headers: {
           "Content-Type": "application/json",
           "Authorization": `Bearer ${token}`
-        },
-        body: JSON.stringify(newPost)
+        }
       });
 
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.message || "Ismeretlen hiba történt");
-      }
-
-      const responseData = await response.json();
-      console.log("Új bejegyzés létrehozva:", responseData);
+      console.log("Új bejegyzés létrehozva:", response.data);
       
       setTitle('');
       setDescription('');
@@ -107,16 +94,14 @@ export default function Help() {
       await fetchData();
     } catch (error) {
       console.error('Hiba a létrehozáskor:', error);
-      alert(`Hiba történt a segítségkérés mentésekor: ${error.message}`);
+      alert(`Hiba történt a segítségkérés mentésekor: ${error.response?.data?.message || error.message}`);
     }
   }
 
   return (
-    
     <div className='help-container'>
       <div className='sor2'></div>
       <div className="help-form-card">
-       
         <h2>Segítség kérése</h2>
         <form onSubmit={handleSubmit}>
           <p>Írd le, miben kell segíteni, a neved(-nak/-nek), és hol van szükség segítségre!</p>
@@ -171,8 +156,6 @@ export default function Help() {
       </div>
 
       <div className="posts-section">
-       
-        
         {loading && <div className="loading-spinner">Adatok betöltése...</div>}
         
         {error && (

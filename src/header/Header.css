@@ -1,4 +1,4 @@
-/* Navbar alapstílusok */
+
 .navbar {
   background-color: #2e7d32;
   color: white;
@@ -20,7 +20,7 @@
   padding: 0 20px;
 }
 
-/* Logo */
+
 .logo {
   display: flex;
   align-items: center;
@@ -34,7 +34,7 @@
   width: 40px;
 }
 
-/* Navigációs menü */
+
 .nav-links {
   display: flex;
   gap: 20px;
@@ -51,7 +51,7 @@
   color: yellow;
 }
 
-/* Bejelentkezés gomb */
+
 .logout-btn {
   background: none;
   border: none;
@@ -65,7 +65,7 @@
   color: red;
 }
 
-/* Keresősáv */
+
 .search-box {
   position: relative;
 }
@@ -86,7 +86,7 @@
   color: gray;
 }
 
-/* Mobilbarát hamburger menü */
+
 .menu-toggle {
   display: none;
   background: none;
@@ -96,7 +96,7 @@
   cursor: pointer;
 }
 
-/* Reszponzív stílus */
+
 @media (max-width: 768px) {
   .nav-links {
     display: none;
