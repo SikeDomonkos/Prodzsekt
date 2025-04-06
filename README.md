@@ -1,69 +1,70 @@
-# E-Panel Projekt
+# Getting Started with Create React App
 
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-E-Panel Projekt - Lakóközösség Szavazó Alkalmazás
-## Projekt leírása
-Az E-Panel egy fejlett, digitális szavazórendszer, amely kifejezetten helyi közösségek számára készült, különösen lakóközösségek, társasházak és egyéb közösségi csoportok részére. A célunk egy olyan platform biztosítása, amely lehetővé teszi a lakóközösségek számára, hogy gyorsan, egyszerűen és biztonságosan lebonyolítsák a különféle szavazásokat, döntéseket hozzanak és áttekintést nyerjenek a közösségi ügyekről. Az alkalmazás célja a közösségi interakciók, döntéshozatali folyamatok egyszerűsítése és modernizálása, miközben biztosítja a transzparenciát, biztonságot és a könnyű használhatóságot.
+## Available Scripts
 
-Főbb funkciók:
-Szavazás és döntéshozatal: A felhasználók szavazhatnak közösségi ügyekről, például közös költségekről, közösségi eseményekről, és egyéb helyi döntésekről.
-Szavazati jogok kezelése: Minden lakó a jogosultságainak megfelelően részt vehet a szavazásokban. A rendszer biztosítja a szavazati jogok ellenőrzését.
-Valós idejű eredmények: Az alkalmazás biztosítja a szavazások valós idejű követését és eredményének azonnali megjelenítését.
-Anonimitás: A szavazások teljesen anonim módon zajlanak, biztosítva a lakók magánéletének védelmét.
+In the project directory, you can run:
 
-A projekt célja, hogy egy olyan könnyen használható digitális szavazórendszert hozzon létre, amely lehetővé teszi a lakóközösségek számára, hogy bárhonnan, bármikor részt vegyenek a közösségi döntéshozatalban, és biztosítja az összes adat védelmét és titkosságát.
+### `npm start`
 
-A Lakóközösség szavazó alkalmazás segítségével a közösségek gyorsan és hatékonyan hozhatnak döntéseket, így elősegítve a közösségi együttműködést és a közös ügyek gyors kezelését. Az alkalmazás különösen hasznos lehet olyan közösségek számára, ahol a hagyományos szavazási formák nem működnek hatékonyan, vagy ahol a lakók különböző okokból nem tudnak személyesen megjelenni.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-Az E-Panel egy átfogó szoftverfejlesztési projekt, amely több különálló, egymással együttműködő modulból áll. A projekt célja egy jól strukturált, könnyen karbantartható és bővíthető rendszer létrehozása. A fejlesztés hatékonyságának növelése érdekében a különböző komponenseket külön branch-ekben kezeljük, lehetővé téve a párhuzamos fejlesztést és a gyors integrációt. A projekt célközönsége mind a fejlesztői csapatok, mind a végfelhasználók, akik egy stabil és megbízható rendszert igényelnek.
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-## Használt technológiák
+### `npm test`
 
-A projektben a következő technológiákat alkalmazzuk:
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-- **Frontend:** React, JavaScript/TypeScript, HTML, CSS, Bootstrap
-- **Backend:** .NET Core, C#, Entity Framework
-- **Adatbázis:** Microsoft SQL Server
-- **Asztali alkalmazás:** WPF (Windows Presentation Foundation)
-- **Verziókezelés:** Git, GitHub
-- **CI/CD:** GitHub Actions
-- **Dokumentáció:** Markdown, Swagger (API dokumentációhoz)
+### `npm run build`
 
-## Projektstruktúra
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-A projekt az alábbi főbb komponensekből épül fel, amelyek együttesen biztosítják az alkalmazás teljes funkcionalitását és skálázhatóságát:
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-- **WPF** - A Windows Presentation Foundation (WPF) technológiát használó kliensalkalmazás, amely a felhasználói interfész megjelenítéséért és a helyi eseménykezelésért felelős. Ez a modul biztosítja az asztali alkalmazás natív élményét és interakcióját.
-- **dokumentacio** - A projekt teljes körű dokumentációját tartalmazó részleg, amely magában foglalja a rendszertervezést, specifikációkat, használati útmutatókat és fejlesztői dokumentációt. A cél a fejlesztői munka támogatása, valamint a hosszú távú fenntarthatóság biztosítása.
-- **adatbazis** - Az adatbázis-kezelésért felelős szegmens, amely tartalmazza a séma definíciókat, migrációs fájlokat, optimalizált SQL szkripteket és indexelési stratégiákat. Ez a modul biztosítja az adatok tárolását, elérhetőségét és biztonságát, valamint skálázható megoldásokat kínál nagy mennyiségű adatok kezelésére.
-- **backend** - A szerveroldali alkalmazásrész, amely az üzleti logikát és API végpontokat biztosítja. A backend felelős az adatok kezeléséért, az alkalmazás üzleti szabályainak végrehajtásáért, valamint a frontend és az adatbázis közötti kommunikációért. Modern architektúrával rendelkezik, amely skálázható és biztonságos működést tesz lehetővé.
-- **frontend** - A React alapú webes felhasználói felület, amely az ügyféloldali interakciókért és a vizuális megjelenítésért felel. A komponensalapú fejlesztési megközelítés biztosítja a moduláris és újrafelhasználható elemekből épülő felhasználói élményt. A rendszer reszponzív kialakítása révén mobil- és asztali eszközökön egyaránt optimális élményt nyújt.
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-## React telepítése
+### `npm run eject`
 
-A frontend fejlesztéséhez szükség van a React környezet beállítására. Az alábbi lépésekkel tudod telepíteni:
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-1. **Node.js telepítése**
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-   - Töltsd le és telepítsd a [Node.js](https://nodejs.org/) aktuális verzióját.
-   - Ellenőrizd a telepítést:
-     ```sh
-     node -v
-     npm -v
-     ```
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-2. **React projekt létrehozása**
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-   - Nyiss egy terminált és futtasd az alábbi parancsot:
-     ```sh
-     npx create-react-app my-app
-     ```
-   - Navigálj az új projekt mappájába:
-     ```sh
-     cd my-app
-     ```
-   - Indítsd el a fejlesztői szervert:
-     ```sh
-     npm start
-     ```
+## Learn More
 
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
