@@ -86,7 +86,6 @@ namespace AuthApi.Controllers
                 {
                     loggedinuser.FizetesiElmaradas = elmaradasFelvitelDto.FizetesiElmaradas;
                     loggedinuser.FizetettEHavi = elmaradasFelvitelDto.FizetettEHavi;
-                    context.Add(loggedinuser);
                     context.SaveChanges();
                     return Ok("Elmaradás frissítve!");
                 }
