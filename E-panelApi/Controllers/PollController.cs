@@ -11,7 +11,7 @@ namespace E_panelApi.Controllers
     [ApiController]
     public class PollController : ControllerBase
     {
-        [HttpPost]
+        [HttpPost] //új szavazás feltöltése
         public ActionResult<Poll> Post(CreatePollDto createPollDto)
         {
             using (var context = new AuthContext())
@@ -35,7 +35,7 @@ namespace E_panelApi.Controllers
             }
         }
 
-        [HttpGet("All")]
+        [HttpGet("All")] //összes szavazás lekérése
         public ActionResult<Poll> GetAll()
         {
             using (var context = new AuthContext())
@@ -44,7 +44,7 @@ namespace E_panelApi.Controllers
             }
         }
 
-         [HttpGet("AllWithName")]
+         [HttpGet("AllWithName")] //összes szavazás lekérése feltöltő nevével
         public ActionResult<Poll> GetAllWithname()
         {
             using (var context = new AuthContext())
@@ -67,7 +67,7 @@ namespace E_panelApi.Controllers
             }
         }
 
-        [HttpGet("ById")]
+        [HttpGet("ById")] //azonosító alapján szavzás lekérése
         public ActionResult<Poll> GetById(string id)
         {
             using (var context = new AuthContext())
@@ -82,7 +82,7 @@ namespace E_panelApi.Controllers
             }
         }
 
-        [HttpGet("ByKeyword")]
+        [HttpGet("ByKeyword")] //kulcsszó alapján szavazás lekérése
         public ActionResult<Poll> GetByKeyword(string keyword)
         {
             using (var context = new AuthContext())
@@ -105,7 +105,7 @@ namespace E_panelApi.Controllers
             }
         }
 
-        [HttpPut]
+        [HttpPut] //azonosító alapján szavás tartalmának módosítása
         public ActionResult<Poll> Update(string id, UpdatePollDto updatePollDto)
         {
             using (var context = new AuthContext())
@@ -123,7 +123,7 @@ namespace E_panelApi.Controllers
             }
         }
         
-        [HttpPut("Yes")]
+        [HttpPut("Yes")] //azonoító alapján szavazás igennel
         public ActionResult<Poll> VoteYes(string id)
         {
             using (var context = new AuthContext())
@@ -139,7 +139,7 @@ namespace E_panelApi.Controllers
             }
         }
         
-        [HttpPut("No")]
+        [HttpPut("No")] //azonoító alapján szavazás nemmel
         public ActionResult<Poll> VoteNo(string id)
         {
             using (var context = new AuthContext())
@@ -155,7 +155,7 @@ namespace E_panelApi.Controllers
             }
         }
         
-        [HttpDelete]
+        [HttpDelete] //azonosító alapján szavazás törlése
         public ActionResult<Poll> Delete(string id)
         {
             using (var context = new AuthContext())
