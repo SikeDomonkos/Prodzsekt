@@ -9,7 +9,7 @@ namespace E_panelApi.Controllers
     [ApiController]
     public class PostController : ControllerBase
     {
-        [HttpPost]
+        [HttpPost] //új segítségkérés feltöltése
         public ActionResult<Post> Post(CreatePostDto createPostDto)
         {
             using (var context = new AuthContext())
@@ -33,7 +33,7 @@ namespace E_panelApi.Controllers
             }
         }
 
-        [HttpGet("All")]
+        [HttpGet("All")] //összes segítségkérés lekérése
         public ActionResult<Post> GetAll()
         {
             using (var context = new AuthContext())
@@ -42,7 +42,7 @@ namespace E_panelApi.Controllers
             }
         }
 
-        [HttpGet("AllWithName")]
+        [HttpGet("AllWithName")] //összes segítségkérés lekérése feltöltő és elfogadó nevével
         public ActionResult<Post> GetAllWithName()
         {
             using (var context = new AuthContext())
@@ -73,7 +73,7 @@ namespace E_panelApi.Controllers
         }
 
 
-        [HttpGet("ById")]
+        [HttpGet("ById")] //azonosító alapján segítségkérés lekérése
         public ActionResult<Post> GetById(string id)
         {
             using (var context = new AuthContext())
@@ -88,7 +88,7 @@ namespace E_panelApi.Controllers
             }
         }
 
-        [HttpGet("ByKeyword")]
+        [HttpGet("ByKeyword")] //kulcsszó alapján segítségkérés lekérése
         public ActionResult<Post> GetByKeyword(string keyword)
         {
             using (var context = new AuthContext())
@@ -111,7 +111,7 @@ namespace E_panelApi.Controllers
             }
         }
 
-        [HttpPut]
+        [HttpPut] //azonosító alapján segítségkérés elfogadása és tartalom módosítása
         public ActionResult<Post> Update(string id, UpdatePostDto updatePostDto)
         {
             using (var context = new AuthContext())
@@ -131,7 +131,7 @@ namespace E_panelApi.Controllers
             }
         }
 
-        [HttpDelete]
+        [HttpDelete] //azonosító alapján segítségkérés törlése
         public ActionResult<Post> Delete(string id)
         {
             using (var context = new AuthContext())
