@@ -18,7 +18,7 @@ namespace AuthApi.Controllers
             this.auth = auth;
         }
 
-        [HttpGet("profile")]
+        [HttpGet("profile")] //azonosító alapján felhasználó adatainak lekérése
         public async Task<ActionResult> Profile(string id)
         {
             using (var context = new AuthContext())
@@ -33,7 +33,7 @@ namespace AuthApi.Controllers
             }
         }
 
-        [HttpGet("UserWithRole")]
+        [HttpGet("UserWithRole")] //azonosító alapján felhasználó név és jogosultság lekérése
         public async Task<ActionResult> GetUserWithRole(string id)
         {
             using (var context = new AuthContext())
@@ -57,7 +57,7 @@ namespace AuthApi.Controllers
             }
         }
         
-        [HttpPut("personal")]
+        [HttpPut("personal")] // azonosító alapján felhasználó személyes adatainak felvitele
         public async Task<ActionResult> Personal(string id, PersonalDto personalDto)
         {
             using (var context = new AuthContext())
@@ -76,7 +76,7 @@ namespace AuthApi.Controllers
             }
         }
 
-        [HttpPut("elmaradas_kezeles")]
+        [HttpPut("elmaradas_kezeles")] //azonosító alapján felhasználó elmaradásának módosítása
         public async Task<ActionResult> elmaradasok(string id, ElmaradasFelvitelDto elmaradasFelvitelDto)
         {
             using (var context = new AuthContext())
@@ -93,7 +93,7 @@ namespace AuthApi.Controllers
             }
         }
 
-        [HttpPost("login")]
+        [HttpPost("login")] //bejelentkezés
         public async Task<ActionResult> LoginPost(LoginRequestDto loginRequestDto)
         {
             var log = await auth.Login(loginRequestDto);
@@ -107,7 +107,7 @@ namespace AuthApi.Controllers
 
         }
 
-        [HttpPost("register")]
+        [HttpPost("register")] //regisztráció
         public async Task<ActionResult> RegisterPost(RegisterRequestDto registerRequestDto)
         {
             var user = await auth.Register(registerRequestDto);
@@ -121,7 +121,7 @@ namespace AuthApi.Controllers
 
         }
 
-        [HttpPost("assignRole")]
+        [HttpPost("assignRole")] //jogosultság hozzárendelése felhasználóhoz
         public async Task<ActionResult> AssignRole(AssignRoleRequestDto assignRoleRequestDto)
         {
             var user = await auth.AssignRole(assignRoleRequestDto);
