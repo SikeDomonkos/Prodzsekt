@@ -20,6 +20,8 @@ namespace ProjektWPF
  
     public partial class MainWindow : Window
     {
+        // Bejelentkezett felhasználó neve, alapértelmezettként "John Doe"
+
         public string LoggedInUsername { get; set; } = "John Doe";
 
         public MainWindow()
@@ -27,10 +29,15 @@ namespace ProjektWPF
             InitializeComponent();
             Loaded += MainWindow_Loaded;
         }
+        // Ablak betöltése után a felhasználónév megjelenítése a jobb oldali panelen
+
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
             UserNameTextBlock.Text = LoggedInUsername; 
         }
+
+        // Oldalsáv nyitva van-e (true), vagy zárva (false)
+
         private bool isSidebarOpen = false;
 
         private void ToggleSidebar_Click(object sender, RoutedEventArgs e)
@@ -48,6 +55,7 @@ namespace ProjektWPF
             SidebarTransform.BeginAnimation(TranslateTransform.XProperty, animation);
         }
 
+        // Kijelentkezés gomb kezelése
         private void Logout_Click(object sender, RoutedEventArgs e)
         {
             foreach (Window window in Application.Current.Windows)
@@ -62,23 +70,21 @@ namespace ProjektWPF
             loginWindow.Show();
             this.Close();
         }
-
+        // Felhasználók megjelenítése
         private void OpenDataGridWindow_Click(object sender, RoutedEventArgs e)
         {
             DataGridWindow dataGridWindow = new DataGridWindow();
             dataGridWindow.Show();
             
         }
+        // Szavazások megjelenítése külön ablakban
         private void GetVotes_Click(object sender, RoutedEventArgs e)
         {
             SzavazasLekeres szavazasLekeres = new SzavazasLekeres();
             szavazasLekeres.Show();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+        // Segítségkérések ablak megnyitása
 
         private void Segitseg_Click(object sender, RoutedEventArgs e)
         {

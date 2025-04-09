@@ -16,6 +16,8 @@ namespace ProjektWPF
             _httpClient = new HttpClient();
         }
 
+        // Lekéri az összes szavazást a szerverről
+
         public async Task<List<Poll>> GetPollsAsync()
         {
             try
@@ -40,6 +42,7 @@ namespace ProjektWPF
                 return new List<Poll>();
             }
         }
+        //Szavazás törlése
 
         public async Task<bool> DeletePollAsync(string pollId)
         {

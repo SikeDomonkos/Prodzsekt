@@ -15,6 +15,7 @@ namespace ProjektWPF
         {
             InitializeComponent();
         }
+        // Jelszó megjelenítése a TextBox-ban (👁 ikon lenyomva)
 
         private void ShowPassword(object sender, MouseButtonEventArgs e)
         {
@@ -22,13 +23,14 @@ namespace ProjektWPF
             PasswordTextBox.Visibility = Visibility.Visible;
             PasswordBox.Visibility = Visibility.Collapsed;
         }
+        // Jelszó elrejtése (👁 ikon felengedve)
 
         private void HidePassword(object sender, MouseEventArgs e)
         {
             PasswordBox.Visibility = Visibility.Visible;
             PasswordTextBox.Visibility = Visibility.Collapsed;
         }
-
+        // Bejelentkezés gomb
         private async void LoginButton_Click(object sender, RoutedEventArgs e)
         {
             string username = UsernameBox.Text;
@@ -55,6 +57,8 @@ namespace ProjektWPF
                     if (response.IsSuccessStatusCode)
                     {
                         var jsonResponse = JObject.Parse(responseContent);
+                        // Token ellenőrzése
+
 
                         if (jsonResponse["token"] != null && jsonResponse["token"].ToString().Length > 0)
                         {
@@ -112,6 +116,7 @@ namespace ProjektWPF
                 }
             }
         }
+        // Enter lenyomására is induljon a bejelentkezés
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {

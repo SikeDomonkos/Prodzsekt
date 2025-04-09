@@ -2,6 +2,8 @@
 
 namespace ProjektWPF
 {
+    // Ez az osztály egy szavazást (Poll) reprezentál az alkalmazásban
+
     public class Poll
     {
         public string Id { get; set; }

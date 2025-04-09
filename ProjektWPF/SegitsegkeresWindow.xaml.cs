@@ -19,10 +19,14 @@ namespace ProjektWPF
             LoadPostsAsync();
         }
 
+        //Posztok lekérése
+
         private async void LoadPostsAsync()
         {
             try
             {
+                // API végpont URL-je
+
                 string url = "https://localhost:7285/api/Post/AllWithName";
                 HttpResponseMessage response = await _httpClient.GetAsync(url);
 
@@ -46,6 +50,8 @@ namespace ProjektWPF
                 MessageBox.Show($"Hálózati hiba: {ex.Message}", "Hiba", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
+        // Metódus a poszt törlésére
 
         private async void DeletePost_Click(object sender, RoutedEventArgs e)
         {

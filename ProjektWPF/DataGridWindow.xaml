@@ -8,6 +8,8 @@
         Icon="/Assets/favicon.ico"
 
         Title="Felhasználók" Height="450" Width="800">
+    
+    <!-- Háttér és elrendezés -->
 
     <Grid>
         <Grid.RowDefinitions>
@@ -24,6 +26,8 @@
                 <GradientStop Color="#3CB371" Offset="1.0"/>
             </LinearGradientBrush>
         </Grid.Background>
+        
+        <!-- Szűrő, kereső és mentés gomb -->
 
         <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
             <Label Content="Szövetkezet:" VerticalAlignment="Center" Margin="10" Foreground="White"/>
@@ -76,6 +80,8 @@
                 </Button.Style>
             </Button>
         </StackPanel>
+        
+        <!-- Felhasználók listája -->
 
         <DataGrid Name="DataGridUsers"
                   Grid.Row="1"

@@ -8,6 +8,8 @@
         Icon="/Assets/favicon.ico"
         Title="E-Panel Admin" Height="500" Width="1000" Background="#006400"
         >
+    <!-- Fő elrendezés -->
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
@@ -29,6 +31,7 @@
                 <GradientStop Color="#3CB371" Offset="1.0"/>
             </LinearGradientBrush>
         </Grid.Background>
+        <!-- Felhasználók lekérése gomb -->
 
         <Button Content="Felhasználók lekérése"
                 Click="OpenDataGridWindow_Click"
@@ -77,6 +80,9 @@
                     </Style.Triggers>
                 </Style>
             </Button.Style>
+            
+            <!-- Szavazások lekérése gomb -->
+
         </Button>
         <Button Content="Szavazások lekérése"
         Click="GetVotes_Click"
@@ -127,6 +133,8 @@
             </Button.Style>
         </Button>
         
+        <!-- Segítségkérések megnyitása -->
+
         <Button Content="Segítségkérések"
         Click="Segitseg_Click"
         Grid.Row="0" 
@@ -175,6 +183,8 @@
                 </Style>
             </Button.Style>
         </Button>
+        <!-- Jobb oldali kihúzható sáv a felhasználói információkkal -->
+
         <Border x:Name="Sidebar"
         Grid.Column="3"
         Background="#2E8B57"
@@ -186,6 +196,8 @@
             <Border.RenderTransform>
                 <TranslateTransform x:Name="SidebarTransform" X="200"/>
             </Border.RenderTransform>
+
+            <!-- Tartalom: név + kijelentkezés gomb -->
 
             <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <TextBlock x:Name="UserNameTextBlock"
@@ -204,6 +216,8 @@
                 Cursor="Hand"/>
             </StackPanel>
         </Border>
+        <!-- Felhasználói ikon gomb a sáv megjelenítéséhez/elrejtéséhez -->
+
         <Button Content="👤"
                 Grid.Column="3"
         Width="40"

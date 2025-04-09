@@ -15,6 +15,8 @@ namespace ProjektWPF
             LoadPolls();
         }
 
+        // Metódus, ami betölti a szavazásokat
+
         private async void LoadPolls()
         {
             try
@@ -27,6 +29,7 @@ namespace ProjektWPF
                 MessageBox.Show($"Failed to load polls: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+        // A szavazás törlése
 
         private async void DeletePoll_Click(object sender, RoutedEventArgs e)
         {

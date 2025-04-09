@@ -9,6 +9,8 @@ namespace ProjektWPF
 {
     public partial class DataGridWindow : Window
     {
+        // Az összes felhasználó adatai egy listában
+
         private List<Person> AllData;
 
         public DataGridWindow()
@@ -16,6 +18,7 @@ namespace ProjektWPF
             InitializeComponent();
             LoadData();
         }
+        // Adatok betöltése adatbázisból és ComboBox feltöltése
 
         private void LoadData()
         {
@@ -38,6 +41,7 @@ namespace ProjektWPF
                 MessageBox.Show($"Error loading data: {ex.Message}");
             }
         }
+        // Adatok lekérdezése az adatbázisból
 
         private List<Person> FetchPersonsFromDatabase()
         {
@@ -88,6 +92,7 @@ namespace ProjektWPF
                 }
             }
         }
+        // Egy adott felhasználó adatainak frissítése adatbázisban
 
         private void UpdatePersonInDatabase(Person person)
         {
@@ -136,6 +141,7 @@ namespace ProjektWPF
                 DataGridUsers.ItemsSource = filteredData;
             }
         }
+        // Összes adat elmentése a "Mentés" gomb megnyomásakor
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
@@ -152,6 +158,8 @@ namespace ProjektWPF
                 MessageBox.Show($"Hiba mentéskor: {ex.Message}", "Hiba", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+        // Keresés név alapján
+
         private void SearchTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             string searchText = SearchTextBox.Text.ToLower();
@@ -169,6 +177,8 @@ namespace ProjektWPF
                 DataGridUsers.ItemsSource = filteredData;
             }
         }
+        // Felhasználó osztály
+
         public class Person
         {
             public string FullName { get; set; }

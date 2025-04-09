@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace ProjektWPF
 {
+    // Osztály, amely egy felhasználó által létrehozott bejegyzést reprezentál.
+
     public class Post
     {
         public string Id { get; set; }

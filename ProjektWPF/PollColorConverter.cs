@@ -5,6 +5,10 @@ using System.Windows.Media;
 
 namespace ProjektWPF
 {
+    // Ez az osztály egy szavazás eredményei alapján tér vissza egy színnel.
+    // Ha az "igen" szavazatok többségben vannak → zöld szín,
+    // ha a "nem" szavazatok vannak többségben → pirosas szín,
+    // döntetlen esetén → semleges szürke szín.
     public class PollColorConverter : IMultiValueConverter
     {
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
