@@ -3,9 +3,16 @@ import axios from 'axios';
 import "./Profilom.css";
 
 export default function Profile() {
+  // Állapot a felhasználói profilhoz
   const [profile, setProfile] = useState(null);
+
+  // Betöltési állapot
   const [loading, setLoading] = useState(true);
+
+  // Szerkesztési mód állapota
   const [isEditing, setIsEditing] = useState(false);
+
+  // Szerkeszthető mezők állapota
   const [formData, setFormData] = useState({
     phoneNumber: '',
     lakasSzovNev: '',
@@ -13,16 +20,19 @@ export default function Profile() {
     varos: '' 
   });
 
+  // Komponens betöltésekor profil betöltése
   useEffect(() => {
     fetchProfile();
   }, []);
 
+  // Profil lekérése a backendről
   const fetchProfile = async () => {
-    setLoading(true);
-    const token = localStorage.getItem('token');
-    const userId = localStorage.getItem('userId');
+    setLoading(true); 
+    const token = localStorage.getItem('token'); 
+    const userId = localStorage.getItem('userId'); 
 
     try {
+      // API hívás a felhasználó adatainak lekérésére
       const response = await axios.get(`https://localhost:7285/auth/profile?id=${userId}`, {
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -30,6 +40,7 @@ export default function Profile() {
         }
       });
 
+      // Profil és űrlap mezők beállítása
       setProfile(response.data);
       setFormData({
         phoneNumber: response.data.phoneNumber || '',
@@ -40,31 +51,37 @@ export default function Profile() {
     } catch (error) {
       console.error('Error fetching profile:', error);
     } finally {
-      setLoading(false);
+      setLoading(false); // Betöltés vége
     }
   };
 
+  // Szerkesztés gombra kattintás
   const handleEditClick = () => {
     setIsEditing(true);
   };
 
+  // Input mezők változásának kezelése
   const handleInputChange = (e) => {
     const { name, value } = e.target;
+
     setFormData({
       ...formData,
       [name]: value
     });
   };
 
+  // Mentés gomb eseménykezelője (PUT kérés)
   const handleSave = async () => {
     const token = localStorage.getItem('token');
     const userId = localStorage.getItem('userId');
 
+    // Dátum formázása ISO formátumra
     const formattedDateOfBirth = new Date(formData.dateOfBirth)
       .toISOString()
       .split('T')[0]; 
 
     try {
+      // PUT kérés küldése az adatok frissítéséhez
       const response = await axios.put(
         `https://localhost:7285/auth/personal?id=${userId}`,
         {
@@ -81,15 +98,20 @@ export default function Profile() {
         }
       );
 
+      // Ha válasz szöveges üzenet, jelenítsük meg
       if (typeof response.data === 'string') {
         console.log('Server response:', response.data);
         alert(response.data);
       } else {
+        // Sikeres frissítés esetén frissítsük a profilt és zárjuk be a szerkesztő modált
         setProfile(response.data); 
         setIsEditing(false); 
       }
+
+     
       window.location.reload();
     } catch (error) {
+      // Hibakezelés
       alert(`Hiba történt: ${error.response?.data?.message || error.message}`);
       console.error('Error:', error); 
     }
@@ -97,8 +119,10 @@ export default function Profile() {
 
   return (
     <div className="profile">
+      {/* Betöltés kijelzése */}
       {loading && <p className="loading">Profil betöltése...</p>}
       
+      {/* Profil megjelenítése, ha elérhető */}
       {profile && (
         <div className="profile-card">
           <h2>{profile.fullName}</h2>
@@ -115,20 +139,24 @@ export default function Profile() {
             <p><strong>Születési dátum:</strong> {new Date(profile.dateOfBirth).toLocaleDateString()}</p>
           )}
           
+          {/* Fizetési elmaradás kiemelve */}
           {profile.fizetesiElmaradas && profile.fizetesiElmaradas > 0 && (
             <p className="payment-warning">
               <strong>Fizetés elmaradás!</strong> {profile.fizetesiElmaradas} Ft
             </p>
           )}
 
+          {/* Szerkesztés gomb */}
           <button onClick={handleEditClick}>Szerkesztés</button>
         </div>
       )}
 
+      {/* Szerkesztő modal, ha szerkesztési módban vagyunk */}
       {isEditing && (
         <div className="edit-modal">
           <div className="edit-modal-content">
             <h2>Profil szerkesztése</h2>
+
             <label>
               Telefonszám:
               <input
@@ -138,6 +166,7 @@ export default function Profile() {
                 onChange={handleInputChange}
               />
             </label>
+
             <label>
               Lakásszövetkezet neve:
               <input
@@ -147,6 +176,7 @@ export default function Profile() {
                 onChange={handleInputChange}
               />
             </label>
+
             <label>
               Születési dátum:
               <input
@@ -156,6 +186,7 @@ export default function Profile() {
                 onChange={handleInputChange}
               />
             </label>
+
             <label>
               Város:
               <input
@@ -165,6 +196,8 @@ export default function Profile() {
                 onChange={handleInputChange}
               />
             </label>
+
+            {/* Mentés és Mégse gombok */}
             <button onClick={handleSave}>Mentés</button>
             <button onClick={() => setIsEditing(false)}>Mégse</button>
           </div>

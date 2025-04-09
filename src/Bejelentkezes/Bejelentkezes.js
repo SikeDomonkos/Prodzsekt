@@ -2,9 +2,12 @@ import { useState } from 'react';
 import axios from 'axios';
 import './Bejelentkezes.css';
 
+// JWT token dekódolása
 const decodeToken = (token) => {
   try {
+    // A token felosztása részekre és a payload kinyerése
     const [, payload] = token.split(".");
+    // Base64 dekódolás és JSON parse
     const decoded = JSON.parse(atob(payload));
     console.log("Dekódolt token tartalma:", decoded);
     return decoded;
@@ -14,31 +17,25 @@ const decodeToken = (token) => {
   }
 };
 
+// Szerverről érkező hibák fordítása magyarra
 const translateError = (errorType) => {
   switch (errorType) {
-    case 'INVALID_FULLNAME':
-      return 'Hiba a teljes névnél!';
-    case 'INVALID_USERNAME':
-      return 'Hiba a felhasználónévnél!';
-    case 'INVALID_EMAIL':
-      return 'Hiba az email címnél!';
-    case 'INVALID_PASSWORD':
-      return 'Hiba a jelszónál!';
-    case 'PASSWORDS_DO_NOT_MATCH':
-      return 'A jelszavak nem egyeznek!';
-    case 'USERNAME_TAKEN':
-      return 'A felhasználónév már foglalt!';
-    case 'EMAIL_TAKEN':
-      return 'Az email cím már foglalt!';
-    case 'LOGIN_FAILED':
-      return 'Hibás felhasználónév vagy jelszó!';
-    default:
-      return 'Ismeretlen hiba történt!';
+    case 'INVALID_FULLNAME': return 'Hiba a teljes névnél!';
+    case 'INVALID_USERNAME': return 'Hiba a felhasználónévnél!';
+    case 'INVALID_EMAIL': return 'Hiba az email címnél!';
+    case 'INVALID_PASSWORD': return 'Hiba a jelszónál!';
+    case 'PASSWORDS_DO_NOT_MATCH': return 'A jelszavak nem egyeznek!';
+    case 'USERNAME_TAKEN': return 'A felhasználónév már foglalt!';
+    case 'EMAIL_TAKEN': return 'Az email cím már foglalt!';
+    case 'LOGIN_FAILED': return 'Hibás felhasználónév vagy jelszó!';
+    default: return 'Ismeretlen hiba történt!';
   }
 };
 
+// Bejelentkezési függvény
 const loginUser = async (userData) => {
   try {
+    // POST kérés küldése a bejelentkezési végpontra
     const response = await axios.post('https://localhost:7285/auth/login', userData, {
       headers: {
         'Content-Type': 'application/json',
@@ -48,10 +45,11 @@ const loginUser = async (userData) => {
 
     console.log("Szerver válasza:", response.data);
 
-    // Token mentése
+    // Token mentése localStorage-ba
     localStorage.removeItem('token');
     localStorage.setItem('token', response.data.token);
 
+    // Token dekódolása és userId kinyerése
     const decoded = decodeToken(response.data.token);
     if (decoded && decoded.sub) {
       localStorage.setItem('userId', decoded.sub);
@@ -63,6 +61,7 @@ const loginUser = async (userData) => {
 
     return response.data;
   } catch (error) {
+
     if (error.response && error.response.data) {
       throw error.response.data;
     }
@@ -70,9 +69,10 @@ const loginUser = async (userData) => {
   }
 };
 
-// Felhasználó regisztrálása
+// Regisztrációs függvény
 const registerUser = async (userData) => {
   try {
+    // POST kérés küldése a regisztrációs végpontra
     const response = await axios.post('https://localhost:7285/auth/register', userData, {
       headers: {
         'Content-Type': 'application/json',
@@ -82,6 +82,7 @@ const registerUser = async (userData) => {
 
     return response.data;
   } catch (error) {
+ 
     if (error.response && error.response.data) {
       throw error.response.data;
     }
@@ -89,12 +90,15 @@ const registerUser = async (userData) => {
   }
 };
 
+// Fő Bejelentkezés komponens
 export default function Bejelentkezes() {
+  // Állapotok kezelése
   const [loginUsername, setLoginUsername] = useState('');
   const [loginPassword, setLoginPassword] = useState('');
   const [loginError, setLoginError] = useState('');
   const [showRegister, setShowRegister] = useState(false);
 
+  // Bejelentkezési űrlap kezelése
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
     setLoginError('');
@@ -102,6 +106,7 @@ export default function Bejelentkezes() {
     try {
       const userData = { username: loginUsername, password: loginPassword };
       await loginUser(userData);
+      // Sikeres bejelentkezés után átirányítás a profil oldalra
       window.location.href = '/Profilom';
     } catch (error) {
       setLoginError(translateError(error.errorType || 'LOGIN_FAILED'));
@@ -133,15 +138,19 @@ export default function Bejelentkezes() {
             />
             <button type="submit">Bejelentkezés</button>
           </form>
+          {/* Regisztrációs modal megnyitása */}
           <button onClick={() => setShowRegister(true)}>Regisztráció</button>
         </div>
       </div>
+      {/* Regisztrációs modal megjelenítése */}
       {showRegister && <RegisterModal onClose={() => setShowRegister(false)} />}
     </div>
   );
 }
 
+// Regisztrációs Modal komponens
 function RegisterModal({ onClose }) {
+  // Állapotok kezelése
   const [fullName, setFullName] = useState('');
   const [userName, setUserName] = useState('');
   const [email, setEmail] = useState('');
@@ -150,9 +159,11 @@ function RegisterModal({ onClose }) {
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
 
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // Jelszavak egyezőségének ellenőrzése
     if (password !== confirmPassword) {
       setErrorMessage(translateError('PASSWORDS_DO_NOT_MATCH'));
       setSuccessMessage('');
@@ -164,6 +175,7 @@ function RegisterModal({ onClose }) {
       await registerUser(userData);
       setSuccessMessage('Sikeres regisztráció! Kérlek jelentkezz be.');
       setErrorMessage('');
+      // 2.5 másodperc után modal bezárása
       setTimeout(onClose, 2500);
     } catch (error) {
       setErrorMessage(translateError(error.errorType));
@@ -175,6 +187,7 @@ function RegisterModal({ onClose }) {
     <div className="modal">
       <div className="modal-content">
         <p>Regisztráció</p>
+        {/* Hiba- és sikerüzenetek megjelenítése */}
         {errorMessage && <p className="error">{errorMessage}</p>}
         {successMessage && <p className="success">{successMessage}</p>}
         <form className="form" onSubmit={handleSubmit}>

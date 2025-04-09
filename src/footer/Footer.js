@@ -6,6 +6,7 @@ function Footer() {
     <div className="Footer">
       <div className="footer-content">
         <div className="social-icons">
+          {/* Közösségi média ikonok */}
           <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
             <img src="https://www.pixsector.com/cache/200e7bcc/av16efeffeed4418c90c1.png" alt="Instagram" title="Instagram" />
           </a>
@@ -13,7 +14,7 @@ function Footer() {
             <img src="https://www.pixsector.com/cache/c2d6c2a1/av580aef89b415365fb9c.png" alt="Facebook" title="Facebook" />
           </a>
         </div>
-
+          {/* email elérhetőségeink */}
         <div className="contact-info">
           <h2>Elérhetőségeink</h2>
           <p>Kovacssz@kkszki.hu</p>

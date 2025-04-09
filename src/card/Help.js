@@ -3,6 +3,7 @@ import axios from 'axios';
 import './Help.css';
 
 export default function Help() {
+  // Állapotváltozók a bejegyzésekhez, töltéshez, hibákhoz és űrlap mezőkhöz
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -12,20 +13,23 @@ export default function Help() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userId, setUserId] = useState(null);
 
+  // Komponens betöltésekor lefutó műveletek: adatok lekérése és bejelentkezés ellenőrzése
   useEffect(() => {
     fetchData();
     checkLoginStatus();
   }, []);
 
+  // Ellenőrzi, hogy be van-e jelentkezve a felhasználó
   function checkLoginStatus() {
     const token = localStorage.getItem('token');
     const userId = localStorage.getItem('userId');
-    setIsLoggedIn(!!token);
+    setIsLoggedIn(!!token); // true, ha van token
     if (token && userId) {
       setUserId(userId);
     }
   }
 
+  // Bejegyzések lekérése az API-ról
   async function fetchData() {
     setLoading(true);
     setError(null);
@@ -35,6 +39,7 @@ export default function Help() {
       
       console.log('Received posts data:', response.data);
       
+      // Ellenőrzi, hogy tömböt kapott-e vissza
       if (Array.isArray(response.data)) {
         setPosts(response.data);
       } else {
@@ -49,14 +54,17 @@ export default function Help() {
     }
   }
 
+  // Új segítségkérés beküldése
   async function handleSubmit(event) {
     event.preventDefault();
 
+    // Ha nincs bejelentkezve, ne engedje beküldeni
     if (!isLoggedIn || !userId) {
       alert("Be kell jelentkezned a segítségkérés létrehozásához!");
       return;
     }
 
+    // Üres mezők ellenőrzése
     if (!title.trim() || !description.trim() || !location.trim()) {
       alert("Minden mezőt ki kell tölteni!");
       return;
@@ -68,6 +76,7 @@ export default function Help() {
       return;
     }
 
+    // Új bejegyzés objektum
     const newPost = {
       posterId: userId,
       title,
@@ -85,12 +94,13 @@ export default function Help() {
 
       console.log("Új bejegyzés létrehozva:", response.data);
       
+      // Mezők kiürítése sikeres beküldés után
       setTitle('');
       setDescription('');
       setLocation('');
       alert("Segítségkérés sikeresen létrehozva!");
       
-      // Frissítjük a posztok listáját
+      // Lista frissítése
       await fetchData();
     } catch (error) {
       console.error('Hiba a létrehozáskor:', error);
@@ -98,9 +108,12 @@ export default function Help() {
     }
   }
 
+  
   return (
     <div className='help-container'>
       <div className='sor2'></div>
+
+      {/* Segítségkérő űrlap */}
       <div className="help-form-card">
         <h2>Segítség kérése</h2>
         <form onSubmit={handleSubmit}>
@@ -155,6 +168,7 @@ export default function Help() {
         </form>
       </div>
 
+      {/* Meglévő segítségkérések listája */}
       <div className="posts-section">
         {loading && <div className="loading-spinner">Adatok betöltése...</div>}
         
@@ -186,6 +200,7 @@ export default function Help() {
           )}
         </div>
       </div>
+
       <div className='sor'></div>
     </div>
   );

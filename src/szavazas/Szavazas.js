@@ -1,21 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid'; 
 import './Szavazas.css';
 
 export default function Szavazas({ user }) {
-  const [database, setDatabase] = useState([]);
-  const [newTitle, setNewTitle] = useState("");
-  const [newDescription, setNewDescription] = useState("");
-  const [newEndDate, setNewEndDate] = useState("");
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [userId, setUserId] = useState(null);
+  // Állapotkezelések
+  const [database, setDatabase] = useState([]); 
+  const [newTitle, setNewTitle] = useState(""); 
+  const [newDescription, setNewDescription] = useState(""); 
+  const [newEndDate, setNewEndDate] = useState(""); 
+  const [isLoggedIn, setIsLoggedIn] = useState(false); 
+  const [userId, setUserId] = useState(null); 
 
+  // Komponens betöltésekor fut le
   useEffect(() => {
-    fetchPolls();
-    checkLoginStatus();
+    fetchPolls(); 
+    checkLoginStatus(); 
   }, []);
 
+  // Ellenőrzi, hogy van-e token és userId a localStorage-ben
   function checkLoginStatus() {
     const token = localStorage.getItem("token");
     const storedUserId = localStorage.getItem("userId");
@@ -29,6 +32,7 @@ export default function Szavazas({ user }) {
     }
   }
 
+  // Szavazások lekérése az adatbázisból
   async function fetchPolls() {
     try {
       const response = await axios.get("https://localhost:7285/api/Poll/All");
@@ -39,6 +43,7 @@ export default function Szavazas({ user }) {
     }
   }
 
+  // Szavazás leadása (igen vagy nem)
   async function handleVote(id, type) {
     if (!isLoggedIn) {
       alert("Be kell jelentkezned a szavazáshoz!");
@@ -74,6 +79,8 @@ export default function Szavazas({ user }) {
 
       console.log("Válasz a szervertől:", response.data);
       localStorage.setItem("votedPolls", JSON.stringify([...votedPolls, id]));
+
+      // Állapot frissítése helyben
       setDatabase(prevDatabase =>
         prevDatabase.map(item =>
           item.id === id ? { ...item, [type]: item[type] + 1 } : item
@@ -84,6 +91,7 @@ export default function Szavazas({ user }) {
     }
   }
 
+  // Új szavazás létrehozása
   async function handleSubmit(event) {
     event.preventDefault();
 
@@ -111,7 +119,7 @@ export default function Szavazas({ user }) {
     }
 
     const newPoll = {
-      id: uuidv4(),
+      id: uuidv4(), 
       title: newTitle,
       description: newDescription,
       yes: 0,
@@ -134,7 +142,7 @@ export default function Szavazas({ user }) {
       );
 
       console.log("Új szavazás létrehozva:", response.data);
-      setDatabase([...database, response.data]);
+      setDatabase([...database, response.data]); 
       setNewTitle("");
       setNewDescription("");
       setNewEndDate("");
@@ -144,6 +152,7 @@ export default function Szavazas({ user }) {
     }
   }
 
+  // Lejárati dátum formázása magyar formátumra
   function formatDate(dateString) {
     const options = { 
       year: 'numeric', 
@@ -156,10 +165,12 @@ export default function Szavazas({ user }) {
     return new Date(dateString).toLocaleDateString('hu-HU', options);
   }
 
+  // Ellenőrzi, hogy egy szavazás lejárt-e
   function isPollExpired(endingAt) {
     return new Date(endingAt) < new Date();
   }
 
+  // JSX visszatérés
   return (
     <div>
       <div className='sor2'></div>

@@ -6,7 +6,7 @@ export default function Fooldal() {
   return (
     
     <div className="Fo">
-    
+    {/* Főoldal */}
       <div id="leiras">
         <h1 className="title">Üdvözlöm a főoldalon</h1>
         <p>Az oldal a társasházban élő emberek számára lett készítve.</p>
